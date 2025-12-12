@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "echarts": "^5.5.1",
+    "gsap": "^3.14.1",
     "three": "^0.170.0"
   },
   "devDependencies": {

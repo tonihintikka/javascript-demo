@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollytelling 2.0 - Modern JavaScript Effects</title>
+  <meta name="description" content="Datavetoinen, vieritykseen sidottu kerronta GSAP ScrollTriggerillä ja ECharts-visualisoinneilla.">
+  <link rel="stylesheet" href="/demos/scrollytelling.css">
+</head>
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <!-- Navigation -->
+  <nav class="demo-nav">
+    <div class="nav-content">
+      <a href="/" class="nav-home">← Takaisin</a>
+      <h1 class="nav-title">Scrollytelling 2.0</h1>
+      <div class="nav-progress">
+        <span id="progress-text">0%</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-word">Scrollytelling</span>
+        <span class="title-word">2.0</span>
+      </h1>
+      <p class="hero-subtitle">
+        Vieritykseen sidottu datavisualisointi: Käyttäjä on ohjaaja
+      </p>
+      <div class="scroll-hint">
+        <span>Scroll down</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section 1: Introduction -->
+  <section class="story-section" id="section-intro">
+    <div class="container">
+      <div class="story-content">
+        <h2 class="section-title fade-in">Mitä on Scrollytelling?</h2>
+        <p class="section-text fade-in">
+          Scrollytelling yhdistää vierityksen ja tarinankerronnan. Toisin kuin
+          passiivinen video, käyttäjä kontrolloi etenemisnopeutta ja voi palata
+          takaisin mielenkiintoisiin kohtiin.
+        </p>
+        <p class="section-text fade-in">
+          Vuonna 2025 scrollytelling on kehittynyt perinteisestä tekstistä
+          <strong>monimutkaiseksi, datavetoiseksi</strong> kokemukseksi, joka
+          integroi reaaliaikaisia visualisointeja suoraan tarinaan.
+        </p>
+      </div>
+
+      <!-- Animated illustration -->
+      <div class="illustration">
+        <div class="scroll-metaphor">
+          <div class="scroll-frame" id="scroll-frame"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section 2: Data Journey -->
+  <section class="story-section chart-section" id="section-data">
+    <div class="container-wide">
+      <div class="sticky-container">
+        <!-- Left: Narrative -->
+        <div class="narrative">
+          <div class="narrative-step" data-step="1">
+            <h3>Vuosi 2020: Alku</h3>
+            <p>Projekti alkoi vaatimattomasti 100 käyttäjällä ja rajallisilla resursseilla.</p>
+          </div>
+
+          <div class="narrative-step" data-step="2">
+            <h3>Vuosi 2022: Kasvu</h3>
+            <p>Orgaaninen kasvu ja word-of-mouth markkinointi nostivat käyttäjämäärän 500:aan.</p>
+          </div>
+
+          <div class="narrative-step" data-step="3">
+            <h3>Vuosi 2023: Murros</h3>
+            <p>Suurten asiakkaiden saavuttaminen toi eksponentiaalisen kasvun.</p>
+          </div>
+
+          <div class="narrative-step" data-step="4">
+            <h3>Vuosi 2024: Skaalaus</h3>
+            <p>Infrastruktuurin parannukset mahdollistivat 1200 käyttäjän palvelun.</p>
+          </div>
+
+          <div class="narrative-step" data-step="5">
+            <h3>Vuosi 2025: Tähtiin</h3>
+            <p>AI-integraatio ja automatisointi toivat räjähdysmäisen kasvun 2000 käyttäjään.</p>
+          </div>
+        </div>
+
+        <!-- Right: Chart (sticky) -->
+        <div class="chart-sticky">
+          <div id="growth-chart" class="chart-container"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section 3: Category Breakdown -->
+  <section class="story-section" id="section-categories">
+    <div class="container">
+      <div class="story-content">
+        <h2 class="section-title fade-in">Käyttäjien jakautuminen</h2>
+        <p class="section-text fade-in">
+          Vuonna 2025 käyttäjäkunta on monipuolistunut. Katsotaan tarkemmin,
+          mistä käyttäjät tulevat.
+        </p>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="chart-reveal">
+        <div id="pie-chart" class="chart-container"></div>
+      </div>
+
+      <div class="insights fade-in">
+        <div class="insight-card">
+          <div class="insight-number">45%</div>
+          <div class="insight-label">Enterprise</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-number">30%</div>
+          <div class="insight-label">SMB</div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-number">25%</div>
+          <div class="insight-label">Individual</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section 4: Performance Metrics -->
+  <section class="story-section" id="section-performance">
+    <div class="container-wide">
+      <div class="story-content centered">
+        <h2 class="section-title fade-in">Suorituskyvyn kehitys</h2>
+        <p class="section-text fade-in">
+          Teknisten parannusten myötä latausajat ovat puolittuneet ja
+          vasteajat parantuneet merkittävästi.
+        </p>
+      </div>
+
+      <!-- Bar Chart -->
+      <div class="chart-reveal">
+        <div id="performance-chart" class="chart-container"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section 5: Future Outlook -->
+  <section class="story-section" id="section-future">
+    <div class="container">
+      <div class="story-content centered">
+        <h2 class="section-title fade-in">Tulevaisuuden näkymät</h2>
+        <p class="section-text fade-in">
+          Ennustamme 3x kasvun seuraavan 12 kuukauden aikana, kun
+          uudet ominaisuudet ja markkinat avautuvat.
+        </p>
+      </div>
+
+      <!-- Animated projection -->
+      <div class="projection">
+        <div class="projection-line" id="projection-line"></div>
+        <div class="projection-stats">
+          <div class="stat">
+            <div class="stat-value" data-target="6000">0</div>
+            <div class="stat-label">Predicted Users 2026</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" data-target="150">0</div>
+            <div class="stat-label">New Markets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="conclusion">
+    <div class="container">
+      <div class="conclusion-content">
+        <h2>Scrollytelling on tulevaisuus</h2>
+        <p>
+          Datavetoinen, vieritykseen sidottu kerronta antaa käyttäjälle kontrollin
+          ja tekee monimutkaisesta datasta ymmärrettävää.
+        </p>
+        <div class="conclusion-actions">
+          <a href="/" class="btn btn-primary">← Takaisin etusivulle</a>
+          <a href="/demos/glassmorphism.html" class="btn btn-secondary">Seuraava demo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <strong>Scrollytelling 2.0 Demo</strong> -
+        Osa "Modernit JavaScript-efektit 2025" projektia
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/demos/scrollytelling.js"></script>
+</body>
+</html>

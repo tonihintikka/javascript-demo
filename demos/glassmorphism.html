@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism 2.0 - Modern JavaScript Effects</title>
+  <meta name="description" content="Interaktiivinen demo glassmorphism-efekteistä: backdrop blur, depth layers, ja fysikaalisesti uskottavat materiaalit.">
+  <link rel="stylesheet" href="/demos/glassmorphism.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="demo-nav">
+    <div class="nav-content">
+      <a href="/" class="nav-home">← Takaisin</a>
+      <h1 class="nav-title">Glassmorphism 2.0</h1>
+      <button class="nav-theme" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="animated-bg">
+      <div class="bg-gradient bg-gradient-1"></div>
+      <div class="bg-gradient bg-gradient-2"></div>
+      <div class="bg-gradient bg-gradient-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="glass-card glass-card-hero">
+          <h2 class="hero-title">Glassmorphism 2.0</h2>
+          <p class="hero-subtitle">
+            Fysikaalisesti uskottavat tilalliset materiaalit, jotka taittavat valoa
+            ja luovat syvyysvaikutelman. WebGPU:n teholla toteutettu moderni design.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">CSS Backdrop Filter</span>
+            <span class="tag">Multi-layer Depth</span>
+            <span class="tag">Light Refraction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Playground -->
+  <section class="playground">
+    <div class="container">
+      <h2 class="section-title">Interaktiivinen Playground</h2>
+      <p class="section-desc">
+        Säädä parametreja ja katso miten glassmorphism-efekti muuttuu reaaliajassa
+      </p>
+
+      <div class="playground-grid">
+        <!-- Preview Area -->
+        <div class="preview-area">
+          <div class="preview-bg">
+            <div class="preview-gradient"></div>
+          </div>
+
+          <div class="glass-card glass-card-preview" id="preview-card">
+            <div class="card-icon">💎</div>
+            <h3>Glass Card</h3>
+            <p>Tämä kortti käyttää backdrop-filter efektiä luodakseen glassmorphic-ilmeen.</p>
+            <button class="glass-btn">Kokeile</button>
+          </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+          <div class="control-group">
+            <label for="blur-control">
+              <span class="control-label">Blur Amount</span>
+              <span class="control-value" id="blur-value">10px</span>
+            </label>
+            <input
+              type="range"
+              id="blur-control"
+              min="0"
+              max="30"
+              value="10"
+              step="1"
+              class="control-slider"
+            >
+          </div>
+
+          <div class="control-group">
+            <label for="opacity-control">
+              <span class="control-label">Background Opacity</span>
+              <span class="control-value" id="opacity-value">0.1</span>
+            </label>
+            <input
+              type="range"
+              id="opacity-control"
+              min="0"
+              max="1"
+              value="0.1"
+              step="0.05"
+              class="control-slider"
+            >
+          </div>
+
+          <div class="control-group">
+            <label for="saturation-control">
+              <span class="control-label">Saturation</span>
+              <span class="control-value" id="saturation-value">180%</span>
+            </label>
+            <input
+              type="range"
+              id="saturation-control"
+              min="100"
+              max="300"
+              value="180"
+              step="10"
+              class="control-slider"
+            >
+          </div>
+
+          <div class="control-group">
+            <label for="border-opacity-control">
+              <span class="control-label">Border Opacity</span>
+              <span class="control-value" id="border-opacity-value">0.2</span>
+            </label>
+            <input
+              type="range"
+              id="border-opacity-control"
+              min="0"
+              max="1"
+              value="0.2"
+              step="0.05"
+              class="control-slider"
+            >
+          </div>
+
+          <button class="control-reset" id="reset-btn">Reset to Default</button>
+          <button class="control-copy" id="copy-css-btn">📋 Copy CSS</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="examples">
+    <div class="container">
+      <h2 class="section-title">Käyttöesimerkit</h2>
+      <p class="section-desc">
+        Glassmorphism toimii parhaiten modernien käyttöliittymien elementeissä
+      </p>
+
+      <div class="examples-grid">
+        <!-- Navigation Bar -->
+        <div class="example-item">
+          <h3 class="example-title">Navigaatiopalkki</h3>
+          <div class="example-preview">
+            <nav class="glass-navbar">
+              <div class="navbar-brand">Logo</div>
+              <div class="navbar-links">
+                <a href="#" class="navbar-link">Home</a>
+                <a href="#" class="navbar-link">About</a>
+                <a href="#" class="navbar-link">Services</a>
+                <a href="#" class="navbar-link">Contact</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="example-item">
+          <h3 class="example-title">Modaali-ikkuna</h3>
+          <div class="example-preview">
+            <button class="demo-btn" id="open-modal-btn">Avaa modaali</button>
+          </div>
+        </div>
+
+        <!-- Card Stack -->
+        <div class="example-item">
+          <h3 class="example-title">Kerrostetut kortit</h3>
+          <div class="example-preview example-stack">
+            <div class="glass-card-small glass-card-layer-1">
+              <p>Layer 1</p>
+            </div>
+            <div class="glass-card-small glass-card-layer-2">
+              <p>Layer 2</p>
+            </div>
+            <div class="glass-card-small glass-card-layer-3">
+              <p>Layer 3</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="example-item">
+          <h3 class="example-title">Hakupalkki</h3>
+          <div class="example-preview">
+            <div class="glass-search">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Hae..." class="search-input">
+            </div>
+          </div>
+        </div>
+
+        <!-- Notification -->
+        <div class="example-item">
+          <h3 class="example-title">Ilmoitus</h3>
+          <div class="example-preview">
+            <div class="glass-notification">
+              <div class="notification-icon">✓</div>
+              <div class="notification-content">
+                <strong>Success!</strong>
+                <p>Your changes have been saved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing Card -->
+        <div class="example-item">
+          <h3 class="example-title">Hinnoittelukortti</h3>
+          <div class="example-preview">
+            <div class="glass-pricing">
+              <div class="pricing-header">Pro Plan</div>
+              <div class="pricing-price">$29<span>/mo</span></div>
+              <ul class="pricing-features">
+                <li>✓ Feature 1</li>
+                <li>✓ Feature 2</li>
+                <li>✓ Feature 3</li>
+              </ul>
+              <button class="pricing-btn">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Details -->
+  <section class="technical">
+    <div class="container">
+      <h2 class="section-title">Tekninen toteutus</h2>
+
+      <div class="tech-grid">
+        <div class="tech-card glass-card">
+          <h3>CSS Backdrop Filter</h3>
+          <pre><code>backdrop-filter: blur(10px) saturate(180%);
+-webkit-backdrop-filter: blur(10px) saturate(180%);
+background: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);</code></pre>
+          <p class="tech-note">
+            <strong>Selaintuki:</strong> Chrome 76+, Safari 9+, Firefox 103+
+          </p>
+        </div>
+
+        <div class="tech-card glass-card">
+          <h3>Suorituskyky</h3>
+          <ul class="tech-list">
+            <li><strong>GPU-kiihdytetty</strong> - backdrop-filter käyttää GPU:ta</li>
+            <li><strong>Komposiittikerrokset</strong> - Optimoi kerrosten määrää</li>
+            <li><strong>Will-change</strong> - Käytä harkiten animaatioissa</li>
+            <li><strong>Reduce motion</strong> - Kunnioita käyttäjän asetuksia</li>
+          </ul>
+        </div>
+
+        <div class="tech-card glass-card">
+          <h3>Saavutettavuus</h3>
+          <ul class="tech-list">
+            <li><strong>Kontrasti</strong> - Varmista riittävä tekstin kontrasti (WCAG AA: 4.5:1)</li>
+            <li><strong>Fallback</strong> - Tarjoa vaihtoehto tukemattomille selaimille</li>
+            <li><strong>Fokus</strong> - Pidä focus indicator selkeänä</li>
+            <li><strong>Semanttisuus</strong> - Älä unohda HTML-semantiikkaa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal (hidden by default) -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="glass-modal">
+      <button class="modal-close" id="close-modal-btn" aria-label="Close">×</button>
+      <h2>Glassmorphic Modal</h2>
+      <p>
+        Tämä modaali käyttää samaa glassmorphism-efektiä. Taustan blur luo
+        syvyysvaikutelman ja erottaa modaalin sisällöstä.
+      </p>
+      <div class="modal-actions">
+        <button class="glass-btn">Accept</button>
+        <button class="glass-btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>
+          <strong>Glassmorphism 2.0 Demo</strong> -
+          Osa "Modernit JavaScript-efektit 2025" projektia
+        </p>
+        <div class="footer-links">
+          <a href="/">← Takaisin etusivulle</a>
+          <a href="/demos.html">Legacy demos →</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/demos/glassmorphism.js"></script>
+</body>
+</html>

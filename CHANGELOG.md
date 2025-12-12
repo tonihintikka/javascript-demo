@@ -60,6 +60,65 @@ All notable changes to the JavaScript Visualization Demo 2025 project.
 - Old demo interface moved from `index.html` to `demos.html`
 - Landing page now serves as primary entry point
 
+### Added Project Management
+- **TODO.md** - Comprehensive task list for all remaining work
+  - 7 new demo pages to implement
+  - GSAP integration tasks
+  - Infrastructure improvements
+  - Landing page enhancements (after demos)
+  - Mobile optimization
+  - Accessibility audit
+  - Deployment tasks
+  - Sprint planning with time estimates
+
+---
+
+## 📋 FOR NEXT AI/DEVELOPER
+
+### Current Status
+✅ **Completed**: Landing page with glassmorphism, 3D particles, Bento Grid
+🚧 **In Progress**: None - ready for next demo
+📌 **Next Priority**: Implement individual demo pages
+
+### What to Do Next
+1. **Read TODO.md** - Complete task breakdown with priorities
+2. **Start with Glassmorphism Demo** (`demos/glassmorphism.html`)
+   - Easiest to implement first
+   - No external dependencies needed
+   - Can use existing CSS from landing page as reference
+3. **Install GSAP** when needed: `npm install gsap`
+4. **Test each demo** in browser before moving to next
+5. **Update CHANGELOG.md** after completing each demo
+
+### Important Files
+- `TODO.md` - Master task list
+- `demos/` - Create this folder for new demo pages
+- `index.html` - Landing page (done, don't modify yet)
+- `demos.html` - Legacy demos (preserve)
+
+### Dev Server
+Running at: http://localhost:3000
+Command: `npm run dev`
+
+### Priority Order
+1. Glassmorphism Demo
+2. Fluid Motion Demo
+3. GSAP Installation
+4. Scrollytelling Demo
+5. Mikrointeraktiot Demo
+6. Text Animations Demo
+7. View Transitions Demo
+8. WebGPU Enhancements
+
+### Key Principles
+- Test in browser after each demo
+- Commit working code incrementally
+- Keep accessibility in mind (prefers-reduced-motion)
+- Mobile-first approach
+- Update CHANGELOG.md with each commit
+
+---
+
 ## [0.2.0] - 2025-12-11
 
 ### Added

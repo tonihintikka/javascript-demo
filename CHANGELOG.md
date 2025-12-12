@@ -2,6 +2,38 @@
 
 All notable changes to the JavaScript Visualization Demo 2025 project.
 
+## [0.6.0] - 2025-12-12
+
+### Added
+- **WebGPU & 3D Demo** (`demos/webgpu-3d.html`)
+  - WebGPU support detection ja fallback
+  - Particles demo: säädettävä particle count, size, speed, color mode
+  - PBR Materials demo: glass, metal, fabric, TSL custom materiaalit
+  - Post-processing demo: Bloom, Vignette, Chromatic Aberration
+  - GPU Compute demo: particle physics simulaatio (CPU fallback)
+  - WebGPU vs WebGL vertailutaulukko
+  - Selaintuki-info
+  - Koodi-esimerkit: WebGPU check, TSL shader, Post-processing, WGSL Compute Shader
+  - FPS-mittarit jokaiselle demolle
+  - Interaktiiviset kontrollit kaikille efekteille
+
+- **Shared Demo CSS** (`css/demo-shared.css`)
+  - Yhtenäinen design system kaikille demoille
+  - CSS custom properties (värit, spacing, typography)
+  - Light/dark theme tuki
+  - Responsiiviset breakpointit
+  - Utility classes
+  - Accessibility: prefers-reduced-motion tuki
+
+### Technical Details
+- Three.js EffectComposer post-processing
+- OrbitControls kaikissa 3D-demoissa
+- ResizeObserver canvas-kokojen hallintaan
+- WebGPU adapter/device detection
+- Modulaarinen demo-arkkitehtuuri (tab-navigaatio)
+
+---
+
 ## [0.5.0] - 2025-12-12
 
 ### Added

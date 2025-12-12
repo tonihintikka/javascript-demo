@@ -191,31 +191,31 @@ Projektin tehtävälista järjestyksessä.
 
 ---
 
-### 7. WebGPU & 3D Demo (Laajennus)
+### 7. WebGPU & 3D Demo (Laajennus) ✅
 **Tiedosto:** `demos/webgpu-3d.html` (tai laajennus olemassa olevaan)
 
-- [ ] **WebGPU-tuki**
+- [x] **WebGPU-tuki**
   - Detect WebGPU support
   - Fallback WebGL renderer
   - WebGPURenderer setup (Three.js)
 
-- [ ] **TSL (Three.js Shading Language)**
+- [x] **TSL (Three.js Shading Language)**
   - Custom materials with TSL
   - Node-based shader creation
   - Examples: glass, metal, fabric
 
-- [ ] **Advanced 3D**
+- [x] **Advanced 3D**
   - Post-processing effects (Bloom, DOF)
   - Physically-based materials
   - Environment mapping
   - Shadow improvements
 
-- [ ] **GPU Compute Shaders**
+- [x] **GPU Compute Shaders**
   - Particle simulation (GPU-driven)
   - Cloth simulation
   - Fluid dynamics demo
 
-- [ ] **Performance**
+- [x] **Performance**
   - Adaptive quality based on device
   - FPS counter
   - Stats.js integration
@@ -224,14 +224,14 @@ Projektin tehtävälista järjestyksessä.
 
 ## 🔧 PRIORITEETTI 2: Infrastruktuuri & Työkalut
 
-### GSAP-integraatio
-- [ ] Install GSAP: `npm install gsap`
-- [ ] Setup GSAP plugins (ScrollTrigger, MorphSVG?)
+### GSAP-integraatio ✅
+- [x] Install GSAP: `npm install gsap`
+- [x] Setup GSAP plugins (ScrollTrigger, MorphSVG?)
 - [ ] Create utilities (`js/gsap-utils.js`)
 - [ ] License check (Club GreenSock vs free features)
 
 ### Demo Navigation System
-- [ ] Create unified navigation for all demos
+- [x] Create unified navigation for all demos
 - [ ] Breadcrumbs (Landing → Demo → Section)
 - [ ] Previous/Next demo buttons
 - [ ] Demo switcher menu
@@ -241,10 +241,10 @@ Projektin tehtävälista järjestyksessä.
 - [ ] `js/components/DemoLayout.js` - Wrapper for all demos
 - [ ] `js/components/CodeBlock.js` - Syntax-highlighted code examples
 - [ ] `js/components/ControlPanel.js` - Reusable settings panel
-- [ ] `css/demo-shared.css` - Shared demo styles
+- [x] `css/demo-shared.css` - Shared demo styles
 
 ### Performance Tools
-- [ ] FPS meter component
+- [x] FPS meter component
 - [ ] Performance monitor overlay (optional)
 - [ ] Adaptive quality manager
 - [ ] Bundle size analysis
@@ -398,14 +398,16 @@ Projektin tehtävälista järjestyksessä.
 - [x] **Mikrointeraktiot Demo** - Magneettiset painikkeet, haptinen palaute
 - [x] **View Transitions Demo** - Bento Grid, sivunavigaatio, teeman vaihto
 - [x] **Tekstianimaatiot Demo** - Character/word/line reveals, scramble, gradients
+- [x] **WebGPU & 3D Demo** - Particles, PBR Materials, Post-processing, GPU Compute
+- [x] **Shared Demo CSS** - Yhtenäinen design system
 
 ### In Progress (🚧)
 - [ ] (None currently)
 
 ### Next Up (📌)
-1. **WebGPU & 3D Demo laajennus** - TSL, post-processing
-2. **Landing page parannukset** - Efektien tuonti demoista
-3. **Mobiilioptimointeja** - Touch-tuki, responsiivisuus
+1. **Landing page parannukset** - Efektien tuonti demoista
+2. **Mobiilioptimointeja** - Touch-tuki, responsiivisuus
+3. **Accessibility audit** - WCAG AA, keyboard navigation
 
 ---
 
@@ -421,14 +423,15 @@ Projektin tehtävälista järjestyksessä.
 - ✅ View Transitions API Demo
 - ✅ Text Animations Demo
 
-### Sprint 3: Polish & Deploy (Estimated: 4-6h)
-- WebGPU/3D enhancements (1-2h)
+### Sprint 3: Polish & Deploy (Estimated: 3-5h) 🚧 KÄYNNISSÄ
+- ✅ WebGPU/3D enhancements
+- ✅ Shared demo CSS
 - Landing page enhancements (2h)
 - Mobile optimization (1-2h)
 - Accessibility audit (1h)
 - Deployment (1h)
 
-**Total Remaining: 4-6 hours**
+**Total Remaining: 3-5 hours**
 
 ---
 
@@ -443,11 +446,11 @@ Projektin tehtävälista järjestyksessä.
 ---
 
 **Last Updated**: 2025-12-12
-**Version**: 0.5.0
+**Version**: 0.6.0
 
 ## 📌 Seuraavat askeleet
 
-1. Paranna **WebGPU & 3D Demo** (`demos/webgpu-3d.html`) - TSL, post-processing
-2. Paranna landing pagen efektejä toteutetuilla demoilla
-3. Mobiilioptimointeja ja saavutettavuustarkistuksia
-4. Deploy GitHub Pagesiin
+1. Paranna landing pagen efektejä toteutetuilla demoilla
+2. Mobiilioptimointeja ja saavutettavuustarkistuksia
+3. Deploy GitHub Pagesiin
+4. Lisää WebGPU-linkki index.html:ään

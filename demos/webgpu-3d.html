@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebGPU & 3D - Modern JavaScript Effects</title>
+  <meta name="description" content="Advanced 3D visualizations with WebGPU, Three.js and TSL (Three.js Shading Language). Post-processing, PBR materials, and GPU compute.">
+  <link rel="stylesheet" href="/demos/webgpu-3d.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="demo-nav">
+    <div class="nav-content">
+      <a href="/" class="nav-home">← Takaisin</a>
+      <h1 class="nav-title">WebGPU & 3D</h1>
+      <button class="nav-theme" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-canvas" id="hero-canvas"></div>
+    <div class="hero-overlay"></div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <h2 class="hero-title">WebGPU & Advanced 3D</h2>
+        <p class="hero-subtitle">
+          Seuraavan sukupolven grafiikkarajapinta selaimissa. 
+          GPU Compute, TSL-shaderit, ja post-processing efektit.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">WebGPU</span>
+          <span class="tag">Three.js TSL</span>
+          <span class="tag">Post-Processing</span>
+          <span class="tag">PBR Materials</span>
+        </div>
+        <div class="hero-status" id="webgpu-status">
+          <span class="status-indicator"></span>
+          <span class="status-text">Checking WebGPU support...</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API Support Section -->
+  <section class="support-section">
+    <div class="container">
+      <h2 class="section-title">WebGPU vs WebGL</h2>
+      <div class="comparison-grid">
+        <div class="comparison-card webgl-card">
+          <div class="card-header">
+            <span class="card-icon">🔷</span>
+            <h3>WebGL 2.0</h3>
+          </div>
+          <ul class="feature-list">
+            <li>✅ Laaja selaintuki (98%+)</li>
+            <li>✅ Vakaa ja hyvin dokumentoitu</li>
+            <li>⚠️ GLSL shader -kieli</li>
+            <li>⚠️ Rajoitettu GPU compute</li>
+            <li>⚠️ Vanhempi API-suunnittelu</li>
+          </ul>
+        </div>
+        <div class="comparison-card webgpu-card">
+          <div class="card-header">
+            <span class="card-icon">⚡</span>
+            <h3>WebGPU</h3>
+          </div>
+          <ul class="feature-list">
+            <li>✅ Moderni, tehokas API</li>
+            <li>✅ GPU Compute Shaders</li>
+            <li>✅ WGSL shader -kieli</li>
+            <li>✅ Parempi suorituskyky</li>
+            <li>⚠️ Rajallinen selaintuki (Chrome 113+)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="browser-support">
+        <h3>Selaintuki</h3>
+        <div class="browser-grid">
+          <div class="browser-item supported">
+            <span class="browser-icon">🌐</span>
+            <span class="browser-name">Chrome 113+</span>
+            <span class="browser-status">✅</span>
+          </div>
+          <div class="browser-item supported">
+            <span class="browser-icon">🔷</span>
+            <span class="browser-name">Edge 113+</span>
+            <span class="browser-status">✅</span>
+          </div>
+          <div class="browser-item partial">
+            <span class="browser-icon">🦊</span>
+            <span class="browser-name">Firefox</span>
+            <span class="browser-status">🔧 Flag</span>
+          </div>
+          <div class="browser-item partial">
+            <span class="browser-icon">🧭</span>
+            <span class="browser-name">Safari 18+</span>
+            <span class="browser-status">⚠️</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Demo Section -->
+  <section class="demo-section">
+    <div class="container">
+      <h2 class="section-title">3D Visualizations</h2>
+      <p class="section-desc">Interaktiivisia 3D-visualisointeja Three.js:llä</p>
+      
+      <div class="demo-tabs">
+        <button class="tab-btn active" data-tab="particles">Particles</button>
+        <button class="tab-btn" data-tab="materials">PBR Materials</button>
+        <button class="tab-btn" data-tab="postfx">Post-Processing</button>
+        <button class="tab-btn" data-tab="compute">GPU Compute</button>
+      </div>
+
+      <div class="demo-content">
+        <!-- Particles Demo -->
+        <div class="demo-panel active" id="particles-panel">
+          <div class="demo-canvas-wrapper">
+            <canvas id="particles-canvas"></canvas>
+            <div class="canvas-overlay">
+              <span class="fps-counter" id="particles-fps">0 FPS</span>
+            </div>
+          </div>
+          <div class="demo-controls">
+            <h4>Particle Controls</h4>
+            <div class="control-group">
+              <label>
+                <span>Particle Count</span>
+                <span id="particle-count-value">10,000</span>
+              </label>
+              <input type="range" id="particle-count" min="1000" max="50000" value="10000" step="1000">
+            </div>
+            <div class="control-group">
+              <label>
+                <span>Size</span>
+                <span id="particle-size-value">0.05</span>
+              </label>
+              <input type="range" id="particle-size" min="0.01" max="0.2" value="0.05" step="0.01">
+            </div>
+            <div class="control-group">
+              <label>
+                <span>Speed</span>
+                <span id="particle-speed-value">1.0</span>
+              </label>
+              <input type="range" id="particle-speed" min="0.1" max="3" value="1" step="0.1">
+            </div>
+            <div class="control-group">
+              <label>
+                <span>Color Mode</span>
+              </label>
+              <select id="particle-color">
+                <option value="rainbow">Rainbow</option>
+                <option value="gradient">Gradient</option>
+                <option value="solid">Solid Color</option>
+              </select>
+            </div>
+            <button class="btn-action" id="reset-particles">Reset Particles</button>
+          </div>
+        </div>
+
+        <!-- PBR Materials Demo -->
+        <div class="demo-panel" id="materials-panel">
+          <div class="demo-canvas-wrapper">
+            <canvas id="materials-canvas"></canvas>
+            <div class="canvas-overlay">
+              <span class="fps-counter" id="materials-fps">0 FPS</span>
+            </div>
+          </div>
+          <div class="demo-controls">
+            <h4>Material Properties</h4>
+            <div class="control-group">
+              <label>
+                <span>Material Type</span>
+              </label>
+              <select id="material-type">
+                <option value="standard">Standard PBR</option>
+                <option value="glass">Glass</option>
+                <option value="metal">Metal</option>
+                <option value="fabric">Fabric</option>
+                <option value="tsl-custom">TSL Custom</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>
+                <span>Roughness</span>
+                <span id="roughness-value">0.5</span>
+              </label>
+              <input type="range" id="material-roughness" min="0" max="1" value="0.5" step="0.01">
+            </div>
+            <div class="control-group">
+              <label>
+                <span>Metalness</span>
+                <span id="metalness-value">0.5</span>
+              </label>
+              <input type="range" id="material-metalness" min="0" max="1" value="0.5" step="0.01">
+            </div>
+            <div class="control-group">
+              <label>
+                <span>Environment Intensity</span>
+                <span id="env-intensity-value">1.0</span>
+              </label>
+              <input type="range" id="env-intensity" min="0" max="3" value="1" step="0.1">
+            </div>
+          </div>
+        </div>
+
+        <!-- Post-Processing Demo -->
+        <div class="demo-panel" id="postfx-panel">
+          <div class="demo-canvas-wrapper">
+            <canvas id="postfx-canvas"></canvas>
+            <div class="canvas-overlay">
+              <span class="fps-counter" id="postfx-fps">0 FPS</span>
+            </div>
+          </div>
+          <div class="demo-controls">
+            <h4>Post-Processing Effects</h4>
+            <div class="control-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="bloom-enabled" checked>
+                <span>Bloom</span>
+              </label>
+              <input type="range" id="bloom-strength" min="0" max="3" value="1.5" step="0.1">
+            </div>
+            <div class="control-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="dof-enabled">
+                <span>Depth of Field</span>
+              </label>
+              <input type="range" id="dof-focus" min="0.1" max="10" value="3" step="0.1">
+            </div>
+            <div class="control-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="vignette-enabled">
+                <span>Vignette</span>
+              </label>
+              <input type="range" id="vignette-amount" min="0" max="1" value="0.5" step="0.05">
+            </div>
+            <div class="control-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="chromatic-enabled">
+                <span>Chromatic Aberration</span>
+              </label>
+              <input type="range" id="chromatic-amount" min="0" max="0.1" value="0.02" step="0.005">
+            </div>
+          </div>
+        </div>
+
+        <!-- GPU Compute Demo -->
+        <div class="demo-panel" id="compute-panel">
+          <div class="demo-canvas-wrapper">
+            <canvas id="compute-canvas"></canvas>
+            <div class="canvas-overlay">
+              <span class="fps-counter" id="compute-fps">0 FPS</span>
+              <span class="compute-info" id="compute-info">Particles: 0</span>
+            </div>
+          </div>
+          <div class="demo-controls">
+            <h4>GPU Compute Simulation</h4>
+            <div class="control-group">
+              <label>
+                <span>Simulation Type</span>
+              </label>
+              <select id="compute-type">
+                <option value="particles">Particle Physics</option>
+                <option value="boids">Boids (Flocking)</option>
+                <option value="fluid">Fluid Simulation</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>
+                <span>Particle Count</span>
+                <span id="compute-count-value">100,000</span>
+              </label>
+              <input type="range" id="compute-count" min="10000" max="500000" value="100000" step="10000">
+            </div>
+            <div class="control-group">
+              <label>
+                <span>Simulation Speed</span>
+                <span id="sim-speed-value">1.0</span>
+              </label>
+              <input type="range" id="sim-speed" min="0.1" max="3" value="1" step="0.1">
+            </div>
+            <div class="webgpu-required" id="compute-warning">
+              <span class="warning-icon">⚠️</span>
+              <span>GPU Compute requires WebGPU support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Examples Section -->
+  <section class="code-section">
+    <div class="container">
+      <h2 class="section-title">Koodiesimerkit</h2>
+      
+      <div class="code-tabs">
+        <button class="code-tab-btn active" data-code="webgpu-check">WebGPU Check</button>
+        <button class="code-tab-btn" data-code="tsl-shader">TSL Shader</button>
+        <button class="code-tab-btn" data-code="postprocessing">Post-Processing</button>
+        <button class="code-tab-btn" data-code="compute-shader">Compute Shader</button>
+      </div>
+
+      <div class="code-panels">
+        <div class="code-panel active" id="webgpu-check-code">
+          <pre><code class="language-javascript">// WebGPU Support Detection
+async function checkWebGPUSupport() {
+  if (!navigator.gpu) {
+    console.log('WebGPU not supported');
+    return { supported: false, reason: 'API not available' };
+  }
+  
+  const adapter = await navigator.gpu.requestAdapter();
+  if (!adapter) {
+    return { supported: false, reason: 'No adapter found' };
+  }
+  
+  const device = await adapter.requestDevice();
+  return { 
+    supported: true, 
+    adapter, 
+    device,
+    features: [...adapter.features]
+  };
+}
+
+// Three.js WebGPU Renderer
+import { WebGPURenderer } from 'three/webgpu';
+
+const renderer = new WebGPURenderer({ antialias: true });
+await renderer.init();
+renderer.setSize(window.innerWidth, window.innerHeight);</code></pre>
+        </div>
+
+        <div class="code-panel" id="tsl-shader-code">
+          <pre><code class="language-javascript">// TSL (Three.js Shading Language) Custom Material
+import { 
+  MeshPhysicalNodeMaterial,
+  color, float, vec3, positionLocal, 
+  sin, cos, time, normalize, uv
+} from 'three/tsl';
+
+const material = new MeshPhysicalNodeMaterial();
+
+// Animated color based on position and time
+material.colorNode = color(
+  sin(positionLocal.x.mul(10).add(time)).mul(0.5).add(0.5),
+  cos(positionLocal.y.mul(10).add(time.mul(0.7))).mul(0.5).add(0.5),
+  sin(positionLocal.z.mul(10).add(time.mul(1.3))).mul(0.5).add(0.5)
+);
+
+// Animated displacement
+material.positionNode = positionLocal.add(
+  normalize(positionLocal).mul(
+    sin(time.mul(2).add(positionLocal.y.mul(5))).mul(0.1)
+  )
+);
+
+// Fresnel-like effect
+const viewDir = normalize(cameraPosition.sub(positionWorld));
+const fresnel = float(1).sub(dot(normalWorld, viewDir)).pow(3);
+material.emissiveNode = vec3(0.2, 0.5, 1.0).mul(fresnel);</code></pre>
+        </div>
+
+        <div class="code-panel" id="postprocessing-code">
+          <pre><code class="language-javascript">// Post-Processing with Three.js
+import { 
+  EffectComposer, 
+  RenderPass, 
+  UnrealBloomPass,
+  BokehPass,
+  ShaderPass
+} from 'three/addons/postprocessing';
+import { VignetteShader } from 'three/addons/shaders';
+
+const composer = new EffectComposer(renderer);
+
+// Base render pass
+composer.addPass(new RenderPass(scene, camera));
+
+// Bloom effect
+const bloomPass = new UnrealBloomPass(
+  new THREE.Vector2(window.innerWidth, window.innerHeight),
+  1.5,  // strength
+  0.4,  // radius
+  0.85  // threshold
+);
+composer.addPass(bloomPass);
+
+// Depth of Field
+const bokehPass = new BokehPass(scene, camera, {
+  focus: 3.0,
+  aperture: 0.025,
+  maxblur: 0.01
+});
+composer.addPass(bokehPass);
+
+// Vignette
+const vignettePass = new ShaderPass(VignetteShader);
+vignettePass.uniforms['darkness'].value = 1.5;
+composer.addPass(vignettePass);
+
+// Render
+function animate() {
+  composer.render();
+  requestAnimationFrame(animate);
+}</code></pre>
+        </div>
+
+        <div class="code-panel" id="compute-shader-code">
+          <pre><code class="language-wgsl">// WGSL Compute Shader - Particle Physics
+@group(0) @binding(0) var&lt;storage, read&gt; positionsIn: array&lt;vec4f&gt;;
+@group(0) @binding(1) var&lt;storage, read&gt; velocitiesIn: array&lt;vec4f&gt;;
+@group(0) @binding(2) var&lt;storage, read_write&gt; positionsOut: array&lt;vec4f&gt;;
+@group(0) @binding(3) var&lt;storage, read_write&gt; velocitiesOut: array&lt;vec4f&gt;;
+
+@group(0) @binding(4) var&lt;uniform&gt; params: Params;
+
+struct Params {
+  deltaTime: f32,
+  gravity: vec3f,
+  damping: f32,
+  bounds: vec3f
+}
+
+@compute @workgroup_size(256)
+fn main(@builtin(global_invocation_id) id: vec3u) {
+  let index = id.x;
+  if (index >= arrayLength(&positionsIn)) { return; }
+  
+  var pos = positionsIn[index].xyz;
+  var vel = velocitiesIn[index].xyz;
+  
+  // Apply gravity
+  vel += params.gravity * params.deltaTime;
+  
+  // Update position
+  pos += vel * params.deltaTime;
+  
+  // Bounce off bounds
+  if (abs(pos.x) > params.bounds.x) {
+    pos.x = sign(pos.x) * params.bounds.x;
+    vel.x *= -params.damping;
+  }
+  // ... similar for y and z
+  
+  positionsOut[index] = vec4f(pos, 1.0);
+  velocitiesOut[index] = vec4f(vel, 0.0);
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Links -->
+  <section class="links-section">
+    <div class="container">
+      <h2 class="section-title">Muut Demot</h2>
+      <div class="demo-links">
+        <a href="/demos/glassmorphism.html" class="demo-link-card">
+          <span class="link-icon">💎</span>
+          <span class="link-title">Glassmorphism 2.0</span>
+        </a>
+        <a href="/demos/fluid-motion.html" class="demo-link-card">
+          <span class="link-icon">🌊</span>
+          <span class="link-title">Fluid Motion</span>
+        </a>
+        <a href="/demos/scrollytelling.html" class="demo-link-card">
+          <span class="link-icon">📜</span>
+          <span class="link-title">Scrollytelling</span>
+        </a>
+        <a href="/demos/view-transitions.html" class="demo-link-card">
+          <span class="link-icon">🔄</span>
+          <span class="link-title">View Transitions</span>
+        </a>
+        <a href="/demos/text-animations.html" class="demo-link-card">
+          <span class="link-icon">✨</span>
+          <span class="link-title">Text Animations</span>
+        </a>
+        <a href="/demos/micro-interactions.html" class="demo-link-card">
+          <span class="link-icon">🎯</span>
+          <span class="link-title">Micro-interactions</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="demo-footer">
+    <div class="container">
+      <p>Modern JavaScript Effects 2025 | WebGPU & 3D Demo</p>
+      <p class="footer-note">
+        WebGPU support varies by browser. This demo includes WebGL fallback.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/demos/webgpu-3d.js"></script>
+</body>
+</html>

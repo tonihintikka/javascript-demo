@@ -2,6 +2,48 @@
 
 All notable changes to the JavaScript Visualization Demo 2025 project.
 
+## [0.4.0] - 2025-12-12
+
+### Added
+- **Glassmorphism 2.0 Demo** (`demos/glassmorphism.html`)
+  - Interaktiivinen playground: blur, opacity, saturation säädöt
+  - Multi-layer depth effects ja light refraction
+  - Real-time CSS koodi-generaattori
+  - Teeman vaihto (dark/light)
+  - Esimerkkikortit ja hover-efektit
+  - `prefers-reduced-motion` tuki
+
+- **Fluid Motion Demo** (`demos/fluid-motion.html`)
+  - WebGL liquid distortion shaderit (GLSL)
+  - Interaktiiviset kontrollit: viskositeetti, vääristymä, nopeus, värivaihto
+  - Preset-napit: Rauhallinen, Energinen, Kaoottinen
+  - Nestemäiset painike-efektit
+  - Image distortion hover-demo
+  - Canvas-pohjaiset metaball-animaatiot
+
+- **Scrollytelling 2.0 Demo** (`demos/scrollytelling.html`)
+  - GSAP ScrollTrigger integraatio
+  - Progress bar ja scroll-indikaattori
+  - Datavetoinen kerronta: ECharts-kaavio scroll-animaatiolla
+  - Sticky-sektiot ja narrative steps
+  - Parallax-efektit
+
+- **Mikrointeraktiot Demo** (`demos/micro-interactions.html`)
+  - Magneettiset painikkeet (3 voimakkuustasoa)
+  - Haptinen palaute (vibration API mobiilille)
+  - Ennustavat käyttöliittymät (intent detection)
+  - Toggle/checkbox animaatiot
+  - Loading-tilat ja toast-notifikaatiot
+  - Koodi-esimerkit jokaiselle efektille
+
+### Technical Details
+- Kaikki 4 demoa sisältävät täydelliset HTML, CSS ja JS-tiedostot
+- Yhtenäinen navigaatio kaikkiin demoihin
+- Responsiivinen suunnittelu
+- Saavutettavuus huomioitu: `prefers-reduced-motion`, keyboard navigation
+
+---
+
 ## [0.3.0] - 2025-12-12
 
 ### Added
@@ -76,25 +118,33 @@ All notable changes to the JavaScript Visualization Demo 2025 project.
 ## 📋 FOR NEXT AI/DEVELOPER
 
 ### Current Status
-✅ **Completed**: Landing page with glassmorphism, 3D particles, Bento Grid
+✅ **Completed**: Landing page, 4 demo-sivua (Glassmorphism, Fluid Motion, Scrollytelling, Mikrointeraktiot)
 🚧 **In Progress**: None - ready for next demo
-📌 **Next Priority**: Implement individual demo pages
+📌 **Next Priority**: View Transitions API Demo tai Text Animations Demo
 
 ### What to Do Next
 1. **Read TODO.md** - Complete task breakdown with priorities
-2. **Start with Glassmorphism Demo** (`demos/glassmorphism.html`)
-   - Easiest to implement first
-   - No external dependencies needed
-   - Can use existing CSS from landing page as reference
-3. **Install GSAP** when needed: `npm install gsap`
+2. **Implement View Transitions Demo** (`demos/view-transitions.html`)
+   - Bento Grid layout
+   - `document.startViewTransition()` API
+   - Shared element transitions
+3. **Implement Text Animations Demo** (`demos/text-animations.html`)
+   - GSAP SplitText tai Splitting.js
+   - Character/word-level animaatiot
 4. **Test each demo** in browser before moving to next
 5. **Update CHANGELOG.md** after completing each demo
 
+### Completed Demos
+- ✅ `demos/glassmorphism.html` - Interaktiivinen playground
+- ✅ `demos/fluid-motion.html` - WebGL liquid distortion
+- ✅ `demos/scrollytelling.html` - GSAP ScrollTrigger + ECharts
+- ✅ `demos/micro-interactions.html` - Magnetic buttons, haptic feedback
+
 ### Important Files
-- `TODO.md` - Master task list
-- `demos/` - Create this folder for new demo pages
+- `TODO.md` - Master task list (päivitetty)
+- `demos/` - 4 demoa toteutettu, 3 jäljellä
 - `index.html` - Landing page (done, don't modify yet)
-- `demos.html` - Legacy demos (preserve)
+- `legacy.html` - Legacy demos (preserve)
 
 ### Dev Server
 Running at: http://localhost:3000

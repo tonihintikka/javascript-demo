@@ -4,56 +4,56 @@ Projektin tehtävälista järjestyksessä.
 
 ## 🎯 PRIORITEETTI 1: Uudet Demodemo-sivut
 
-### 1. Glassmorphism 2.0 Demo
+### 1. Glassmorphism 2.0 Demo ✅
 **Tiedosto:** `demos/glassmorphism.html`
 
-- [ ] **HTML-rakenne**
+- [x] **HTML-rakenne**
   - Hero-osio glassmorphic card -esimerkillä
   - Interaktiivinen playground (säätöpaneelit)
   - Esimerkkejä: kortit, modaalit, navigaatio
 
-- [ ] **CSS/Efektit**
+- [x] **CSS/Efektit**
   - `backdrop-filter: blur()` + `saturate()`
   - Multi-layer depth effects
   - Light refraction simulaatio
   - Hover-transformaatiot
   - Responsive glassmorphism
 
-- [ ] **JavaScript**
+- [x] **JavaScript**
   - Interaktiivinen säätö (blur amount, opacity, saturation)
   - Real-time preview
   - Koodi-generaattori (copy CSS)
   - Mouse parallax effect
 
-- [ ] **Saavutettavuus**
+- [x] **Saavutettavuus**
   - Riittävä kontrasti tekstille
   - Fallback ei-tuetuille selaimille
   - `prefers-reduced-motion`
 
 ---
 
-### 2. Nestemäiset muodot (Fluid Motion) Demo
+### 2. Nestemäiset muodot (Fluid Motion) Demo ✅
 **Tiedosto:** `demos/fluid-motion.html`
 
-- [ ] **HTML-rakenne**
+- [x] **HTML-rakenne**
   - Canvas-pohjainen liquid distortion
   - Image distortion demo
   - Blob animations showcase
 
-- [ ] **WebGL/Shader-efektit**
+- [x] **WebGL/Shader-efektit**
   - Liquid distortion shader (GLSL)
   - Mouse velocity tracking
   - Image warp on hover
   - Animated blobs (metaballs)
 
-- [ ] **JavaScript**
+- [x] **JavaScript**
   - WebGL context setup
   - Vertex/fragment shaders
   - Mouse interaction (velocity + position)
   - Performance optimization
   - Fallback 2D canvas animaatio
 
-- [ ] **Esimerkit**
+- [x] **Esimerkit**
   - Product image hover effect
   - Hero background animation
   - Button hover distortion
@@ -61,33 +61,33 @@ Projektin tehtävälista järjestyksessä.
 
 ---
 
-### 3. Scrollytelling 2.0 Demo
+### 3. Scrollytelling 2.0 Demo ✅
 **Tiedosto:** `demos/scrollytelling.html`
 
 **Riippuvuus:** Vaatii GSAP:n asennuksen
 
-- [ ] **Asennus**
+- [x] **Asennus**
   - `npm install gsap`
   - GSAP ScrollTrigger plugin
 
-- [ ] **HTML-rakenne**
+- [x] **HTML-rakenne**
   - Multi-step story sections
   - Data visualization integration (ECharts)
   - Sticky sections
 
-- [ ] **GSAP ScrollTrigger**
+- [x] **GSAP ScrollTrigger**
   - Pin sections while scrolling
   - Scrub animations (tied to scroll)
   - Timeline-based storytelling
   - Parallax layers
 
-- [ ] **Data-driven animations**
+- [x] **Data-driven animations**
   - Chart reveal on scroll
   - Progressive data disclosure
   - Morphing between visualizations
   - Exploded view (tuotteen purkaminen)
 
-- [ ] **Esimerkit**
+- [x] **Esimerkit**
   - Product showcase (Apple-tyyli)
   - Data journalism story
   - Company timeline
@@ -123,28 +123,28 @@ Projektin tehtävälista järjestyksessä.
 
 ---
 
-### 5. Mikrointeraktiot & Ennakoiva UI Demo
+### 5. Mikrointeraktiot & Ennakoiva UI Demo ✅
 **Tiedosto:** `demos/micro-interactions.html`
 
-- [ ] **HTML-rakenne**
+- [x] **HTML-rakenne**
   - Button showcase
   - Form interactions
   - Loading states
   - Success/error feedback
 
-- [ ] **Magnetic Buttons**
+- [x] **Magnetic Buttons**
   - Cursor attraction effect
   - Smooth easing
   - Click ripple
   - Haptic feedback (mobile)
 
-- [ ] **Predictive UI** (Advanced)
+- [x] **Predictive UI** (Advanced)
   - Mouse trajectory tracking
   - Intent detection algorithm
   - Pre-loading on hover prediction
   - Smart hover states
 
-- [ ] **Mikrointeraktiot**
+- [x] **Mikrointeraktiot**
   - Button hover effects (scale, rotate, morph)
   - Toggle switch animations
   - Checkbox animations
@@ -152,7 +152,7 @@ Projektin tehtävälista järjestyksessä.
   - Loading spinners
   - Toast notifications
 
-- [ ] **Esimerkit**
+- [x] **Esimerkit**
   - E-commerce "Add to cart" button
   - Form validation feedback
   - Like button animation
@@ -398,43 +398,41 @@ Projektin tehtävälista järjestyksessä.
 - [x] Git repository initialized
 - [x] 3D visualizations (legacy demos)
 - [x] Voice/Gesture/Sensor demos (legacy)
+- [x] **Glassmorphism Demo** - Täysin toteutettu
+- [x] **Fluid Motion Demo** - WebGL-shaderit, kontrollit
+- [x] **Scrollytelling Demo** - GSAP ScrollTrigger, ECharts
+- [x] **Mikrointeraktiot Demo** - Magneettiset painikkeet, haptinen palaute
 
 ### In Progress (🚧)
 - [ ] (None currently)
 
 ### Next Up (📌)
-1. **Glassmorphism Demo** - Easiest to implement first
-2. **GSAP Installation** - Required for multiple demos
-3. **Fluid Motion Demo** - Visual wow-factor
-4. **Scrollytelling Demo** - Requires GSAP
+1. **View Transitions API Demo** - Bento Grid, siirtymäanimaatiot
+2. **Tekstianimaatiot Demo** - GSAP SplitText / Splitting.js
+3. **WebGPU & 3D Demo** - Laajennus olemassa olevaan
 
 ---
 
 ## 🎯 Sprint Planning
 
-### Sprint 1: Core Demos (Estimated: 8-12h)
-- Glassmorphism Demo (2-3h)
-- Fluid Motion Demo (3-4h)
-- Mikrointeraktiot Demo (2-3h)
-- Demo navigation system (1-2h)
+### Sprint 1: Core Demos ✅ VALMIS
+- ✅ Glassmorphism Demo
+- ✅ Fluid Motion Demo
+- ✅ Mikrointeraktiot Demo
+- ✅ Scrollytelling Demo (+ GSAP)
 
-### Sprint 2: GSAP Demos (Estimated: 6-8h)
-- GSAP installation & setup (1h)
-- Scrollytelling Demo (3-4h)
-- Text Animations Demo (2-3h)
-
-### Sprint 3: Advanced Demos (Estimated: 6-8h)
+### Sprint 2: Remaining Demos (Estimated: 6-8h)
 - View Transitions API Demo (3-4h)
-- WebGPU enhancements (2-3h)
-- Shared components (1h)
+- Text Animations Demo (2-3h)
+- WebGPU enhancements (1-2h)
 
-### Sprint 4: Polish & Deploy (Estimated: 4-6h)
+### Sprint 3: Polish & Deploy (Estimated: 4-6h)
 - Landing page enhancements (2h)
 - Mobile optimization (1-2h)
 - Accessibility audit (1h)
 - Deployment (1h)
 
-**Total Estimate: 24-34 hours**
+**Total Remaining: 10-14 hours**
 
 ---
 
@@ -449,4 +447,11 @@ Projektin tehtävälista järjestyksessä.
 ---
 
 **Last Updated**: 2025-12-12
-**Version**: 0.3.0
+**Version**: 0.4.0
+
+## 📌 Seuraavat askeleet
+
+1. Toteuta **View Transitions API Demo** (`demos/view-transitions.html`)
+2. Toteuta **Tekstianimaatiot Demo** (`demos/text-animations.html`)
+3. Paranna landing pagen efektejä toteutetuilla demoilla
+4. Mobiilioptimointeja ja saavutettavuustarkistuksia

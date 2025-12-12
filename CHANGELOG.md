@@ -2,6 +2,42 @@
 
 All notable changes to the JavaScript Visualization Demo 2025 project.
 
+## [0.5.0] - 2025-12-12
+
+### Added
+- **View Transitions API Demo** (`demos/view-transitions.html`)
+  - Interaktiivinen Bento Grid layout
+  - Card expansion View Transition -animaatiolla
+  - Teeman vaihto (light/dark) demonstraatio
+  - Sivunavigaatio-simulaatio (SPA-tyylinen)
+  - API-tuen tarkistus ja fallback
+  - Koodi-esimerkit (JavaScript & CSS)
+  - Selaintuki-taulukko
+
+- **Tekstianimaatiot Demo** (`demos/text-animations.html`)
+  - Character-by-character animaatiot (fade, slide, scale, rotate)
+  - Word-by-word animaatiot (fade, slide, blur)
+  - Typewriter/kirjoituskone-efekti (terminal-tyylinen)
+  - Text Scramble -efekti (Matrix-tyylinen dekoodaus)
+  - Gradient-tekstianimaatiot (flow, pulse, rainbow, shimmer)
+  - Line reveal -animaatiot lainauksille
+  - Counter/laskuri-animaatiot
+  - Replay-napit jokaiselle efektille
+
+### Changed
+- **index.html** linkit korjattu:
+  - WebGPU & 3D -> `/legacy.html#3d-demo`
+  - View Transitions -> `/demos/view-transitions.html`
+  - Tekstianimaatiot -> `/demos/text-animations.html`
+
+### Technical Details
+- Kaikki 6 pää-demoa nyt toteutettu
+- Natiivi JavaScript (ei GSAP-riippuvuutta tekstianimaatioissa)
+- View Transitions API fallback vanhoille selaimille
+- IntersectionObserver scroll-triggered animaatioille
+
+---
+
 ## [0.4.0] - 2025-12-12
 
 ### Added
@@ -118,33 +154,30 @@ All notable changes to the JavaScript Visualization Demo 2025 project.
 ## 📋 FOR NEXT AI/DEVELOPER
 
 ### Current Status
-✅ **Completed**: Landing page, 4 demo-sivua (Glassmorphism, Fluid Motion, Scrollytelling, Mikrointeraktiot)
-🚧 **In Progress**: None - ready for next demo
-📌 **Next Priority**: View Transitions API Demo tai Text Animations Demo
+✅ **Completed**: Landing page, 6 demo-sivua (kaikki päädemot valmiina!)
+🚧 **In Progress**: None
+📌 **Next Priority**: WebGPU/3D laajennus, Landing page polish, Deploy
 
 ### What to Do Next
-1. **Read TODO.md** - Complete task breakdown with priorities
-2. **Implement View Transitions Demo** (`demos/view-transitions.html`)
-   - Bento Grid layout
-   - `document.startViewTransition()` API
-   - Shared element transitions
-3. **Implement Text Animations Demo** (`demos/text-animations.html`)
-   - GSAP SplitText tai Splitting.js
-   - Character/word-level animaatiot
-4. **Test each demo** in browser before moving to next
-5. **Update CHANGELOG.md** after completing each demo
+1. **Read TODO.md** - Jäljellä olevat tehtävät
+2. **WebGPU & 3D parannukset** - TSL, post-processing efektit
+3. **Landing page polish** - Tuo efektejä demoista
+4. **Mobiilioptimointeja** - Touch-tuki, responsiivisuus
+5. **Deploy** - GitHub Pages
 
-### Completed Demos
+### Completed Demos (6/6 päädemoa)
 - ✅ `demos/glassmorphism.html` - Interaktiivinen playground
 - ✅ `demos/fluid-motion.html` - WebGL liquid distortion
 - ✅ `demos/scrollytelling.html` - GSAP ScrollTrigger + ECharts
 - ✅ `demos/micro-interactions.html` - Magnetic buttons, haptic feedback
+- ✅ `demos/view-transitions.html` - Bento Grid, teeman vaihto
+- ✅ `demos/text-animations.html` - Character/word reveals, scramble
 
 ### Important Files
 - `TODO.md` - Master task list (päivitetty)
-- `demos/` - 4 demoa toteutettu, 3 jäljellä
-- `index.html` - Landing page (done, don't modify yet)
-- `legacy.html` - Legacy demos (preserve)
+- `demos/` - 6 demoa toteutettu
+- `index.html` - Landing page (linkit toimivat)
+- `legacy.html` - Legacy demos (voice, gesture, sensor)
 
 ### Dev Server
 Running at: http://localhost:3000

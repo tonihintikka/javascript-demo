@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Transitions API - Modern JavaScript Effects</title>
+  <meta name="description" content="View Transitions API demo: saumattomat tilasiirtymät ja Bento Grid -animaatiot.">
+  <link rel="stylesheet" href="/demos/view-transitions.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="demo-nav">
+    <div class="nav-content">
+      <a href="/" class="nav-home">← Takaisin</a>
+      <h1 class="nav-title">View Transitions API</h1>
+      <div class="nav-actions">
+        <button class="nav-btn" id="toggle-animations" aria-label="Toggle animations">
+          <span class="btn-icon">✨</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">View Transitions</h1>
+        <p class="hero-subtitle">
+          Saumattomat tilasiirtymät natiiviAPI:lla - ei JavaScript-kirjastoja
+        </p>
+        <div class="api-status" id="api-status">
+          <span class="status-icon">⏳</span>
+          <span class="status-text">Tarkistetaan API-tukea...</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid Demo -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Bento Grid</h2>
+        <p class="section-description">
+          Klikkaa kortteja nähdäksesi View Transitions -animaation toiminnassa
+        </p>
+      </div>
+
+      <div class="bento-grid" id="bento-grid">
+        <!-- Card 1: Large -->
+        <article class="bento-card bento-large" data-id="1" style="view-transition-name: card-1;">
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">🚀</span>
+              <span class="card-number">01</span>
+            </div>
+            <h3 class="card-title">Performance</h3>
+            <p class="card-desc">GPU-accelerated transitions with minimal JavaScript overhead</p>
+            <div class="card-tags">
+              <span class="tag">60fps</span>
+              <span class="tag">Native</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Medium -->
+        <article class="bento-card bento-medium" data-id="2" style="view-transition-name: card-2;">
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">🎨</span>
+              <span class="card-number">02</span>
+            </div>
+            <h3 class="card-title">Smooth</h3>
+            <p class="card-desc">Automatic cross-fade between states</p>
+          </div>
+        </article>
+
+        <!-- Card 3: Medium -->
+        <article class="bento-card bento-medium" data-id="3" style="view-transition-name: card-3;">
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">🔗</span>
+              <span class="card-number">03</span>
+            </div>
+            <h3 class="card-title">Connected</h3>
+            <p class="card-desc">Shared element transitions</p>
+          </div>
+        </article>
+
+        <!-- Card 4: Wide -->
+        <article class="bento-card bento-wide" data-id="4" style="view-transition-name: card-4;">
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">📱</span>
+              <span class="card-number">04</span>
+            </div>
+            <h3 class="card-title">Responsive</h3>
+            <p class="card-desc">Works across all screen sizes with adaptive layouts</p>
+            <div class="card-tags">
+              <span class="tag">Mobile</span>
+              <span class="tag">Desktop</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Small -->
+        <article class="bento-card bento-small" data-id="5" style="view-transition-name: card-5;">
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">⚡</span>
+            </div>
+            <h3 class="card-title">Fast</h3>
+          </div>
+        </article>
+
+        <!-- Card 6: Small -->
+        <article class="bento-card bento-small" data-id="6" style="view-transition-name: card-6;">
+          <div class="card-inner">
+            <div class="card-header">
+              <span class="card-icon">🎯</span>
+            </div>
+            <h3 class="card-title">Precise</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expanded Card View (Hidden by default) -->
+  <div class="expanded-overlay" id="expanded-overlay" hidden>
+    <div class="expanded-card" id="expanded-card">
+      <button class="close-btn" id="close-expanded" aria-label="Close">×</button>
+      <div class="expanded-content">
+        <div class="expanded-header">
+          <span class="card-icon" id="expanded-icon">🚀</span>
+          <span class="card-number" id="expanded-number">01</span>
+        </div>
+        <h2 class="expanded-title" id="expanded-title">Performance</h2>
+        <p class="expanded-desc" id="expanded-desc">
+          GPU-accelerated transitions with minimal JavaScript overhead
+        </p>
+        <div class="expanded-details">
+          <h3>Lisätietoja</h3>
+          <p>
+            View Transitions API mahdollistaa saumattoman siirtymän eri näkymien välillä
+            käyttäen selaimen natiiveja animaatio-ominaisuuksia. Tämä tarkoittaa:
+          </p>
+          <ul>
+            <li>60fps animaatiot ilman jank-ongelmia</li>
+            <li>Automaattinen cross-fade vanhan ja uuden tilan välillä</li>
+            <li>Shared element transitions - elementit "lentävät" paikasta toiseen</li>
+            <li>Fallback vanhemmille selaimille</li>
+          </ul>
+        </div>
+        <div class="expanded-actions">
+          <button class="action-btn primary">Kokeile</button>
+          <button class="action-btn secondary">Kopioi koodi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme Switcher Demo -->
+  <section class="demo-section theme-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Teeman vaihto</h2>
+        <p class="section-description">
+          View Transitions tekee teeman vaihdosta visuaalisesti näyttävän
+        </p>
+      </div>
+
+      <div class="theme-demo">
+        <div class="theme-preview" id="theme-preview">
+          <div class="preview-header">
+            <div class="preview-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="preview-title">Demo App</span>
+          </div>
+          <div class="preview-content">
+            <div class="preview-sidebar">
+              <div class="sidebar-item active"></div>
+              <div class="sidebar-item"></div>
+              <div class="sidebar-item"></div>
+            </div>
+            <div class="preview-main">
+              <div class="preview-card"></div>
+              <div class="preview-card"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="theme-controls">
+          <button class="theme-btn" data-theme="light">
+            <span class="theme-icon">☀️</span>
+            <span>Light</span>
+          </button>
+          <button class="theme-btn active" data-theme="dark">
+            <span class="theme-icon">🌙</span>
+            <span>Dark</span>
+          </button>
+          <button class="theme-btn" data-theme="system">
+            <span class="theme-icon">💻</span>
+            <span>System</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Navigation Demo -->
+  <section class="demo-section navigation-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Sivunavigaatio</h2>
+        <p class="section-description">
+          Simuloitu MPA (Multi-Page Application) navigaatio View Transitionsilla
+        </p>
+      </div>
+
+      <div class="navigation-demo">
+        <div class="nav-tabs">
+          <button class="nav-tab active" data-page="home">
+            <span class="tab-icon">🏠</span>
+            Home
+          </button>
+          <button class="nav-tab" data-page="products">
+            <span class="tab-icon">📦</span>
+            Products
+          </button>
+          <button class="nav-tab" data-page="about">
+            <span class="tab-icon">ℹ️</span>
+            About
+          </button>
+          <button class="nav-tab" data-page="contact">
+            <span class="tab-icon">📧</span>
+            Contact
+          </button>
+        </div>
+
+        <div class="page-container" id="page-container">
+          <!-- Home Page -->
+          <div class="page-content active" data-page="home" style="view-transition-name: page-content;">
+            <h3>Tervetuloa</h3>
+            <p>Tämä on kotisivu. Klikkaa eri välilehtiä nähdäksesi View Transitions -animaation.</p>
+            <div class="page-hero">
+              <div class="hero-image" style="view-transition-name: hero-image;"></div>
+            </div>
+          </div>
+
+          <!-- Products Page -->
+          <div class="page-content" data-page="products" hidden>
+            <h3>Tuotteet</h3>
+            <p>Tuoteluettelo näyttää tuotteemme.</p>
+            <div class="product-grid">
+              <div class="product-card" style="view-transition-name: product-1;"></div>
+              <div class="product-card" style="view-transition-name: product-2;"></div>
+              <div class="product-card" style="view-transition-name: product-3;"></div>
+            </div>
+          </div>
+
+          <!-- About Page -->
+          <div class="page-content" data-page="about" hidden>
+            <h3>Tietoa meistä</h3>
+            <p>Olemme moderni teknologiayritys, joka keskittyy innovaatioihin.</p>
+            <div class="about-content">
+              <div class="about-image" style="view-transition-name: about-image;"></div>
+              <div class="about-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Page -->
+          <div class="page-content" data-page="contact" hidden>
+            <h3>Ota yhteyttä</h3>
+            <p>Kerro meille miten voimme auttaa.</p>
+            <form class="contact-form">
+              <input type="text" placeholder="Nimi" class="form-input">
+              <input type="email" placeholder="Sähköposti" class="form-input">
+              <textarea placeholder="Viesti" class="form-textarea"></textarea>
+              <button type="submit" class="submit-btn">Lähetä</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Example -->
+  <section class="demo-section code-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Koodi</h2>
+        <p class="section-description">
+          Näin helppoa View Transitions API:n käyttö on
+        </p>
+      </div>
+
+      <div class="code-examples">
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">JavaScript</span>
+            <button class="copy-btn" data-code="js">📋 Kopioi</button>
+          </div>
+          <pre><code id="code-js">// Basic view transition
+document.startViewTransition(() => {
+  // Update the DOM
+  updateContent();
+});
+
+// With async operations
+document.startViewTransition(async () => {
+  const data = await fetchData();
+  renderNewContent(data);
+});
+
+// Fallback for unsupported browsers
+function navigateTo(newContent) {
+  if (!document.startViewTransition) {
+    updateContent(newContent);
+    return;
+  }
+
+  document.startViewTransition(() => {
+    updateContent(newContent);
+  });
+}</code></pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">CSS</span>
+            <button class="copy-btn" data-code="css">📋 Kopioi</button>
+          </div>
+          <pre><code id="code-css">/* Shared element transition */
+.card {
+  view-transition-name: card-1;
+}
+
+/* Custom animation for old state */
+::view-transition-old(card-1) {
+  animation: fade-out 0.3s ease-out;
+}
+
+/* Custom animation for new state */
+::view-transition-new(card-1) {
+  animation: fade-in 0.3s ease-in;
+}
+
+/* Slide transition */
+@keyframes slide-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+::view-transition-new(page-content) {
+  animation: slide-in 0.4s ease-out;
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Browser Support -->
+  <section class="demo-section support-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Selaintuki</h2>
+      </div>
+
+      <div class="browser-grid">
+        <div class="browser-card supported">
+          <span class="browser-icon">🟢</span>
+          <span class="browser-name">Chrome 111+</span>
+        </div>
+        <div class="browser-card supported">
+          <span class="browser-icon">🟢</span>
+          <span class="browser-name">Edge 111+</span>
+        </div>
+        <div class="browser-card partial">
+          <span class="browser-icon">🟡</span>
+          <span class="browser-name">Safari 18+</span>
+        </div>
+        <div class="browser-card unsupported">
+          <span class="browser-icon">🔴</span>
+          <span class="browser-name">Firefox (tulossa)</span>
+        </div>
+      </div>
+
+      <p class="support-note">
+        💡 Vinkki: Käytä aina fallback-logiikkaa vanhoille selaimille
+      </p>
+    </div>
+  </section>
+
+  <script type="module" src="/demos/view-transitions.js"></script>
+</body>
+</html>

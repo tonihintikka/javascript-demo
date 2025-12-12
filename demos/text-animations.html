@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tekstianimaatiot 2025 - Modern JavaScript Effects</title>
+  <meta name="description" content="Modernit tekstianimaatiot: character reveals, morphing text, gradient animations ja GSAP SplitText.">
+  <link rel="stylesheet" href="/demos/text-animations.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="demo-nav">
+    <div class="nav-content">
+      <a href="/" class="nav-home">← Takaisin</a>
+      <h1 class="nav-title">Tekstianimaatiot 2025</h1>
+      <button class="replay-btn" id="replay-all" aria-label="Replay all animations">
+        🔄 Toista uudelleen
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title split-text" data-animation="chars">
+          Tekstianimaatiot
+        </h1>
+        <p class="hero-subtitle split-text" data-animation="words">
+          Kirjain kirjaimelta, sana sanalta, rivi riviltä
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Character Reveal -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Kirjain kerrallaan</h2>
+        <p class="section-description">
+          Tekstin paljastaminen yksi kirjain kerrallaan
+        </p>
+      </div>
+
+      <div class="demo-grid">
+        <!-- Fade In -->
+        <div class="demo-card">
+          <h3>Fade In</h3>
+          <div class="demo-preview">
+            <span class="animated-text char-fade" data-text="MODERN">MODERN</span>
+          </div>
+          <button class="replay-btn small" data-target="char-fade">▶️</button>
+        </div>
+
+        <!-- Slide Up -->
+        <div class="demo-card">
+          <h3>Slide Up</h3>
+          <div class="demo-preview">
+            <span class="animated-text char-slide-up" data-text="EFFECTS">EFFECTS</span>
+          </div>
+          <button class="replay-btn small" data-target="char-slide-up">▶️</button>
+        </div>
+
+        <!-- Scale -->
+        <div class="demo-card">
+          <h3>Scale</h3>
+          <div class="demo-preview">
+            <span class="animated-text char-scale" data-text="DYNAMIC">DYNAMIC</span>
+          </div>
+          <button class="replay-btn small" data-target="char-scale">▶️</button>
+        </div>
+
+        <!-- Rotate -->
+        <div class="demo-card">
+          <h3>Rotate</h3>
+          <div class="demo-preview">
+            <span class="animated-text char-rotate" data-text="SPINNING">SPINNING</span>
+          </div>
+          <button class="replay-btn small" data-target="char-rotate">▶️</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Word Animations -->
+  <section class="demo-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Sana kerrallaan</h2>
+        <p class="section-description">
+          Kokonaisten sanojen animointi
+        </p>
+      </div>
+
+      <div class="demo-showcase">
+        <div class="showcase-item">
+          <div class="showcase-preview">
+            <p class="word-animate word-fade-in">
+              Jokainen sana ilmestyy omaan tahtiinsa
+            </p>
+          </div>
+          <span class="showcase-label">Fade In</span>
+          <button class="replay-btn small" data-target="word-fade-in">▶️</button>
+        </div>
+
+        <div class="showcase-item">
+          <div class="showcase-preview">
+            <p class="word-animate word-slide-left">
+              Sanat liukuvat vasemmalta oikealle
+            </p>
+          </div>
+          <span class="showcase-label">Slide Left</span>
+          <button class="replay-btn small" data-target="word-slide-left">▶️</button>
+        </div>
+
+        <div class="showcase-item">
+          <div class="showcase-preview">
+            <p class="word-animate word-blur-in">
+              Terävöityvä blur-efekti jokaiselle sanalle
+            </p>
+          </div>
+          <span class="showcase-label">Blur In</span>
+          <button class="replay-btn small" data-target="word-blur-in">▶️</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typewriter Effect -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Kirjoituskone-efekti</h2>
+        <p class="section-description">
+          Klassinen typewriter-animaatio
+        </p>
+      </div>
+
+      <div class="typewriter-demo">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">Terminal</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="typewriter" id="typewriter-1">npm install modern-effects</span>
+              <span class="cursor">|</span>
+            </div>
+            <div class="terminal-line hidden" id="terminal-line-2">
+              <span class="prompt">$</span>
+              <span class="typewriter" id="typewriter-2">Initializing awesome animations...</span>
+            </div>
+            <div class="terminal-line hidden" id="terminal-line-3">
+              <span class="success">✓</span>
+              <span class="typewriter" id="typewriter-3">Ready to create magic!</span>
+            </div>
+          </div>
+        </div>
+        <button class="replay-btn" id="replay-typewriter">🔄 Toista</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Text Scramble -->
+  <section class="demo-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Text Scramble</h2>
+        <p class="section-description">
+          Hakkeroitu tekstiefekti - Matrix-tyylinen dekoodaus
+        </p>
+      </div>
+
+      <div class="scramble-demo">
+        <div class="scramble-display">
+          <span class="scramble-text" id="scramble-text">INNOVATE</span>
+        </div>
+        <div class="scramble-controls">
+          <button class="word-btn" data-word="INNOVATE">INNOVATE</button>
+          <button class="word-btn" data-word="CREATE">CREATE</button>
+          <button class="word-btn" data-word="DESIGN">DESIGN</button>
+          <button class="word-btn" data-word="DEVELOP">DEVELOP</button>
+          <button class="word-btn" data-word="ANIMATE">ANIMATE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gradient Text -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Gradient-animaatiot</h2>
+        <p class="section-description">
+          Liikkuvat gradientit tekstissä
+        </p>
+      </div>
+
+      <div class="gradient-showcase">
+        <h2 class="gradient-text gradient-flow">Flowing Colors</h2>
+        <h2 class="gradient-text gradient-pulse">Pulsing Gradient</h2>
+        <h2 class="gradient-text gradient-rainbow">Rainbow Effect</h2>
+        <h2 class="gradient-text gradient-shimmer">Shimmer Effect</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Line Reveal -->
+  <section class="demo-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Rivi kerrallaan</h2>
+        <p class="section-description">
+          Kokonaisten rivien paljastaminen
+        </p>
+      </div>
+
+      <div class="line-reveal-demo">
+        <div class="quote-container">
+          <blockquote class="line-reveal">
+            <p class="quote-line">"Design is not just what it looks like</p>
+            <p class="quote-line">and feels like.</p>
+            <p class="quote-line">Design is how it works."</p>
+            <footer class="quote-author">— Steve Jobs</footer>
+          </blockquote>
+        </div>
+        <button class="replay-btn" id="replay-quote">🔄 Toista</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counter Animation -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Numerot</h2>
+        <p class="section-description">
+          Animoidut laskurit ja numerot
+        </p>
+      </div>
+
+      <div class="counter-grid">
+        <div class="counter-card">
+          <div class="counter-value" data-target="1000">0</div>
+          <div class="counter-label">Käyttäjää</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-value" data-target="50" data-suffix="+">0</div>
+          <div class="counter-label">Projektia</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-value" data-target="99.9" data-suffix="%" data-decimals="1">0</div>
+          <div class="counter-label">Uptime</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-value" data-target="24" data-suffix="/7">0</div>
+          <div class="counter-label">Tuki</div>
+        </div>
+      </div>
+      <button class="replay-btn centered" id="replay-counters">🔄 Toista</button>
+    </div>
+  </section>
+
+  <!-- Code Example -->
+  <section class="demo-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Koodi</h2>
+        <p class="section-description">
+          Tekstin jakaminen ja animointi
+        </p>
+      </div>
+
+      <div class="code-example">
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">JavaScript</span>
+            <button class="copy-btn" id="copy-code">📋 Kopioi</button>
+          </div>
+          <pre><code>// Split text into characters
+function splitText(element) {
+  const text = element.textContent;
+  element.innerHTML = '';
+
+  text.split('').forEach((char, i) => {
+    const span = document.createElement('span');
+    span.textContent = char === ' ' ? '\u00A0' : char;
+    span.style.setProperty('--char-index', i);
+    span.classList.add('char');
+    element.appendChild(span);
+  });
+}
+
+// Animate with stagger
+const chars = element.querySelectorAll('.char');
+chars.forEach((char, i) => {
+  char.style.animationDelay = `${i * 0.05}s`;
+  char.classList.add('animate');
+});</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/demos/text-animations.js"></script>
+</body>
+</html>

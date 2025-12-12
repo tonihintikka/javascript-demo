@@ -95,27 +95,27 @@ Projektin tehtävälista järjestyksessä.
 
 ---
 
-### 4. View Transitions API Demo
+### 4. View Transitions API Demo ✅
 **Tiedosto:** `demos/view-transitions.html`
 
-- [ ] **HTML-rakenne**
+- [x] **HTML-rakenne**
   - Bento Grid layout (interaktiivinen)
   - Expandable cards
   - Multi-page simulation (SPA)
 
-- [ ] **View Transitions API**
+- [x] **View Transitions API**
   - `document.startViewTransition()`
   - Shared element transitions
   - Custom transition animations
   - Fallback for unsupported browsers
 
-- [ ] **Bento Grid**
+- [x] **Bento Grid**
   - Asymmetric layout
   - Card expansion animation
   - Smooth layout shifts
   - "Object permanence" demo
 
-- [ ] **Esimerkit**
+- [x] **Esimerkit**
   - Image gallery expansion
   - Product card to detail page
   - Modal transitions
@@ -160,22 +160,22 @@ Projektin tehtävälista järjestyksessä.
 
 ---
 
-### 6. Tekstianimaatiot Demo
+### 6. Tekstianimaatiot Demo ✅
 **Tiedosto:** `demos/text-animations.html`
 
 **Riippuvuus:** Vaatii GSAP + SplitText plugin
 
-- [ ] **Asennus**
+- [x] **Asennus**
   - GSAP SplitText (requires Club GreenSock tai vaihtoehto)
   - Vaihtoehto: [Splitting.js](https://splitting.js.org/) (ilmainen)
 
-- [ ] **HTML-rakenne**
+- [x] **HTML-rakenne**
   - Text reveal showcase
   - Morphing text demo
   - Gradient animations
   - Typing effects
 
-- [ ] **Animaatiotyypit**
+- [x] **Animaatiotyypit**
   - Character-by-character reveal
   - Word-by-word fade in
   - Line-by-line slide up
@@ -183,17 +183,11 @@ Projektin tehtävälista järjestyksessä.
   - Gradient text animation
   - Text morphing/substitution
 
-- [ ] **GSAP Integraatio**
-  - SplitText for character splitting
-  - Stagger animations
-  - Timeline-based sequences
-  - Scroll-triggered text reveals
-
-- [ ] **Esimerkit**
+- [x] **Esimerkit**
   - Hero title animation
   - Subtitle typewriter effect
   - Quote reveal
-  - Heading morphing
+  - Counter animations
 
 ---
 
@@ -402,14 +396,16 @@ Projektin tehtävälista järjestyksessä.
 - [x] **Fluid Motion Demo** - WebGL-shaderit, kontrollit
 - [x] **Scrollytelling Demo** - GSAP ScrollTrigger, ECharts
 - [x] **Mikrointeraktiot Demo** - Magneettiset painikkeet, haptinen palaute
+- [x] **View Transitions Demo** - Bento Grid, sivunavigaatio, teeman vaihto
+- [x] **Tekstianimaatiot Demo** - Character/word/line reveals, scramble, gradients
 
 ### In Progress (🚧)
 - [ ] (None currently)
 
 ### Next Up (📌)
-1. **View Transitions API Demo** - Bento Grid, siirtymäanimaatiot
-2. **Tekstianimaatiot Demo** - GSAP SplitText / Splitting.js
-3. **WebGPU & 3D Demo** - Laajennus olemassa olevaan
+1. **WebGPU & 3D Demo laajennus** - TSL, post-processing
+2. **Landing page parannukset** - Efektien tuonti demoista
+3. **Mobiilioptimointeja** - Touch-tuki, responsiivisuus
 
 ---
 
@@ -421,18 +417,18 @@ Projektin tehtävälista järjestyksessä.
 - ✅ Mikrointeraktiot Demo
 - ✅ Scrollytelling Demo (+ GSAP)
 
-### Sprint 2: Remaining Demos (Estimated: 6-8h)
-- View Transitions API Demo (3-4h)
-- Text Animations Demo (2-3h)
-- WebGPU enhancements (1-2h)
+### Sprint 2: Remaining Demos ✅ VALMIS
+- ✅ View Transitions API Demo
+- ✅ Text Animations Demo
 
 ### Sprint 3: Polish & Deploy (Estimated: 4-6h)
+- WebGPU/3D enhancements (1-2h)
 - Landing page enhancements (2h)
 - Mobile optimization (1-2h)
 - Accessibility audit (1h)
 - Deployment (1h)
 
-**Total Remaining: 10-14 hours**
+**Total Remaining: 4-6 hours**
 
 ---
 
@@ -447,11 +443,11 @@ Projektin tehtävälista järjestyksessä.
 ---
 
 **Last Updated**: 2025-12-12
-**Version**: 0.4.0
+**Version**: 0.5.0
 
 ## 📌 Seuraavat askeleet
 
-1. Toteuta **View Transitions API Demo** (`demos/view-transitions.html`)
-2. Toteuta **Tekstianimaatiot Demo** (`demos/text-animations.html`)
-3. Paranna landing pagen efektejä toteutetuilla demoilla
-4. Mobiilioptimointeja ja saavutettavuustarkistuksia
+1. Paranna **WebGPU & 3D Demo** (`demos/webgpu-3d.html`) - TSL, post-processing
+2. Paranna landing pagen efektejä toteutetuilla demoilla
+3. Mobiilioptimointeja ja saavutettavuustarkistuksia
+4. Deploy GitHub Pagesiin

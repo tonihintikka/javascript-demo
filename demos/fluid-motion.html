@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nestemäiset muodot 2025 - Modern JavaScript Effects</title>
+  <meta name="description" content="Liquid distortion ja orgaaniset animaatiot WebGL-teknologialla.">
+  <link rel="stylesheet" href="/demos/fluid-motion.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="demo-nav">
+    <div class="nav-content">
+      <a href="/" class="nav-home">← Takaisin</a>
+      <h1 class="nav-title">Nestemäiset muodot 2025</h1>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Liquid Distortion</h1>
+        <p class="hero-subtitle">
+          Orgaaniset, nestemäiset muodot WebGL-shadereilla
+        </p>
+      </div>
+    </div>
+
+    <!-- Main WebGL Canvas -->
+    <canvas id="fluid-canvas" class="fluid-canvas"></canvas>
+  </section>
+
+  <!-- Interactive Controls -->
+  <section class="controls-section">
+    <div class="container">
+      <div class="controls-panel">
+        <h2>Interaktiiviset kontrollit</h2>
+
+        <div class="control-group">
+          <label for="viscosity">
+            Viskositeetti
+            <span class="control-value" id="viscosity-value">0.5</span>
+          </label>
+          <input type="range" id="viscosity" min="0" max="1" step="0.01" value="0.5">
+        </div>
+
+        <div class="control-group">
+          <label for="distortion">
+            Vääristymä
+            <span class="control-value" id="distortion-value">0.3</span>
+          </label>
+          <input type="range" id="distortion" min="0" max="1" step="0.01" value="0.3">
+        </div>
+
+        <div class="control-group">
+          <label for="speed">
+            Nopeus
+            <span class="control-value" id="speed-value">1.0</span>
+          </label>
+          <input type="range" id="speed" min="0.1" max="3" step="0.1" value="1.0">
+        </div>
+
+        <div class="control-group">
+          <label for="color-shift">
+            Värivaihto
+            <span class="control-value" id="color-shift-value">0.5</span>
+          </label>
+          <input type="range" id="color-shift" min="0" max="1" step="0.01" value="0.5">
+        </div>
+
+        <div class="preset-buttons">
+          <button class="preset-btn" data-preset="calm">Rauhallinen</button>
+          <button class="preset-btn" data-preset="energetic">Energinen</button>
+          <button class="preset-btn" data-preset="chaotic">Kaoottinen</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples Section -->
+  <section class="examples-section">
+    <div class="container">
+      <h2 class="section-title">Käyttöesimerkit</h2>
+
+      <div class="examples-grid">
+        <!-- Example 1: Button Hover -->
+        <div class="example-card">
+          <h3>Painike-efekti</h3>
+          <div class="example-demo">
+            <button class="liquid-btn" id="liquid-btn-1">
+              <span class="btn-text">Hover me</span>
+              <canvas class="btn-canvas"></canvas>
+            </button>
+          </div>
+          <p>Nestemäinen hover-efekti painikkeessa</p>
+        </div>
+
+        <!-- Example 2: Image Distortion -->
+        <div class="example-card">
+          <h3>Kuvavääristymä</h3>
+          <div class="example-demo">
+            <div class="image-distortion" id="image-distortion">
+              <canvas class="distortion-canvas"></canvas>
+            </div>
+          </div>
+          <p>Interaktiivinen kuvavääristymä hiiren liikkeellä</p>
+        </div>
+
+        <!-- Example 3: Loading Animation -->
+        <div class="example-card">
+          <h3>Latausanimaatio</h3>
+          <div class="example-demo">
+            <div class="liquid-loader">
+              <canvas class="loader-canvas"></canvas>
+              <span class="loader-text">Loading...</span>
+            </div>
+          </div>
+          <p>Nestemäinen latausanimaatio</p>
+        </div>
+
+        <!-- Example 4: Background Effect -->
+        <div class="example-card">
+          <h3>Taustaefekti</h3>
+          <div class="example-demo">
+            <div class="card-with-fluid">
+              <canvas class="card-fluid-bg"></canvas>
+              <div class="card-content-overlay">
+                <h4>Premium Card</h4>
+                <p>Nestemäinen taustaefekti kortissa</p>
+              </div>
+            </div>
+          </div>
+          <p>Elävä taustaefekti UI-korteissa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Details -->
+  <section class="technical-section">
+    <div class="container">
+      <h2 class="section-title">Tekninen toteutus</h2>
+
+      <div class="technical-grid">
+        <div class="tech-card">
+          <h3>Fragment Shader</h3>
+          <pre><code>precision mediump float;
+
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform float u_viscosity;
+uniform float u_distortion;
+
+void main() {
+  vec2 uv = gl_FragCoord.xy / u_resolution;
+
+  // Liquid distortion
+  float wave1 = sin(uv.x * 10.0 + u_time) * u_distortion;
+  float wave2 = cos(uv.y * 10.0 + u_time * 0.8) * u_distortion;
+
+  vec2 distorted = uv + vec2(wave1, wave2) * u_viscosity;
+
+  // Color gradient
+  vec3 color = vec3(
+    0.5 + 0.5 * sin(distorted.x * 3.14 + u_time),
+    0.5 + 0.5 * sin(distorted.y * 3.14 + u_time * 1.2),
+    0.5 + 0.5 * sin((distorted.x + distorted.y) * 3.14)
+  );
+
+  gl_FragColor = vec4(color, 1.0);
+}</code></pre>
+        </div>
+
+        <div class="tech-card">
+          <h3>WebGL Setup</h3>
+          <pre><code>const canvas = document.getElementById('fluid-canvas');
+const gl = canvas.getContext('webgl');
+
+// Create shader program
+const program = createProgram(gl, vertexShader, fragmentShader);
+
+// Set uniforms
+const timeLocation = gl.getUniformLocation(program, 'u_time');
+const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
+
+// Animation loop
+function render(time) {
+  gl.uniform1f(timeLocation, time * 0.001);
+  gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+
+  gl.drawArrays(gl.TRIANGLES, 0, 6);
+  requestAnimationFrame(render);
+}</code></pre>
+        </div>
+
+        <div class="tech-card">
+          <h3>Optimointi</h3>
+          <ul>
+            <li><strong>Texture pooling</strong> - Uudelleenkäytä tekstuureja</li>
+            <li><strong>RAF throttling</strong> - Rajoita renderöintiä tarpeen mukaan</li>
+            <li><strong>Precision tuning</strong> - Käytä mediump/lowp tarkkuutta</li>
+            <li><strong>Conditional rendering</strong> - Renderoi vain näkyvissä olevat</li>
+            <li><strong>Mobile detection</strong> - Alempi resoluutio mobiilissa</li>
+          </ul>
+        </div>
+
+        <div class="tech-card">
+          <h3>Käyttötapaukset</h3>
+          <ul>
+            <li><strong>Hero-bannerit</strong> - Dynaamiset hero-osiot</li>
+            <li><strong>Hover-efektit</strong> - Interaktiiviset painikkeet</li>
+            <li><strong>Latausanimaatiot</strong> - Orgaaniset loaderit</li>
+            <li><strong>Siirtymät</strong> - Pehmeät page transitions</li>
+            <li><strong>Data-visualisointi</strong> - Virtaukset ja liikkeet</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Section -->
+  <section class="performance-section">
+    <div class="container">
+      <h2 class="section-title">Suorituskyky</h2>
+
+      <div class="performance-stats">
+        <div class="stat-card">
+          <div class="stat-label">FPS</div>
+          <div class="stat-value" id="fps-counter">60</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Frame Time</div>
+          <div class="stat-value" id="frame-time">16.7ms</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Draw Calls</div>
+          <div class="stat-value" id="draw-calls">5</div>
+        </div>
+      </div>
+
+      <div class="performance-tips">
+        <h3>Optimointivinkkit</h3>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon">🎯</div>
+            <h4>Rajoita kompleksisuutta</h4>
+            <p>Pidä fragment shader yksinkertaisena - monimutkainen matematiikka syö tehoja nopeasti.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">📱</div>
+            <h4>Mobiilioptimointl</h4>
+            <p>Laske resoluutiota mobiililaitteilla - 0.5x alkuperäisestä riittää usein.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">⚡</div>
+            <h4>Conditional rendering</h4>
+            <p>Pysäytä renderöinti kun elementti ei ole näkyvissä (Intersection Observer).</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🎨</div>
+            <h4>Tekstuurien koko</h4>
+            <p>Power-of-two tekstuurit (256, 512, 1024) ovat optimaalisimpia GPU:lle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="conclusion">
+    <div class="container">
+      <div class="conclusion-content">
+        <h2>Nestemäiset efektit luovat elämää</h2>
+        <p>
+          WebGL-shaderit mahdollistavat orgaaniset, nestemäiset animaatiot jotka
+          olivat aiemmin mahdollisia vain natiiveissa sovelluksissa. Oikein toteutettuna
+          ne toimivat 60 FPS:llä myös mobiililaitteilla.
+        </p>
+        <div class="conclusion-actions">
+          <a href="/" class="btn btn-primary">← Takaisin etusivulle</a>
+          <a href="/demos/view-transitions.html" class="btn btn-secondary">Seuraava demo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <strong>Nestemäiset muodot Demo</strong> -
+        Osa "Modernit JavaScript-efektit 2025" projektia
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/demos/fluid-motion.js"></script>
+</body>
+</html>

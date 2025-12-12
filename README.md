@@ -2,9 +2,12 @@
 
 Interaktiivinen demoympäristö, joka esittelee moderneja JavaScript-pohjaisia käyttöliittymäefektejä ja trendejä 2025. Perustuu analyysiin "Javascript-efektit ja trendit 2025".
 
+🌐 **Live Demo**: [https://javascript-demo-henna.vercel.app](https://javascript-demo-henna.vercel.app)
+
 ![Demo Preview](https://img.shields.io/badge/Status-Active-success)
-![Version](https://img.shields.io/badge/Version-0.3.0-blue)
+![Version](https://img.shields.io/badge/Version-0.7.0-blue)
 ![Node](https://img.shields.io/badge/Node-18+-green)
+![Deploy](https://img.shields.io/badge/Deployed-Vercel-black)
 
 ## 🚀 Quick Start
 
@@ -20,6 +23,8 @@ npm run build
 ```
 
 Avaa selain osoitteessa: **http://localhost:3000**
+
+Tai kokeile live-demoa: **[javascript-demo-henna.vercel.app](https://javascript-demo-henna.vercel.app)**
 
 ## 📋 Sisältö
 
@@ -104,11 +109,36 @@ Säilytetyt alkuperäiset demot:
 - **GSAP** - Advanced animations & scrollytelling
 - **React Three Fiber** (valinnainen) - Declarative 3D
 
+## 🌐 Kieliversiot (i18n)
+
+Sovellus tukee suomea ja englantia modulaarisella käännösarkkitehtuurilla:
+
+- **Kielenvaihto**: Oikean yläkulman FI/EN-napista
+- **Automaattinen tallennus**: Kielivalinta säilyy localStorage:ssa
+- **Lazy loading**: Vain tarvittavat käännökset ladataan
+
+### Käännösrakenne
+```
+locales/
+├── fi/
+│   ├── common.json           # Nav, footer, yleiset
+│   ├── landing.json          # Etusivu
+│   ├── glassmorphism.json
+│   ├── fluid-motion.json
+│   ├── scrollytelling.json
+│   ├── micro-interactions.json
+│   ├── view-transitions.json
+│   ├── text-animations.json
+│   └── webgpu-3d.json
+└── en/
+    └── (sama rakenne)
+```
+
 ## 📁 Projektin rakenne
 
 ```
 demos_from new javascript posibilities/
-├── index.html                 # Landing page (uusi)
+├── index.html                 # Landing page
 ├── demos.html                 # Legacy demo interface
 ├── package.json
 ├── vite.config.js
@@ -118,12 +148,14 @@ demos_from new javascript posibilities/
 │
 ├── css/
 │   ├── landing.css           # Landing page styles (glassmorphism, Bento Grid)
+│   ├── demo-shared.css       # Shared demo styles
 │   └── styles.css            # Demo page styles
 │
 ├── js/
 │   ├── landing.js            # Landing page interactivity
 │   ├── main.js               # Demo page logic
 │   ├── utils.js              # Utilities
+│   ├── i18n.js               # Internationalization module
 │   └── three/                # Three.js visualizations
 │       ├── index.js
 │       ├── ThreeVisualization.js
@@ -133,10 +165,28 @@ demos_from new javascript posibilities/
 │       ├── NetworkGraph3D.js
 │       └── PieChart3D.js
 │
+├── demos/                    # Individual demo pages
+│   ├── glassmorphism.html
+│   ├── fluid-motion.html
+│   ├── scrollytelling.html
+│   ├── micro-interactions.html
+│   ├── view-transitions.html
+│   ├── text-animations.html
+│   └── webgpu-3d.html
+│
+├── locales/                  # Translations
+│   ├── fi/                   # Finnish (modular)
+│   ├── en/                   # English (modular)
+│   ├── fi.json               # Finnish (legacy)
+│   └── en.json               # English (legacy)
+│
 ├── data/
 │   └── sample-data.json      # Demo data
 │
-└── Javascript-efektit ja trendit 2025.pdf
+└── tests/                    # Test suite
+    ├── setup.js
+    ├── unit/                 # Unit tests
+    └── e2e/                  # E2E tests
 ```
 
 ## 🎨 Landing Page Ominaisuudet
@@ -231,18 +281,32 @@ Lisää dokumentaatiota löytyy:
 
 ## 🎯 Roadmap
 
-### Versio 0.4.0 (Suunnitteilla)
-- [ ] GSAP-integraatio scrollytelling-demoihin
-- [ ] View Transitions API demo
-- [ ] Glassmorphism playground (interaktiivinen)
-- [ ] Fluid distortion shader demo
-- [ ] Text animation showcase
+### Versio 0.7.0 ✅ (Nykyinen)
+- [x] Modulaarinen i18n-arkkitehtuuri (FI/EN)
+- [x] Kielenvaihtonappi
+- [x] Lazy loading käännöksille
+- [x] Käännökset kaikille 7 demoille
 
-### Versio 0.5.0 (Tulevaisuus)
-- [ ] WebGPU compute shader demo
+### Versio 0.6.0 ✅
+- [x] WebGPU & 3D Demo
+- [x] Shared demo CSS
+- [x] Post-processing effects
+
+### Versio 0.5.0 ✅
+- [x] View Transitions API demo
+- [x] Text animations demo
+
+### Versio 0.4.0 ✅
+- [x] Glassmorphism playground
+- [x] Fluid distortion shader demo
+- [x] Scrollytelling demo
+- [x] Micro-interactions demo
+
+### Versio 0.8.0 (Suunnitteilla)
+- [ ] Demo-sivujen i18n data-attribuutit
 - [ ] AI-avusteinen generatiivinen UI
 - [ ] WebXR/VR-tuki
-- [ ] Collaboration features (WebSockets)
+- [ ] Performance-optimoinnit
 
 ## 🤝 Kontribuutiot
 
@@ -268,7 +332,8 @@ MIT License - Vapaa käyttöön ja muokkaukseen
 
 ---
 
-**Kehittäjä**: Toni Hintikka
-**GitHub**: [tonihintikka/javascript-demo](https://github.com/tonihintikka/javascript-demo)
-**Versio**: 0.3.0
+**Kehittäjä**: Toni Hintikka  
+**GitHub**: [tonihintikka/javascript-demo](https://github.com/tonihintikka/javascript-demo)  
+**Live Demo**: [javascript-demo-henna.vercel.app](https://javascript-demo-henna.vercel.app)  
+**Versio**: 0.7.0  
 **Päivitetty**: Joulukuu 2025

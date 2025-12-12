@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Visualization Demo 2025</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <h1>JS Visualization Demo 2025</h1>
+      <p class="subtitle">Interactive controls: Voice, Gestures, Sensors</p>
+      <button id="theme-toggle" class="btn btn-icon" aria-label="Toggle dark/light theme">
+        <span class="icon-sun">&#9728;</span>
+        <span class="icon-moon">&#9790;</span>
+      </button>
+    </header>
+
+    <!-- Demo Navigation -->
+    <nav class="demo-nav" aria-label="Demo navigation">
+      <ul class="demo-list">
+        <li>
+          <a href="#basic-charts" class="demo-link active" data-demo="basic-charts">
+            <span class="demo-number">01</span>
+            <span class="demo-title">Basic Charts</span>
+            <span class="demo-desc">ECharts fundamentals</span>
+          </a>
+        </li>
+        <li>
+          <a href="#voice-demo" class="demo-link" data-demo="voice-demo">
+            <span class="demo-number">02</span>
+            <span class="demo-title">Voice Control</span>
+            <span class="demo-desc">Web Speech API</span>
+          </a>
+        </li>
+        <li>
+          <a href="#gesture-demo" class="demo-link" data-demo="gesture-demo">
+            <span class="demo-number">03</span>
+            <span class="demo-title">Gesture Control</span>
+            <span class="demo-desc">MediaPipe Vision</span>
+          </a>
+        </li>
+        <li>
+          <a href="#sensor-demo" class="demo-link" data-demo="sensor-demo">
+            <span class="demo-number">04</span>
+            <span class="demo-title">Sensor Control</span>
+            <span class="demo-desc">Device Sensors</span>
+          </a>
+        </li>
+        <li>
+          <a href="#3d-demo" class="demo-link" data-demo="3d-demo">
+            <span class="demo-number">05</span>
+            <span class="demo-title">3D Visualization</span>
+            <span class="demo-desc">Three.js</span>
+          </a>
+        </li>
+        <li>
+          <a href="#multimodal" class="demo-link" data-demo="multimodal">
+            <span class="demo-number">06</span>
+            <span class="demo-title">Multimodal</span>
+            <span class="demo-desc">All combined</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Status Bar -->
+      <div class="status-bar" role="status" aria-live="polite">
+        <div class="status-item" id="voice-status">
+          <span class="status-icon">&#127908;</span>
+          <span class="status-label">Voice: <span id="voice-state">Off</span></span>
+        </div>
+        <div class="status-item" id="gesture-status">
+          <span class="status-icon">&#128400;</span>
+          <span class="status-label">Gesture: <span id="gesture-state">Off</span></span>
+        </div>
+        <div class="status-item" id="sensor-status">
+          <span class="status-icon">&#128241;</span>
+          <span class="status-label">Sensors: <span id="sensor-state">Off</span></span>
+        </div>
+      </div>
+
+      <!-- Demo Container -->
+      <div id="demo-container" class="demo-container">
+        <!-- Demo content will be loaded here -->
+        <div class="loading-placeholder">
+          <p>Select a demo from the navigation above</p>
+        </div>
+      </div>
+
+      <!-- Controls Panel -->
+      <div class="controls-panel">
+        <div class="control-group">
+          <h3>Quick Controls</h3>
+          <div class="button-group">
+            <button class="btn" id="btn-prev" aria-label="Previous">&#9664; Prev</button>
+            <button class="btn" id="btn-next" aria-label="Next">Next &#9654;</button>
+            <button class="btn" id="btn-reset" aria-label="Reset">&#8635; Reset</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <h3>Chart Type</h3>
+          <div class="button-group">
+            <button class="btn" data-chart-type="line">Line</button>
+            <button class="btn" data-chart-type="bar">Bar</button>
+            <button class="btn" data-chart-type="pie">Pie</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accessibility: Screen reader announcements -->
+      <div id="sr-announcer" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Demo showcasing 2025 JavaScript visualization trends</p>
+      <button class="btn btn-small" id="btn-show-data" aria-label="Show data as table">
+        Show Data Table
+      </button>
+    </footer>
+
+    <!-- Data Table Modal -->
+    <dialog id="data-modal" class="modal">
+      <div class="modal-content">
+        <h2>Data Table</h2>
+        <div id="data-table-container"></div>
+        <button class="btn" id="btn-close-modal">Close</button>
+      </div>
+    </dialog>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

@@ -3,137 +3,326 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Visualization Demo 2025</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <title>Modernit JavaScript-efektit 2025 | Interaktiivinen Demo</title>
+  <meta name="description" content="Tutustu moderneihin JavaScript-efekteihin ja käyttöliittymätrendeihin 2025: WebGPU, Glassmorphism, Scrollytelling ja enemmän.">
+  <link rel="stylesheet" href="/css/landing.css">
 </head>
 <body>
-  <div id="app">
-    <!-- Header -->
-    <header class="header">
-      <h1>JS Visualization Demo 2025</h1>
-      <p class="subtitle">Interactive controls: Voice, Gestures, Sensors</p>
-      <button id="theme-toggle" class="btn btn-icon" aria-label="Toggle dark/light theme">
-        <span class="icon-sun">&#9728;</span>
-        <span class="icon-moon">&#9790;</span>
-      </button>
-    </header>
+  <!-- Hero Section with 3D Background -->
+  <section class="hero" id="hero">
+    <!-- Three.js Canvas for particle background -->
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
 
-    <!-- Demo Navigation -->
-    <nav class="demo-nav" aria-label="Demo navigation">
-      <ul class="demo-list">
-        <li>
-          <a href="#basic-charts" class="demo-link active" data-demo="basic-charts">
-            <span class="demo-number">01</span>
-            <span class="demo-title">Basic Charts</span>
-            <span class="demo-desc">ECharts fundamentals</span>
+    <!-- Glassmorphic Hero Card -->
+    <div class="hero-content">
+      <div class="glass-card">
+        <h1 class="hero-title">
+          <span class="title-line">Modernit</span>
+          <span class="title-line gradient-text">JavaScript-efektit</span>
+          <span class="title-line">2025</span>
+        </h1>
+        <p class="hero-subtitle">
+          Post-staattisen verkon aikakausi: Interaktiivinen demoympäristö,
+          joka esittelee tuotantovalmiita visuaalisia koukkuja
+        </p>
+        <div class="hero-cta">
+          <a href="#demos" class="btn btn-primary btn-magnetic">
+            Tutustu demoihin
+            <span class="btn-arrow">↓</span>
           </a>
-        </li>
-        <li>
-          <a href="#voice-demo" class="demo-link" data-demo="voice-demo">
-            <span class="demo-number">02</span>
-            <span class="demo-title">Voice Control</span>
-            <span class="demo-desc">Web Speech API</span>
-          </a>
-        </li>
-        <li>
-          <a href="#gesture-demo" class="demo-link" data-demo="gesture-demo">
-            <span class="demo-number">03</span>
-            <span class="demo-title">Gesture Control</span>
-            <span class="demo-desc">MediaPipe Vision</span>
-          </a>
-        </li>
-        <li>
-          <a href="#sensor-demo" class="demo-link" data-demo="sensor-demo">
-            <span class="demo-number">04</span>
-            <span class="demo-title">Sensor Control</span>
-            <span class="demo-desc">Device Sensors</span>
-          </a>
-        </li>
-        <li>
-          <a href="#3d-demo" class="demo-link" data-demo="3d-demo">
-            <span class="demo-number">05</span>
-            <span class="demo-title">3D Visualization</span>
-            <span class="demo-desc">Three.js</span>
-          </a>
-        </li>
-        <li>
-          <a href="#multimodal" class="demo-link" data-demo="multimodal">
-            <span class="demo-number">06</span>
-            <span class="demo-title">Multimodal</span>
-            <span class="demo-desc">All combined</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main class="main-content">
-      <!-- Status Bar -->
-      <div class="status-bar" role="status" aria-live="polite">
-        <div class="status-item" id="voice-status">
-          <span class="status-icon">&#127908;</span>
-          <span class="status-label">Voice: <span id="voice-state">Off</span></span>
-        </div>
-        <div class="status-item" id="gesture-status">
-          <span class="status-icon">&#128400;</span>
-          <span class="status-label">Gesture: <span id="gesture-state">Off</span></span>
-        </div>
-        <div class="status-item" id="sensor-status">
-          <span class="status-icon">&#128241;</span>
-          <span class="status-label">Sensors: <span id="sensor-state">Off</span></span>
         </div>
       </div>
+    </div>
 
-      <!-- Demo Container -->
-      <div id="demo-container" class="demo-container">
-        <!-- Demo content will be loaded here -->
-        <div class="loading-placeholder">
-          <p>Select a demo from the navigation above</p>
-        </div>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
       </div>
+      <span class="scroll-text">Scroll to explore</span>
+    </div>
+  </section>
 
-      <!-- Controls Panel -->
-      <div class="controls-panel">
-        <div class="control-group">
-          <h3>Quick Controls</h3>
-          <div class="button-group">
-            <button class="btn" id="btn-prev" aria-label="Previous">&#9664; Prev</button>
-            <button class="btn" id="btn-next" aria-label="Next">Next &#9654;</button>
-            <button class="btn" id="btn-reset" aria-label="Reset">&#8635; Reset</button>
+  <!-- Scrollytelling Introduction -->
+  <section class="intro-section" id="intro">
+    <div class="container">
+      <div class="intro-content">
+        <h2 class="section-title reveal-text">
+          Visuaaliset efektit määrittelevät käyttäjäkokemuksen
+        </h2>
+        <div class="intro-grid">
+          <div class="intro-stat reveal-fade">
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-label">% WebGPU-tuki</div>
+            <p class="stat-desc">Kaikissa suurimmissa selaimissa</p>
+          </div>
+          <div class="intro-stat reveal-fade">
+            <div class="stat-number" data-target="60">0</div>
+            <div class="stat-label">FPS suorituskyky</div>
+            <p class="stat-desc">Myös mobiililaitteilla</p>
+          </div>
+          <div class="intro-stat reveal-fade">
+            <div class="stat-number" data-target="7">0</div>
+            <div class="stat-label">Efektikategoriaa</div>
+            <p class="stat-desc">Tuotantovalmiita toteutuksia</p>
           </div>
         </div>
-        <div class="control-group">
-          <h3>Chart Type</h3>
-          <div class="button-group">
-            <button class="btn" data-chart-type="line">Line</button>
-            <button class="btn" data-chart-type="bar">Bar</button>
-            <button class="btn" data-chart-type="pie">Pie</button>
-          </div>
+
+        <div class="intro-text reveal-fade">
+          <p>
+            Joulukuussa 2025 digitaalinen maisema on saavuttanut kriittisen käännekohdan.
+            <strong>WebGPU:n laaja käyttöönotto</strong> on poistanut perinteiset pullonkaulat,
+            mahdollistaen AAA-pelitason grafiikan ja fysiikkasimulaatiot suoraan käyttöliittymissä.
+          </p>
+          <p>
+            Tämä demoympäristö esittelee <strong>oikeasti toimivia visuaalisia koukkuja</strong>
+            pelkän koristelun sijaan. Keskitymme teknologioihin, jotka ovat tuotantovalmiita,
+            skaalautuvia ja tuottavat mitattavaa lisäarvoa.
+          </p>
         </div>
       </div>
+    </div>
 
-      <!-- Accessibility: Screen reader announcements -->
-      <div id="sr-announcer" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
-    </main>
+    <!-- Animated blob background -->
+    <div class="blob-container">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>Demo showcasing 2025 JavaScript visualization trends</p>
-      <button class="btn btn-small" id="btn-show-data" aria-label="Show data as table">
-        Show Data Table
-      </button>
-    </footer>
+  <!-- Demo Grid (Bento Layout) -->
+  <section class="demos-section" id="demos">
+    <div class="container">
+      <h2 class="section-title centered reveal-text">
+        Tutustu interaktiivisiin demoihin
+      </h2>
+      <p class="section-subtitle centered reveal-fade">
+        Jokainen demo on toteutettu modernilla teknologialla ja optimoitu suorituskyvylle
+      </p>
 
-    <!-- Data Table Modal -->
-    <dialog id="data-modal" class="modal">
-      <div class="modal-content">
-        <h2>Data Table</h2>
-        <div id="data-table-container"></div>
-        <button class="btn" id="btn-close-modal">Close</button>
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+        <!-- Demo Card 1: WebGPU & 3D (Large) -->
+        <a href="demos.html#3d-demo" class="demo-card card-large demo-card-3d" data-demo="3d">
+          <div class="card-content">
+            <span class="card-number">01</span>
+            <h3 class="card-title">WebGPU & 3D-renderöinti</h3>
+            <p class="card-desc">AAA-pelitason grafiikka selaimessa</p>
+            <div class="card-tech">
+              <span class="tech-tag">Three.js</span>
+              <span class="tech-tag">WebGPU</span>
+              <span class="tech-tag">TSL</span>
+            </div>
+          </div>
+          <div class="card-preview">
+            <canvas class="preview-canvas" data-preview="3d"></canvas>
+          </div>
+          <div class="card-overlay"></div>
+        </a>
+
+        <!-- Demo Card 2: Scrollytelling -->
+        <a href="demos.html#basic-charts" class="demo-card demo-card-scroll" data-demo="scrollytelling">
+          <div class="card-content">
+            <span class="card-number">02</span>
+            <h3 class="card-title">Scrollytelling 2.0</h3>
+            <p class="card-desc">Datavetoinen, vieritykseen sidottu kerronta</p>
+            <div class="card-tech">
+              <span class="tech-tag">GSAP</span>
+              <span class="tech-tag">ECharts</span>
+            </div>
+          </div>
+          <div class="card-preview">
+            <div class="preview-scrollytelling"></div>
+          </div>
+          <div class="card-overlay"></div>
+        </a>
+
+        <!-- Demo Card 3: Glassmorphism (Wide) -->
+        <a href="#" class="demo-card card-wide demo-card-glass" data-demo="glass">
+          <div class="card-content">
+            <span class="card-number">03</span>
+            <h3 class="card-title">Glassmorphism 2.0</h3>
+            <p class="card-desc">Fysikaalisesti uskottavat tilalliset materiaalit</p>
+            <div class="card-tech">
+              <span class="tech-tag">CSS Backdrop</span>
+              <span class="tech-tag">Shaders</span>
+            </div>
+          </div>
+          <div class="card-preview">
+            <div class="glass-preview">
+              <div class="glass-layer glass-layer-1"></div>
+              <div class="glass-layer glass-layer-2"></div>
+              <div class="glass-layer glass-layer-3"></div>
+            </div>
+          </div>
+          <div class="card-overlay"></div>
+        </a>
+
+        <!-- Demo Card 4: Fluid Motion -->
+        <a href="#" class="demo-card demo-card-fluid" data-demo="fluid">
+          <div class="card-content">
+            <span class="card-number">04</span>
+            <h3 class="card-title">Nestemäiset muodot</h3>
+            <p class="card-desc">Liquid distortion & orgaaniset animaatiot</p>
+            <div class="card-tech">
+              <span class="tech-tag">WebGL</span>
+              <span class="tech-tag">Shaders</span>
+            </div>
+          </div>
+          <div class="card-preview">
+            <canvas class="preview-canvas" data-preview="fluid"></canvas>
+          </div>
+          <div class="card-overlay"></div>
+        </a>
+
+        <!-- Demo Card 5: View Transitions -->
+        <a href="#" class="demo-card demo-card-transitions" data-demo="transitions">
+          <div class="card-content">
+            <span class="card-number">05</span>
+            <h3 class="card-title">View Transitions</h3>
+            <p class="card-desc">Saumattomat tilasiirtymät & Bento Grid</p>
+            <div class="card-tech">
+              <span class="tech-tag">View Transitions API</span>
+            </div>
+          </div>
+          <div class="card-preview">
+            <div class="transitions-preview">
+              <div class="mini-grid">
+                <div class="mini-box"></div>
+                <div class="mini-box"></div>
+                <div class="mini-box"></div>
+                <div class="mini-box"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-overlay"></div>
+        </a>
+
+        <!-- Demo Card 6: Micro-interactions -->
+        <a href="#" class="demo-card demo-card-micro" data-demo="micro">
+          <div class="card-content">
+            <span class="card-number">06</span>
+            <h3 class="card-title">Mikrointeraktiot</h3>
+            <p class="card-desc">Ennakoiva UI & magneettiset painikkeet</p>
+            <div class="card-tech">
+              <span class="tech-tag">Intent Detection</span>
+            </div>
+          </div>
+          <div class="card-preview">
+            <div class="micro-preview">
+              <button class="preview-btn">Hover me</button>
+            </div>
+          </div>
+          <div class="card-overlay"></div>
+        </a>
+
+        <!-- Demo Card 7: Text Animations -->
+        <a href="#" class="demo-card demo-card-text" data-demo="text">
+          <div class="card-content">
+            <span class="card-number">07</span>
+            <h3 class="card-title">Tekstianimaatiot</h3>
+            <p class="card-desc">GSAP SplitText & morfaukset</p>
+            <div class="card-tech">
+              <span class="tech-tag">GSAP</span>
+              <span class="tech-tag">SplitText</span>
+            </div>
+          </div>
+          <div class="card-preview">
+            <div class="text-preview">
+              <span class="animated-text">MOTION</span>
+            </div>
+          </div>
+          <div class="card-overlay"></div>
+        </a>
+
+        <!-- Legacy Demos Card -->
+        <a href="demos.html" class="demo-card card-legacy demo-card-legacy" data-demo="legacy">
+          <div class="card-content">
+            <span class="card-number">+3</span>
+            <h3 class="card-title">Voice, Gesture & Sensors</h3>
+            <p class="card-desc">Web Speech API, MediaPipe, Generic Sensors</p>
+            <div class="card-tech">
+              <span class="tech-tag">Multimodal</span>
+            </div>
+          </div>
+          <div class="card-overlay"></div>
+        </a>
       </div>
-    </dialog>
-  </div>
+    </div>
+  </section>
 
-  <script type="module" src="/js/main.js"></script>
+  <!-- Summary Section -->
+  <section class="summary-section" id="summary">
+    <div class="container">
+      <div class="summary-content">
+        <h2 class="section-title reveal-text">Suorituskyky ja saavutettavuus</h2>
+
+        <div class="summary-grid">
+          <div class="summary-card reveal-fade">
+            <div class="summary-icon">🚀</div>
+            <h3>Tuotantokäyttö</h3>
+            <ul>
+              <li>View Transitions API</li>
+              <li>Mikrointeraktiot</li>
+              <li>Glassmorphism (CSS)</li>
+              <li>Scrollytelling</li>
+            </ul>
+          </div>
+
+          <div class="summary-card reveal-fade">
+            <div class="summary-icon">🎨</div>
+            <h3>Showcase-efektit</h3>
+            <ul>
+              <li>Raskaat 3D-kohtaukset</li>
+              <li>Partikkelijärjestelmät</li>
+              <li>WebGPU Compute Shaders</li>
+              <li>Liquid distortion</li>
+            </ul>
+          </div>
+
+          <div class="summary-card reveal-fade">
+            <div class="summary-icon">♿</div>
+            <h3>Saavutettavuus</h3>
+            <ul>
+              <li><code>prefers-reduced-motion</code></li>
+              <li>ARIA-labels & roles</li>
+              <li>Keyboard navigation</li>
+              <li>High contrast mode</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="summary-cta reveal-fade">
+          <a href="demos.html" class="btn btn-primary btn-large btn-magnetic">
+            Aloita demojen tutkiminen
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p><strong>Modernit JavaScript-efektit ja käyttöliittymäarkkitehtuurit</strong></p>
+          <p>Tilannekatsaus joulukuu 2025 · Tuotantovalmiit toteutukset</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/tonihintikka/javascript-demo" target="_blank" rel="noopener">
+            GitHub Repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Magnetic Cursor Follower -->
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <script type="module" src="/js/landing.js"></script>
 </body>
 </html>

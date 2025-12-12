@@ -1,8 +1,6 @@
-# Modernit JavaScript-efektit 2025
+# Modern JavaScript Effects 2025
 
-> 🇬🇧 **[English version available](README.en.md)**
-
-Interaktiivinen demoympäristö, joka esittelee moderneja JavaScript-pohjaisia käyttöliittymäefektejä ja trendejä 2025. Perustuu analyysiin "Javascript-efektit ja trendit 2025".
+Interactive demo environment showcasing modern JavaScript-based UI effects and trends for 2025. Based on the analysis "JavaScript Effects and Trends 2025".
 
 🌐 **Live Demo**: [https://javascript-demo-henna.vercel.app](https://javascript-demo-henna.vercel.app)
 
@@ -24,60 +22,60 @@ npm run dev
 npm run build
 ```
 
-Avaa selain osoitteessa: **http://localhost:3000**
+Open browser at: **http://localhost:3000**
 
-Tai kokeile live-demoa: **[javascript-demo-henna.vercel.app](https://javascript-demo-henna.vercel.app)**
+Or try the live demo: **[javascript-demo-henna.vercel.app](https://javascript-demo-henna.vercel.app)**
 
-## 📋 Sisältö
+## 📋 Contents
 
 ### Landing Page (index.html)
 
-Moderni landing page, joka esittelee kaikki demot interaktiivisesti:
+Modern landing page showcasing all demos interactively:
 
-- **Hero Section**: 3D-partikkelijärjestelmä (Three.js) + glassmorphism
-- **Scrollytelling Intro**: Animoidut tilastot ja scroll-reveal efektit
-- **Bento Grid**: 7 efektikategoriaa interaktiivisina kortteina
-- **Live Previews**: Jokainen kortti näyttää efektin livenä
+- **Hero Section**: 3D particle system (Three.js) + glassmorphism
+- **Scrollytelling Intro**: Animated statistics and scroll-reveal effects
+- **Bento Grid**: 7 effect categories as interactive cards
+- **Live Previews**: Each card shows the effect live
 
-### 7 Efektikategoriaa
+### 7 Effect Categories
 
-#### 1. WebGPU & 3D-renderöinti
+#### 1. WebGPU & 3D Rendering
 - Three.js WebGPU renderer
-- 3D-visualisoinnit (bar, scatter, surface, network, pie charts)
+- 3D visualizations (bar, scatter, surface, network, pie charts)
 - TSL (Three.js Shading Language)
-- GPU-kiihdytetty renderöinti
+- GPU-accelerated rendering
 
 #### 2. Scrollytelling 2.0
 - GSAP ScrollTrigger
-- Datavetoinen kerronta
-- ECharts-integraatio
+- Data-driven storytelling
+- ECharts integration
 - Progressive disclosure
 
 #### 3. Glassmorphism 2.0
 - CSS backdrop-filter
-- Fysikaalisesti uskottavat materiaalit
+- Physically plausible materials
 - Depth layering
 - Light refraction effects
 
-#### 4. Nestemäiset muodot (Fluid Motion)
+#### 4. Fluid Shapes (Fluid Motion)
 - Liquid distortion shader
 - Mouse-reactive effects
 - Animated blobs
 - Velocity-based warping
 
 #### 5. View Transitions API
-- Saumattomat tilasiirtymät
+- Seamless state transitions
 - Bento Grid layout
 - Object permanence
 - Native browser transitions
 
-#### 6. Mikrointeraktiot & Ennakoiva UI
+#### 6. Micro-interactions & Predictive UI
 - Magnetic buttons
 - Intent detection
 - Smart prefetching
 - Cursor following
 
-#### 7. Tekstianimaatiot
+#### 7. Text Animations
 - GSAP SplitText
 - Character-by-character reveals
 - Text morphing
@@ -85,14 +83,14 @@ Moderni landing page, joka esittelee kaikki demot interaktiivisesti:
 
 ### Legacy Demos (demos.html)
 
-Säilytetyt alkuperäiset demot:
+Preserved original demos:
 - **Voice Control**: Web Speech API
 - **Gesture Control**: MediaPipe hand tracking
 - **Sensor Control**: Generic Sensor API
 - **3D Visualization**: Three.js visualizations
-- **Multimodal**: Kaikki yhdistettynä
+- **Multimodal**: All combined
 
-## 🛠 Teknologiat
+## 🛠 Technologies
 
 ### Core
 - **Vite** 6.0.3 - Build tool & dev server
@@ -107,24 +105,24 @@ Säilytetyt alkuperäiset demot:
 - **MediaPipe** - Gesture recognition
 - **Generic Sensor API** - Device sensors
 
-### Tulevat kirjastot (suunnitteilla)
+### Planned Libraries
 - **GSAP** - Advanced animations & scrollytelling
-- **React Three Fiber** (valinnainen) - Declarative 3D
+- **React Three Fiber** (optional) - Declarative 3D
 
-## 🌐 Kieliversiot (i18n)
+## 🌐 Internationalization (i18n)
 
-Sovellus tukee suomea ja englantia modulaarisella käännösarkkitehtuurilla:
+The application supports Finnish and English with a modular translation architecture:
 
-- **Kielenvaihto**: Oikean yläkulman FI/EN-napista
-- **Automaattinen tallennus**: Kielivalinta säilyy localStorage:ssa
-- **Lazy loading**: Vain tarvittavat käännökset ladataan
+- **Language Switch**: FI/EN button in the top right corner
+- **Auto-save**: Language preference persists in localStorage
+- **Lazy loading**: Only required translations are loaded
 
-### Käännösrakenne
+### Translation Structure
 ```
 locales/
 ├── fi/
-│   ├── common.json           # Nav, footer, yleiset
-│   ├── landing.json          # Etusivu
+│   ├── common.json           # Nav, footer, common UI
+│   ├── landing.json          # Homepage
 │   ├── glassmorphism.json
 │   ├── fluid-motion.json
 │   ├── scrollytelling.json
@@ -133,10 +131,10 @@ locales/
 │   ├── text-animations.json
 │   └── webgpu-3d.json
 └── en/
-    └── (sama rakenne)
+    └── (same structure)
 ```
 
-## 📁 Projektin rakenne
+## 📁 Project Structure
 
 ```
 demos_from new javascript posibilities/
@@ -191,7 +189,7 @@ demos_from new javascript posibilities/
     └── e2e/                  # E2E tests
 ```
 
-## 🎨 Landing Page Ominaisuudet
+## 🎨 Landing Page Features
 
 ### Glassmorphism
 - Backdrop blur + saturation
@@ -225,37 +223,37 @@ demos_from new javascript posibilities/
 - ✅ Focus-visible states
 - ✅ Mobile-first responsive
 
-## 🌐 Selaintuki
+## 🌐 Browser Support
 
-| Selain | Desktop | Mobile | Huomiot |
-|--------|---------|--------|---------|
-| Chrome | ✅ Full | ✅ Full | Paras tuki kaikille ominaisuuksille |
-| Edge | ✅ Full | ✅ Full | Chromium-pohjainen |
-| Firefox | ✅ Full | ⚠️ Limited | Web Speech API rajoitettu |
-| Safari | ⚠️ Partial | ⚠️ Partial | WebGPU tuki lisätty 2024 |
+| Browser | Desktop | Mobile | Notes |
+|---------|---------|--------|-------|
+| Chrome | ✅ Full | ✅ Full | Best support for all features |
+| Edge | ✅ Full | ✅ Full | Chromium-based |
+| Firefox | ✅ Full | ⚠️ Limited | Web Speech API limited |
+| Safari | ⚠️ Partial | ⚠️ Partial | WebGPU support added in 2024 |
 
-### Vaaditut ominaisuudet
-- WebGL 2.0 tai WebGPU
+### Required Features
+- WebGL 2.0 or WebGPU
 - ES6+ JavaScript
 - CSS Custom Properties
 - Intersection Observer API
 
-## ⚡ Suorituskyky
+## ⚡ Performance
 
-### Optimoinnit
-- **On-demand rendering**: Renderöintiluuppi pysähtyy kun ei muutoksia
-- **Reduced particle count**: 1000 partikkelia (optimoitu mobiilille)
-- **Lazy loading**: Demot ladataan vain tarvittaessa
-- **Debounced events**: Resize & scroll handlers optimoitu
-- **Automatic quality scaling**: Adaptoituu laitteen tehoon
+### Optimizations
+- **On-demand rendering**: Render loop stops when no changes
+- **Reduced particle count**: 1000 particles (optimized for mobile)
+- **Lazy loading**: Demos loaded only when needed
+- **Debounced events**: Resize & scroll handlers optimized
+- **Automatic quality scaling**: Adapts to device capabilities
 
-### Performance Metrics (tavoite)
+### Performance Metrics (targets)
 - First Contentful Paint: < 1.5s
 - Time to Interactive: < 3s
 - 60 FPS animations (desktop)
 - 30+ FPS animations (mobile)
 
-## 🧪 Kehitys
+## 🧪 Development
 
 ### Dev Server
 ```bash
@@ -269,73 +267,80 @@ npm run build
 # → dist/
 ```
 
+### Run Tests
+```bash
+npm run test        # Watch mode
+npm run test:run    # Single run
+```
+
 ### Preview Production Build
 ```bash
 npm run preview
 ```
 
-## 📚 Dokumentaatio
+## 📚 Documentation
 
-Lisää dokumentaatiota löytyy:
-- `PLAN.md` - Alkuperäinen suunnitelma
-- `CHANGELOG.md` - Muutosloki
-- `Javascript-efektit ja trendit 2025.pdf` - Lähdemateriaali
+Additional documentation available:
+- `PLAN.md` - Original plan
+- `CHANGELOG.md` - Change log
+- `TODO.md` - Task list
+- `PLAN-i18n.md` - Internationalization plan
 
 ## 🎯 Roadmap
 
-### Versio 0.7.0 ✅ (Nykyinen)
-- [x] Modulaarinen i18n-arkkitehtuuri (FI/EN)
-- [x] Kielenvaihtonappi
-- [x] Lazy loading käännöksille
-- [x] Käännökset kaikille 7 demoille
+### Version 0.7.0 ✅ (Current)
+- [x] Modular i18n architecture (FI/EN)
+- [x] Language toggle button
+- [x] Lazy loading for translations
+- [x] Translations for all 7 demos
 
-### Versio 0.6.0 ✅
+### Version 0.6.0 ✅
 - [x] WebGPU & 3D Demo
 - [x] Shared demo CSS
 - [x] Post-processing effects
 
-### Versio 0.5.0 ✅
+### Version 0.5.0 ✅
 - [x] View Transitions API demo
 - [x] Text animations demo
 
-### Versio 0.4.0 ✅
+### Version 0.4.0 ✅
 - [x] Glassmorphism playground
 - [x] Fluid distortion shader demo
 - [x] Scrollytelling demo
 - [x] Micro-interactions demo
 
-### Versio 0.8.0 (Suunnitteilla)
-- [ ] Demo-sivujen i18n data-attribuutit
-- [ ] AI-avusteinen generatiivinen UI
-- [ ] WebXR/VR-tuki
-- [ ] Performance-optimoinnit
+### Version 0.8.0 (Planned)
+- [ ] Demo pages i18n data-attributes
+- [ ] AI-assisted generative UI
+- [ ] WebXR/VR support
+- [ ] Performance optimizations
 
-## 🤝 Kontribuutiot
+## 🤝 Contributing
 
-Projekti on demo-tarkoitukseen. Fork & PR:t tervetulleita!
+This project is for demo purposes. Forks & PRs are welcome!
 
 ### Development Guidelines
-1. Käytä ES6+ moduleja
-2. Noudata accessibility best practices
-3. Testaa kaikissa suurimmissa selaimissa
-4. Optimoi suorituskyky (60 FPS tavoite)
-5. Päivitä CHANGELOG.md
+1. Use ES6+ modules
+2. Follow accessibility best practices
+3. Test in all major browsers
+4. Optimize for performance (60 FPS target)
+5. Update CHANGELOG.md
 
-## 📄 Lisenssi
+## 📄 License
 
-MIT License - Vapaa käyttöön ja muokkaukseen
+MIT License - Free to use and modify
 
-## 🙏 Kiitokset
+## 🙏 Acknowledgments
 
-- **Three.js** - Loistava 3D-kirjasto
-- **ECharts** - Tehokas chart-kirjasto
-- **Vite** - Nopea build tool
-- **PDF "Javascript-efektit ja trendit 2025"** - Inspiraatio ja suunnittelu
+- **Three.js** - Excellent 3D library
+- **ECharts** - Powerful charting library
+- **Vite** - Fast build tool
+- **PDF "JavaScript Effects and Trends 2025"** - Inspiration and design
 
 ---
 
-**Kehittäjä**: Toni Hintikka  
+**Developer**: Toni Hintikka  
 **GitHub**: [tonihintikka/javascript-demo](https://github.com/tonihintikka/javascript-demo)  
 **Live Demo**: [javascript-demo-henna.vercel.app](https://javascript-demo-henna.vercel.app)  
-**Versio**: 0.7.0  
-**Päivitetty**: Joulukuu 2025
+**Version**: 0.7.0  
+**Updated**: December 2025

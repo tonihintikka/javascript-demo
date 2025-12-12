@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mikrointeraktiot 2025 - Modern JavaScript Effects</title>
+  <meta name="description" content="Modernit mikrointeraktiot: magneettiset painikkeet, ennustavat käyttöliittymät ja haptinen palaute.">
+  <link rel="stylesheet" href="/demos/micro-interactions.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="demo-nav">
+    <div class="nav-content">
+      <a href="/" class="nav-home">← Takaisin</a>
+      <h1 class="nav-title">Mikrointeraktiot 2025</h1>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-char">M</span>
+          <span class="title-char">i</span>
+          <span class="title-char">k</span>
+          <span class="title-char">r</span>
+          <span class="title-char">o</span>
+          <span class="title-char">i</span>
+          <span class="title-char">n</span>
+          <span class="title-char">t</span>
+          <span class="title-char">e</span>
+          <span class="title-char">r</span>
+          <span class="title-char">a</span>
+          <span class="title-char">k</span>
+          <span class="title-char">t</span>
+          <span class="title-char">i</span>
+          <span class="title-char">o</span>
+          <span class="title-char">t</span>
+        </h1>
+        <p class="hero-subtitle">
+          Pienet yksityiskohdat, jotka tekevät käyttökokemuksesta poikkeuksellisen
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Magnetic Buttons Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Magneettiset painikkeet</h2>
+        <p class="section-description">
+          Painikkeet, jotka "vetävät" kursoria puoleensa ja reagoivat liikkeeseen
+        </p>
+      </div>
+
+      <div class="demo-grid">
+        <button class="magnetic-btn" data-strength="0.3">
+          <span class="btn-text">Subtle</span>
+        </button>
+        <button class="magnetic-btn" data-strength="0.5">
+          <span class="btn-text">Medium</span>
+        </button>
+        <button class="magnetic-btn" data-strength="0.8">
+          <span class="btn-text">Strong</span>
+        </button>
+      </div>
+
+      <div class="code-example">
+        <h3>Implementation</h3>
+        <pre><code>button.addEventListener('mousemove', (e) => {
+  const rect = button.getBoundingClientRect();
+  const x = e.clientX - rect.left - rect.width / 2;
+  const y = e.clientY - rect.top - rect.height / 2;
+
+  button.style.transform = \`translate(\${x * strength}px, \${y * strength}px)\`;
+});</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Haptic Feedback Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Haptinen palaute</h2>
+        <p class="section-description">
+          Visuaalinen ja taktinen palaute käyttäjän toiminnoista
+        </p>
+      </div>
+
+      <div class="haptic-demo">
+        <div class="haptic-buttons">
+          <button class="haptic-btn" data-haptic="light">
+            <span class="haptic-icon">👆</span>
+            <span class="haptic-label">Light Tap</span>
+          </button>
+          <button class="haptic-btn" data-haptic="medium">
+            <span class="haptic-icon">✋</span>
+            <span class="haptic-label">Medium</span>
+          </button>
+          <button class="haptic-btn" data-haptic="heavy">
+            <span class="haptic-icon">👊</span>
+            <span class="haptic-label">Heavy</span>
+          </button>
+        </div>
+
+        <div class="haptic-indicator">
+          <div class="haptic-wave"></div>
+          <div class="haptic-wave"></div>
+          <div class="haptic-wave"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Predictive UI Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Ennustava käyttöliittymä</h2>
+        <p class="section-description">
+          UI-elementit, jotka ennakoivat käyttäjän seuraavaa toimintoa
+        </p>
+      </div>
+
+      <div class="predictive-demo">
+        <div class="action-cards">
+          <div class="action-card" data-action="save">
+            <div class="card-icon">💾</div>
+            <h3>Save</h3>
+            <p>Tallenna muutokset</p>
+            <div class="prediction-indicator"></div>
+          </div>
+          <div class="action-card" data-action="share">
+            <div class="card-icon">📤</div>
+            <h3>Share</h3>
+            <p>Jaa ystäville</p>
+            <div class="prediction-indicator"></div>
+          </div>
+          <div class="action-card" data-action="delete">
+            <div class="card-icon">🗑️</div>
+            <h3>Delete</h3>
+            <p>Poista pysyvästi</p>
+            <div class="prediction-indicator"></div>
+          </div>
+        </div>
+
+        <div class="prediction-info">
+          <p>Liikuta hiirtä korttien yläpuolella. Järjestelmä ennustaa mitä korttia klikkaat seuraavaksi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Button States Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Pehmeät tilasiirtymät</h2>
+        <p class="section-description">
+          Painikkeet, jotka viestivät tilansa selkeästi
+        </p>
+      </div>
+
+      <div class="state-buttons">
+        <button class="state-btn" id="loading-btn">
+          <span class="btn-content">
+            <span class="btn-icon">⚡</span>
+            <span class="btn-label">Click to Load</span>
+          </span>
+          <span class="btn-loader">
+            <span class="loader-spinner"></span>
+            <span class="loader-text">Loading...</span>
+          </span>
+          <span class="btn-success">
+            <span class="success-icon">✓</span>
+            <span class="success-text">Success!</span>
+          </span>
+        </button>
+
+        <button class="state-btn" id="favorite-btn">
+          <span class="btn-icon favorite-icon">♡</span>
+          <span class="btn-label">Add to Favorites</span>
+        </button>
+
+        <button class="state-btn toggle-btn" id="toggle-btn">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+          <span class="btn-label">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ripple Effect Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Aaltovaikutus (Ripple)</h2>
+        <p class="section-description">
+          Material Design -inspiroidut aaltovaikutukset
+        </p>
+      </div>
+
+      <div class="ripple-demo">
+        <button class="ripple-btn ripple-primary">
+          Primary Action
+        </button>
+        <button class="ripple-btn ripple-secondary">
+          Secondary Action
+        </button>
+        <button class="ripple-btn ripple-accent">
+          Accent Action
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tooltip Section -->
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Älykkäät tooltips</h2>
+        <p class="section-description">
+          Kontekstiherkät vihjeet oikeaan aikaan
+        </p>
+      </div>
+
+      <div class="tooltip-demo">
+        <button class="tooltip-trigger" data-tooltip="Tallenna työsi">
+          💾 Save
+        </button>
+        <button class="tooltip-trigger" data-tooltip="Jaa sosiaalisessa mediassa">
+          📤 Share
+        </button>
+        <button class="tooltip-trigger" data-tooltip="Muokkaa asetuksia">
+          ⚙️ Settings
+        </button>
+        <button class="tooltip-trigger" data-tooltip="Lataa PDF-versio">
+          📥 Download
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Practices -->
+  <section class="demo-section best-practices">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Parhaat käytännöt</h2>
+      </div>
+
+      <div class="practices-grid">
+        <div class="practice-card">
+          <div class="practice-icon">⚡</div>
+          <h3>Suorituskyky</h3>
+          <p>Käytä CSS transforms ja will-change optimointiin. Vältä layout thrashing -ongelmia.</p>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">♿</div>
+          <h3>Saavutettavuus</h3>
+          <p>Kunnioita prefers-reduced-motion asetusta. Varmista keyboard-navigointi.</p>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">🎯</div>
+          <h3>Tarkoituksenmukaisuus</h3>
+          <p>Animaatiot tulee palvella käyttötarkoitusta, eivät häiritä.</p>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">⏱️</div>
+          <h3>Ajoitus</h3>
+          <p>200-300ms on optimaalinen aika useimmille mikrointeraktioille.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="conclusion">
+    <div class="container">
+      <div class="conclusion-content">
+        <h2>Mikrointeraktiot luovat elämyksen</h2>
+        <p>
+          Pienet, hiotut yksityiskohdat erottavat hyvän käyttökokemuksen erinomaisesta.
+          Moderni JavaScript ja CSS mahdollistavat sulavat, natiivitason mikrointeraktiot.
+        </p>
+        <div class="conclusion-actions">
+          <a href="/" class="btn btn-primary">← Takaisin etusivulle</a>
+          <a href="/demos/text-animations.html" class="btn btn-secondary">Seuraava demo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <strong>Mikrointeraktiot Demo</strong> -
+        Osa "Modernit JavaScript-efektit 2025" projektia
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/demos/micro-interactions.js"></script>
+</body>
+</html>

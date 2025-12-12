@@ -1,0 +1,27 @@
+{
+  "title": "Glassmorphism 2.0",
+  "heroTitle": "Glassmorphism 2.0",
+  "heroSubtitle": "Physically plausible spatial materials that refract light and create depth. Modern design powered by WebGPU.",
+  "playgroundTitle": "Interactive Playground",
+  "playgroundDesc": "Adjust parameters and see how the glassmorphism effect changes in real-time",
+  "controls": {
+    "blur": "Blur Amount",
+    "opacity": "Background Opacity",
+    "saturation": "Saturation",
+    "borderOpacity": "Border Opacity"
+  },
+  "examples": {
+    "title": "Examples",
+    "card": "Card",
+    "modal": "Modal",
+    "navigation": "Navigation"
+  },
+  "layers": {
+    "title": "Multi-layer Effects",
+    "desc": "Create depth with multiple glass layers"
+  },
+  "codeGenerator": {
+    "title": "CSS Code Generator",
+    "copyButton": "Copy CSS"
+  }
+}

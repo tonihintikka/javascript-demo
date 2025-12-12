@@ -1,0 +1,39 @@
+{
+  "title": "Mikrointeraktiot",
+  "heroTitle": "Mikrointeraktiot & Ennakoiva UI",
+  "heroSubtitle": "Magneettiset painikkeet, haptinen palaute ja ennakoivat käyttöliittymät.",
+  "magneticButtons": {
+    "title": "Magneettiset painikkeet",
+    "desc": "Painikkeet, jotka seuraavat kursoria",
+    "weak": "Heikko",
+    "medium": "Keskiverto",
+    "strong": "Vahva"
+  },
+  "hapticFeedback": {
+    "title": "Haptinen palaute",
+    "desc": "Tuntoaistiin perustuva palaute (mobiili)",
+    "tap": "Napautus",
+    "success": "Onnistuminen",
+    "warning": "Varoitus"
+  },
+  "predictiveUI": {
+    "title": "Ennakoiva UI",
+    "desc": "Vie hiiri lähelle painiketta nähdäksesi intent detection -efektin",
+    "intentDetected": "Aikomus havaittu!",
+    "ready": "Valmis"
+  },
+  "toggles": {
+    "title": "Toggle-animaatiot",
+    "desc": "Interaktiiviset kytkimet ja checkboxit"
+  },
+  "loadingStates": {
+    "title": "Lataustilojen animaatiot",
+    "loading": "Ladataan...",
+    "complete": "Valmis!"
+  },
+  "toasts": {
+    "title": "Toast-ilmoitukset",
+    "show": "Näytä ilmoitus",
+    "message": "Toiminto suoritettu onnistuneesti!"
+  }
+}

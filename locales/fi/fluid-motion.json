@@ -1,0 +1,31 @@
+{
+  "title": "Nestemäiset muodot",
+  "heroTitle": "Fluid Motion",
+  "heroSubtitle": "WebGL liquid distortion -shaderit. Liikuta hiirtä nähdäksesi vääristymisefekti.",
+  "controls": {
+    "viscosity": "Viskositeetti",
+    "distortion": "Vääristymä",
+    "speed": "Nopeus",
+    "colorShift": "Värivaihto"
+  },
+  "presets": {
+    "title": "Esiasetukset",
+    "calm": "Rauhallinen",
+    "energetic": "Energinen",
+    "chaotic": "Kaoottinen"
+  },
+  "sections": {
+    "liquidButtons": {
+      "title": "Nestemäiset painikkeet",
+      "desc": "Hover-efektit, jotka reagoivat hiiren liikkeeseen"
+    },
+    "imageDistortion": {
+      "title": "Kuvavääristymä",
+      "desc": "Vie hiiri kuvan päälle nähdäksesi efektin"
+    },
+    "metaballs": {
+      "title": "Metaball-animaatiot",
+      "desc": "Orgaaniset, yhdistyvät muodot"
+    }
+  }
+}

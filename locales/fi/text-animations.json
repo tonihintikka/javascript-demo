@@ -1,0 +1,58 @@
+{
+  "title": "Tekstianimaatiot",
+  "heroTitle": "Tekstianimaatiot",
+  "heroSubtitle": "Merkki kerrallaan, sana kerrallaan ja rivi kerrallaan animaatiot.",
+  "types": {
+    "charByChar": "Merkki kerrallaan",
+    "wordByWord": "Sana kerrallaan",
+    "lineByLine": "Rivi kerrallaan",
+    "typewriter": "Kirjoituskone",
+    "scramble": "Tekstin sekoitus",
+    "gradient": "Liukuväri",
+    "counter": "Laskuri"
+  },
+  "replay": "Toista uudelleen",
+  "sections": {
+    "charAnimations": {
+      "title": "Merkkianimaatiot",
+      "desc": "Jokainen merkki animoidaan erikseen",
+      "modes": {
+        "fade": "Häivytys",
+        "slide": "Liuku",
+        "scale": "Skaalaus",
+        "rotate": "Kierto"
+      }
+    },
+    "wordAnimations": {
+      "title": "Sana-animaatiot",
+      "desc": "Jokainen sana animoidaan erikseen",
+      "modes": {
+        "fade": "Häivytys",
+        "slide": "Liuku",
+        "blur": "Sumennus"
+      }
+    },
+    "typewriter": {
+      "title": "Kirjoituskone-efekti",
+      "desc": "Klassinen terminaalityylinen animaatio"
+    },
+    "scramble": {
+      "title": "Tekstin sekoitus",
+      "desc": "Matrix-tyylinen dekoodausefekti"
+    },
+    "gradient": {
+      "title": "Liukuväriteksti",
+      "desc": "Animoidut liukuvärit tekstissä",
+      "modes": {
+        "flow": "Virtaus",
+        "pulse": "Pulssi",
+        "rainbow": "Sateenkaari",
+        "shimmer": "Kimallus"
+      }
+    },
+    "counter": {
+      "title": "Laskurianimaatiot",
+      "desc": "Animoidut numerolaskurit"
+    }
+  }
+}

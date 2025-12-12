@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Modern JavaScript Effects 2025 | Interactive Demo",
+    "description": "Explore modern JavaScript effects and UI trends 2025: WebGPU, Glassmorphism, Scrollytelling and more."
+  },
+  "nav": {
+    "back": "← Back",
+    "toggleTheme": "Toggle theme",
+    "language": "FI"
+  },
+  "footer": {
+    "title": "Modern JavaScript Effects and UI Architecture",
+    "subtitle": "Status update December 2025 · Production-ready implementations",
+    "github": "GitHub Repository"
+  },
+  "common": {
+    "tryIt": "Try it",
+    "learnMore": "Learn more",
+    "controls": "Controls",
+    "codeExamples": "Code Examples",
+    "browserSupport": "Browser Support",
+    "otherDemos": "Other Demos",
+    "hoverMe": "Hover me",
+    "reset": "Reset",
+    "copy": "Copy",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "open": "Open",
+    "save": "Save",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

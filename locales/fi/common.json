@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Modernit JavaScript-efektit 2025 | Interaktiivinen Demo",
+    "description": "Tutustu moderneihin JavaScript-efekteihin ja käyttöliittymätrendeihin 2025: WebGPU, Glassmorphism, Scrollytelling ja enemmän."
+  },
+  "nav": {
+    "back": "← Takaisin",
+    "toggleTheme": "Vaihda teemaa",
+    "language": "EN"
+  },
+  "footer": {
+    "title": "Modernit JavaScript-efektit ja käyttöliittymäarkkitehtuurit",
+    "subtitle": "Tilannekatsaus joulukuu 2025 · Tuotantovalmiit toteutukset",
+    "github": "GitHub Repository"
+  },
+  "common": {
+    "tryIt": "Kokeile",
+    "learnMore": "Lue lisää",
+    "controls": "Kontrollit",
+    "codeExamples": "Koodiesimerkit",
+    "browserSupport": "Selaintuki",
+    "otherDemos": "Muut Demot",
+    "hoverMe": "Vie hiiri päälle",
+    "reset": "Nollaa",
+    "copy": "Kopioi",
+    "loading": "Ladataan...",
+    "error": "Virhe",
+    "success": "Onnistui",
+    "close": "Sulje",
+    "open": "Avaa",
+    "save": "Tallenna",
+    "cancel": "Peruuta",
+    "yes": "Kyllä",
+    "no": "Ei"
+  }
+}

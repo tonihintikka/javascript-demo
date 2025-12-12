@@ -1,0 +1,84 @@
+{
+  "title": "WebGPU & 3D",
+  "heroTitle": "WebGPU & Advanced 3D",
+  "heroSubtitle": "Seuraavan sukupolven grafiikkarajapinta selaimissa. GPU Compute, TSL-shaderit ja post-processing efektit.",
+  "checkingSupport": "Tarkistetaan WebGPU-tukea...",
+  "supported": "WebGPU tuettu ✓",
+  "notSupported": "WebGPU ei saatavilla - käytetään WebGL fallbackia",
+  "comparison": {
+    "title": "WebGPU vs WebGL",
+    "webgl": {
+      "title": "WebGL 2.0",
+      "features": [
+        "✅ Laaja selaintuki (98%+)",
+        "✅ Vakaa ja hyvin dokumentoitu",
+        "⚠️ GLSL shader-kieli",
+        "⚠️ Rajoitettu GPU-laskenta",
+        "⚠️ Vanhempi API-suunnittelu"
+      ]
+    },
+    "webgpu": {
+      "title": "WebGPU",
+      "features": [
+        "✅ Moderni, tehokas API",
+        "✅ GPU Compute Shaderit",
+        "✅ WGSL shader-kieli",
+        "✅ Parempi suorituskyky",
+        "⚠️ Rajoitettu selaintuki (Chrome 113+)"
+      ]
+    }
+  },
+  "tabs": {
+    "particles": "Partikkelit",
+    "materials": "PBR-materiaalit",
+    "postfx": "Jälkikäsittely",
+    "compute": "GPU-laskenta"
+  },
+  "particleControls": {
+    "title": "Partikkelikontrollit",
+    "count": "Partikkelimäärä",
+    "size": "Koko",
+    "speed": "Nopeus",
+    "colorMode": "Väritila",
+    "rainbow": "Sateenkaari",
+    "gradient": "Liukuväri",
+    "solid": "Yksivärinen",
+    "reset": "Nollaa partikkelit"
+  },
+  "materialControls": {
+    "title": "Materiaaliominaisuudet",
+    "type": "Materiaalityyppi",
+    "standard": "Standardi PBR",
+    "glass": "Lasi",
+    "metal": "Metalli",
+    "fabric": "Kangas",
+    "tslCustom": "TSL Custom",
+    "roughness": "Karheus",
+    "metalness": "Metallisuus",
+    "envIntensity": "Ympäristön intensiteetti"
+  },
+  "postfxControls": {
+    "title": "Jälkikäsittelyefektit",
+    "bloom": "Bloom",
+    "dof": "Syväterävyys",
+    "vignette": "Vinjetti",
+    "chromatic": "Kromaattinen aberraatio"
+  },
+  "computeControls": {
+    "title": "GPU-laskentasimulaatio",
+    "simType": "Simulaatiotyyppi",
+    "particles": "Partikkelifysiikka",
+    "boids": "Boids (parveilu)",
+    "fluid": "Nestesimulaatio",
+    "particleCount": "Partikkelimäärä",
+    "simSpeed": "Simulaationopeus",
+    "warning": "GPU-laskenta vaatii WebGPU-tuen"
+  },
+  "codeExamples": {
+    "title": "Koodiesimerkit",
+    "webgpuCheck": "WebGPU-tarkistus",
+    "tslShader": "TSL Shader",
+    "postprocessing": "Jälkikäsittely",
+    "computeShader": "Compute Shader"
+  }
+}

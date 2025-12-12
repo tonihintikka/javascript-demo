@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title1": "Modern",
+    "title2": "JavaScript Effects",
+    "title3": "2025",
+    "subtitle": "The post-static web era: Interactive demo environment showcasing production-ready visual hooks",
+    "cta": "Explore Demos",
+    "scrollText": "Scroll to explore"
+  },
+  "intro": {
+    "title": "Visual effects define the user experience",
+    "stats": {
+      "webgpu": {
+        "value": "100",
+        "label": "% WebGPU support",
+        "desc": "In all major browsers"
+      },
+      "fps": {
+        "value": "60",
+        "label": "FPS performance",
+        "desc": "Even on mobile devices"
+      },
+      "categories": {
+        "value": "7",
+        "label": "Effect categories",
+        "desc": "Production-ready implementations"
+      }
+    },
+    "text1": "In December 2025, the digital landscape has reached a critical turning point. <strong>Widespread adoption of WebGPU</strong> has removed traditional bottlenecks, enabling AAA game-level graphics and physics simulations directly in user interfaces.",
+    "text2": "This demo environment showcases <strong>actually working visual hooks</strong> instead of mere decoration. We focus on technologies that are production-ready, scalable, and deliver measurable value."
+  },
+  "demos": {
+    "sectionTitle": "Explore Interactive Demos",
+    "sectionSubtitle": "Each demo is implemented with modern technology and optimized for performance",
+    "webgpu": {
+      "title": "WebGPU & 3D Rendering",
+      "desc": "AAA game-level graphics in browser"
+    },
+    "scrollytelling": {
+      "title": "Scrollytelling 2.0",
+      "desc": "Data-driven, scroll-bound storytelling"
+    },
+    "glassmorphism": {
+      "title": "Glassmorphism 2.0",
+      "desc": "Physically plausible spatial materials"
+    },
+    "fluidMotion": {
+      "title": "Fluid Shapes",
+      "desc": "Liquid distortion & organic animations"
+    },
+    "viewTransitions": {
+      "title": "View Transitions",
+      "desc": "Seamless state transitions & Bento Grid"
+    },
+    "microInteractions": {
+      "title": "Micro-interactions",
+      "desc": "Predictive UI & magnetic buttons"
+    },
+    "textAnimations": {
+      "title": "Text Animations",
+      "desc": "GSAP SplitText & morphing"
+    },
+    "legacy": {
+      "title": "Voice, Gesture & Sensors",
+      "desc": "Web Speech API, MediaPipe, Generic Sensors"
+    }
+  },
+  "summary": {
+    "title": "Performance and Accessibility",
+    "production": {
+      "title": "Production Use",
+      "items": ["View Transitions API", "Micro-interactions", "Glassmorphism (CSS)", "Scrollytelling"]
+    },
+    "showcase": {
+      "title": "Showcase Effects",
+      "items": ["Heavy 3D scenes", "Particle systems", "WebGPU Compute Shaders", "Liquid distortion"]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "items": ["prefers-reduced-motion", "ARIA-labels & roles", "Keyboard navigation", "High contrast mode"]
+    },
+    "cta": "Start Exploring Demos"
+  }
+}

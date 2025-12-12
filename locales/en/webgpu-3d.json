@@ -1,0 +1,84 @@
+{
+  "title": "WebGPU & 3D",
+  "heroTitle": "WebGPU & Advanced 3D",
+  "heroSubtitle": "Next-generation graphics API for browsers. GPU Compute, TSL shaders, and post-processing effects.",
+  "checkingSupport": "Checking WebGPU support...",
+  "supported": "WebGPU supported ✓",
+  "notSupported": "WebGPU not available - using WebGL fallback",
+  "comparison": {
+    "title": "WebGPU vs WebGL",
+    "webgl": {
+      "title": "WebGL 2.0",
+      "features": [
+        "✅ Wide browser support (98%+)",
+        "✅ Stable and well documented",
+        "⚠️ GLSL shader language",
+        "⚠️ Limited GPU compute",
+        "⚠️ Older API design"
+      ]
+    },
+    "webgpu": {
+      "title": "WebGPU",
+      "features": [
+        "✅ Modern, efficient API",
+        "✅ GPU Compute Shaders",
+        "✅ WGSL shader language",
+        "✅ Better performance",
+        "⚠️ Limited browser support (Chrome 113+)"
+      ]
+    }
+  },
+  "tabs": {
+    "particles": "Particles",
+    "materials": "PBR Materials",
+    "postfx": "Post-Processing",
+    "compute": "GPU Compute"
+  },
+  "particleControls": {
+    "title": "Particle Controls",
+    "count": "Particle Count",
+    "size": "Size",
+    "speed": "Speed",
+    "colorMode": "Color Mode",
+    "rainbow": "Rainbow",
+    "gradient": "Gradient",
+    "solid": "Solid Color",
+    "reset": "Reset Particles"
+  },
+  "materialControls": {
+    "title": "Material Properties",
+    "type": "Material Type",
+    "standard": "Standard PBR",
+    "glass": "Glass",
+    "metal": "Metal",
+    "fabric": "Fabric",
+    "tslCustom": "TSL Custom",
+    "roughness": "Roughness",
+    "metalness": "Metalness",
+    "envIntensity": "Environment Intensity"
+  },
+  "postfxControls": {
+    "title": "Post-Processing Effects",
+    "bloom": "Bloom",
+    "dof": "Depth of Field",
+    "vignette": "Vignette",
+    "chromatic": "Chromatic Aberration"
+  },
+  "computeControls": {
+    "title": "GPU Compute Simulation",
+    "simType": "Simulation Type",
+    "particles": "Particle Physics",
+    "boids": "Boids (Flocking)",
+    "fluid": "Fluid Simulation",
+    "particleCount": "Particle Count",
+    "simSpeed": "Simulation Speed",
+    "warning": "GPU Compute requires WebGPU support"
+  },
+  "codeExamples": {
+    "title": "Code Examples",
+    "webgpuCheck": "WebGPU Check",
+    "tslShader": "TSL Shader",
+    "postprocessing": "Post-Processing",
+    "computeShader": "Compute Shader"
+  }
+}

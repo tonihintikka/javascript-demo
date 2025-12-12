@@ -1,0 +1,32 @@
+{
+  "title": "View Transitions",
+  "heroTitle": "View Transitions API",
+  "heroSubtitle": "Saumattomat siirtymät sivujen ja tilojen välillä.",
+  "expandCard": "Laajenna kortti",
+  "collapseCard": "Pienennä kortti",
+  "sections": {
+    "bentoGrid": {
+      "title": "Bento Grid",
+      "desc": "Klikkaa kortteja nähdäksesi View Transition -animaatiot"
+    },
+    "themeSwitch": {
+      "title": "Teeman vaihto",
+      "desc": "Teeman vaihto animoidaan sujuvasti",
+      "light": "Vaalea",
+      "dark": "Tumma"
+    },
+    "pageNav": {
+      "title": "Sivunavigaatio",
+      "desc": "SPA-tyylinen navigaatio ilman sivunlatausta",
+      "page1": "Sivu 1",
+      "page2": "Sivu 2",
+      "page3": "Sivu 3"
+    }
+  },
+  "browserSupport": {
+    "title": "Selaintuki",
+    "supported": "Tuettu",
+    "notSupported": "Ei tuettu",
+    "fallback": "Fallback käytössä"
+  }
+}

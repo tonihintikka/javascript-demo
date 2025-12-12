@@ -1,0 +1,39 @@
+{
+  "title": "Micro-interactions",
+  "heroTitle": "Micro-interactions & Predictive UI",
+  "heroSubtitle": "Magnetic buttons, haptic feedback, and predictive user interfaces.",
+  "magneticButtons": {
+    "title": "Magnetic Buttons",
+    "desc": "Buttons that follow the cursor",
+    "weak": "Weak",
+    "medium": "Medium",
+    "strong": "Strong"
+  },
+  "hapticFeedback": {
+    "title": "Haptic Feedback",
+    "desc": "Touch-based feedback (mobile)",
+    "tap": "Tap",
+    "success": "Success",
+    "warning": "Warning"
+  },
+  "predictiveUI": {
+    "title": "Predictive UI",
+    "desc": "Move your mouse near the button to see the intent detection effect",
+    "intentDetected": "Intent detected!",
+    "ready": "Ready"
+  },
+  "toggles": {
+    "title": "Toggle Animations",
+    "desc": "Interactive switches and checkboxes"
+  },
+  "loadingStates": {
+    "title": "Loading State Animations",
+    "loading": "Loading...",
+    "complete": "Complete!"
+  },
+  "toasts": {
+    "title": "Toast Notifications",
+    "show": "Show notification",
+    "message": "Action completed successfully!"
+  }
+}

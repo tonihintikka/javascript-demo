@@ -1,0 +1,38 @@
+{
+  "title": "Scrollytelling 2.0",
+  "heroTitle": "Scrollytelling 2.0",
+  "heroSubtitle": "Datavetoinen, vieritykseen sidottu kerronta GSAP ScrollTrigger -kirjastolla.",
+  "progress": "Edistyminen",
+  "sections": {
+    "intro": {
+      "title": "Datan visualisointi kertomuksena",
+      "desc": "Scrollytelling yhdistää vierityksen ja kerronnan luodakseen immersiivisiä datakokemuksia."
+    },
+    "chart": {
+      "title": "Interaktiivinen kaavio",
+      "desc": "Vieritä nähdäksesi datan elävän"
+    },
+    "parallax": {
+      "title": "Parallax-efektit",
+      "desc": "Syvyysvaikutelma kerroksilla"
+    },
+    "sticky": {
+      "title": "Sticky-sektiot",
+      "desc": "Kiinnitetyt elementit, jotka päivittyvät vierityksen mukaan"
+    }
+  },
+  "narrative": {
+    "step1": {
+      "title": "Vaihe 1",
+      "text": "Tarina alkaa..."
+    },
+    "step2": {
+      "title": "Vaihe 2",
+      "text": "Data paljastaa trendin..."
+    },
+    "step3": {
+      "title": "Vaihe 3",
+      "text": "Johtopäätös syntyy..."
+    }
+  }
+}

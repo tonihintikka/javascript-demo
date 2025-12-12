@@ -5,35 +5,37 @@ All notable changes to the JavaScript Visualization Demo 2025 project.
 ## [0.7.0] - 2025-12-12 (Keskeneräinen)
 
 ### Added
-- **Internationalization (i18n) - Aloitettu**
-  - `locales/fi.json` - Suomenkieliset käännökset
-  - `locales/en.json` - Englanninkieliset käännökset
-  - `js/i18n.js` - I18n-moduuli:
-    - `load(locale)` - Lataa käännökset
-    - `t(key)` - Hakee käännöksen avaimella (dot notation)
-    - `apply()` - Päivittää DOM:in data-i18n attribuuttien perusteella
-    - `toggle()` - Vaihtaa kielen (fi ↔ en)
-    - localStorage-persistenssi
-  - `index.html` päivitetty data-i18n attribuuteilla
+- **Internationalization (i18n) - Modulaarinen rakenne**
+  - Modulaarinen käännösarkkitehtuuri:
+    ```
+    locales/
+    ├── fi/
+    │   ├── common.json       # Nav, footer, yleiset
+    │   ├── landing.json      # Etusivu
+    │   ├── glassmorphism.json
+    │   ├── fluid-motion.json
+    │   ├── scrollytelling.json
+    │   ├── micro-interactions.json
+    │   ├── view-transitions.json
+    │   ├── text-animations.json
+    │   └── webgpu-3d.json
+    ├── en/
+    │   └── (sama rakenne)
+    ```
+  - `js/i18n.js` päivitetty:
+    - `loadModular()` - Lataa common + sivukohtaiset moduulit
+    - `detectPageModule()` - Tunnistaa automaattisesti sivun
+    - `loadModule()` - Lazy loading yksittäisille moduuleille
+    - `fetchWithCache()` - Välimuisti latausten optimointiin
+    - `clearCache()` - Välimuistin tyhjennys kielenvaihdossa
+    - Fallback legacy-muotoon (locales/fi.json)
+  - Käännökset kaikille 7 demo-sivulle (FI + EN)
+  - localStorage-persistenssi
   - Kielenvaihtonappi (fixed position, oikea yläkulma)
   - CSS-tyylit kielenvaihtimelle (`css/landing.css`)
 
 ### TODO - Keskeneräinen
-- [ ] **Refaktoroi i18n modulaariseksi** (suositeltu rakenne):
-  ```
-  locales/
-  ├── fi/
-  │   ├── common.json       # Yhteiset: nav, footer, buttons
-  │   ├── landing.json      # Etusivu
-  │   ├── glassmorphism.json
-  │   ├── fluid-motion.json
-  │   └── ... (muut demot)
-  ├── en/
-  │   └── (sama rakenne)
-  ```
-- [ ] Päivitä demo-sivut i18n-tuella
-- [ ] Lazy loading - lataa vain tarvittavat käännökset
-- [ ] Caching-mekanismi (common.json ladataan kerran)
+- [ ] Päivitä demo-sivut data-i18n attribuuteilla
 
 ### Technical Notes
 - Nykyinen ratkaisu: yksi suuri JSON per kieli (270+ riviä)

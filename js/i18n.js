@@ -2,9 +2,11 @@
  * I18n - Internationalization module
  * 
  * Handles Finnish/English language switching with:
- * - JSON-based translations
+ * - Modular JSON-based translations (common + page-specific)
  * - localStorage persistence
  * - Dynamic DOM updates via data-i18n attributes
+ * - Lazy loading of page-specific translations
+ * - Caching to avoid redundant fetches
  */
 
 class I18n {
@@ -12,24 +14,41 @@ class I18n {
     this.locale = localStorage.getItem('locale') || defaultLocale;
     this.translations = {};
     this.loaded = false;
+    this.loadedModules = new Set();
+    this.cache = new Map(); // Cache for loaded JSON files
+    this.useModular = true; // Try modular first, fallback to legacy
   }
 
   /**
    * Load translations for a given locale
+   * Supports both modular (locales/fi/common.json) and legacy (locales/fi.json) formats
    * @param {string} locale - 'fi' or 'en'
+   * @param {string[]} modules - Additional modules to load (e.g., ['landing', 'webgpu-3d'])
    * @returns {Promise<void>}
    */
-  async load(locale = this.locale) {
+  async load(locale = this.locale, modules = []) {
     try {
-      // Determine base path based on current location
       const basePath = this.getBasePath();
-      const response = await fetch(`${basePath}locales/${locale}.json`);
       
-      if (!response.ok) {
-        throw new Error(`Failed to load translations for ${locale}`);
+      // Detect current page and add its module automatically
+      const pageModule = this.detectPageModule();
+      if (pageModule && !modules.includes(pageModule)) {
+        modules.push(pageModule);
       }
       
-      this.translations = await response.json();
+      // Try modular loading first
+      if (this.useModular) {
+        try {
+          await this.loadModular(locale, modules, basePath);
+        } catch (modularError) {
+          console.warn('Modular loading failed, trying legacy format:', modularError);
+          this.useModular = false;
+          await this.loadLegacy(locale, basePath);
+        }
+      } else {
+        await this.loadLegacy(locale, basePath);
+      }
+      
       this.locale = locale;
       this.loaded = true;
       
@@ -52,9 +71,135 @@ class I18n {
       // Fallback to Finnish if English fails, or vice versa
       if (locale !== 'fi') {
         console.warn('Falling back to Finnish');
-        await this.load('fi');
+        await this.load('fi', modules);
       }
     }
+  }
+
+  /**
+   * Load modular translations (common + page-specific modules)
+   * @param {string} locale - 'fi' or 'en'
+   * @param {string[]} modules - Modules to load
+   * @param {string} basePath - Base path for locales
+   */
+  async loadModular(locale, modules, basePath) {
+    // Always load common first
+    const commonPath = `${basePath}locales/${locale}/common.json`;
+    const commonData = await this.fetchWithCache(commonPath);
+    
+    // Start with common translations
+    this.translations = { ...commonData };
+    this.loadedModules.add('common');
+    
+    // Load additional modules in parallel
+    const modulePromises = modules.map(async (module) => {
+      if (this.loadedModules.has(module)) return null;
+      
+      const modulePath = `${basePath}locales/${locale}/${module}.json`;
+      try {
+        const moduleData = await this.fetchWithCache(modulePath);
+        this.loadedModules.add(module);
+        return { module, data: moduleData };
+      } catch (err) {
+        console.warn(`Module ${module} not found for locale ${locale}`);
+        return null;
+      }
+    });
+    
+    const results = await Promise.all(modulePromises);
+    
+    // Merge module data into translations
+    results.forEach(result => {
+      if (result) {
+        // Page-specific modules go under their own key
+        this.translations[result.module] = result.data;
+      }
+    });
+  }
+
+  /**
+   * Load legacy single-file translations
+   * @param {string} locale - 'fi' or 'en'
+   * @param {string} basePath - Base path for locales
+   */
+  async loadLegacy(locale, basePath) {
+    const response = await fetch(`${basePath}locales/${locale}.json`);
+    if (!response.ok) {
+      throw new Error(`Failed to load translations for ${locale}`);
+    }
+    this.translations = await response.json();
+  }
+
+  /**
+   * Fetch JSON with caching
+   * @param {string} url - URL to fetch
+   * @returns {Promise<object>}
+   */
+  async fetchWithCache(url) {
+    if (this.cache.has(url)) {
+      return this.cache.get(url);
+    }
+    
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${url}`);
+    }
+    
+    const data = await response.json();
+    this.cache.set(url, data);
+    return data;
+  }
+
+  /**
+   * Detect which page module to load based on current URL
+   * @returns {string|null}
+   */
+  detectPageModule() {
+    const path = window.location.pathname;
+    
+    // Landing page
+    if (path === '/' || path.endsWith('/index.html') || path.endsWith('/')) {
+      return 'landing';
+    }
+    
+    // Demo pages
+    const demoMatch = path.match(/demos\/([a-z-]+)\.html/);
+    if (demoMatch) {
+      return demoMatch[1]; // e.g., 'webgpu-3d', 'glassmorphism'
+    }
+    
+    return null;
+  }
+
+  /**
+   * Load an additional module dynamically (for lazy loading)
+   * @param {string} module - Module name (e.g., 'webgpu-3d')
+   * @returns {Promise<void>}
+   */
+  async loadModule(module) {
+    if (this.loadedModules.has(module)) return;
+    
+    const basePath = this.getBasePath();
+    const modulePath = `${basePath}locales/${this.locale}/${module}.json`;
+    
+    try {
+      const moduleData = await this.fetchWithCache(modulePath);
+      this.translations[module] = moduleData;
+      this.loadedModules.add(module);
+      
+      // Re-apply translations
+      this.apply();
+    } catch (err) {
+      console.warn(`Could not load module ${module}:`, err);
+    }
+  }
+
+  /**
+   * Clear cache (useful when switching locales)
+   */
+  clearCache() {
+    this.cache.clear();
+    this.loadedModules.clear();
   }
 
   /**
@@ -182,6 +327,8 @@ class I18n {
    */
   async toggle() {
     const newLocale = this.locale === 'fi' ? 'en' : 'fi';
+    // Clear cache when switching locales
+    this.clearCache();
     await this.load(newLocale);
   }
 

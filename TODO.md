@@ -11,29 +11,29 @@ Projektin tehtävälista järjestyksessä.
 - [x] `index.html` - data-i18n attribuutit lisätty
 - [x] Kielenvaihtonappi + CSS-tyylit
 
-### i18n Refaktorointi modulaariseksi ⏳
-Nykyinen rakenne (yksi suuri JSON) pitäisi refaktoroida:
+### i18n Refaktorointi modulaariseksi ✅
+Modulaarinen rakenne toteutettu:
 
 ```
 locales/
 ├── fi/
-│   ├── common.json       # Yhteiset: nav, footer, buttons
-│   ├── landing.json      # Etusivu
-│   ├── glassmorphism.json
-│   ├── fluid-motion.json
-│   ├── scrollytelling.json
-│   ├── micro-interactions.json
-│   ├── view-transitions.json
-│   ├── text-animations.json
-│   └── webgpu-3d.json
+│   ├── common.json           # ✅ Yhteiset: nav, footer, buttons
+│   ├── landing.json          # ✅ Etusivu
+│   ├── glassmorphism.json    # ✅
+│   ├── fluid-motion.json     # ✅
+│   ├── scrollytelling.json   # ✅
+│   ├── micro-interactions.json # ✅
+│   ├── view-transitions.json # ✅
+│   ├── text-animations.json  # ✅
+│   └── webgpu-3d.json        # ✅
 ├── en/
-│   └── (sama rakenne)
+│   └── (sama rakenne)        # ✅
 ```
 
-- [ ] Jaa `fi.json` ja `en.json` pienempiin moduuleihin
-- [ ] Päivitä `js/i18n.js` lataamaan sivukohtaiset käännökset
-- [ ] Lisää lazy loading (ladataan vain tarvittavat)
-- [ ] Lisää caching (common.json ladataan kerran)
+- [x] Jaa `fi.json` ja `en.json` pienempiin moduuleihin
+- [x] Päivitä `js/i18n.js` lataamaan sivukohtaiset käännökset
+- [x] Lisää lazy loading (ladataan vain tarvittavat)
+- [x] Lisää caching (common.json ladataan kerran)
 
 ### Demo-sivujen i18n ⏳
 - [ ] `demos/glassmorphism.html` - lisää data-i18n attribuutit

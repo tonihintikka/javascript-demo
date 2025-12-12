@@ -1,0 +1,31 @@
+{
+  "title": "Fluid Shapes",
+  "heroTitle": "Fluid Motion",
+  "heroSubtitle": "WebGL liquid distortion shaders. Move your mouse to see the distortion effect.",
+  "controls": {
+    "viscosity": "Viscosity",
+    "distortion": "Distortion",
+    "speed": "Speed",
+    "colorShift": "Color Shift"
+  },
+  "presets": {
+    "title": "Presets",
+    "calm": "Calm",
+    "energetic": "Energetic",
+    "chaotic": "Chaotic"
+  },
+  "sections": {
+    "liquidButtons": {
+      "title": "Liquid Buttons",
+      "desc": "Hover effects that react to mouse movement"
+    },
+    "imageDistortion": {
+      "title": "Image Distortion",
+      "desc": "Hover over the image to see the effect"
+    },
+    "metaballs": {
+      "title": "Metaball Animations",
+      "desc": "Organic, merging shapes"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Scrollytelling 2.0",
+  "heroTitle": "Scrollytelling 2.0",
+  "heroSubtitle": "Data-driven, scroll-bound storytelling with GSAP ScrollTrigger.",
+  "progress": "Progress",
+  "sections": {
+    "intro": {
+      "title": "Data visualization as narrative",
+      "desc": "Scrollytelling combines scrolling and storytelling to create immersive data experiences."
+    },
+    "chart": {
+      "title": "Interactive Chart",
+      "desc": "Scroll to see the data come alive"
+    },
+    "parallax": {
+      "title": "Parallax Effects",
+      "desc": "Depth perception through layers"
+    },
+    "sticky": {
+      "title": "Sticky Sections",
+      "desc": "Pinned elements that update with scroll progress"
+    }
+  },
+  "narrative": {
+    "step1": {
+      "title": "Step 1",
+      "text": "The story begins..."
+    },
+    "step2": {
+      "title": "Step 2",
+      "text": "Data reveals a trend..."
+    },
+    "step3": {
+      "title": "Step 3",
+      "text": "Conclusion emerges..."
+    }
+  }
+}

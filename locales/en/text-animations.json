@@ -1,0 +1,58 @@
+{
+  "title": "Text Animations",
+  "heroTitle": "Text Animations",
+  "heroSubtitle": "Character-by-character, word-by-word, and line-by-line animations.",
+  "types": {
+    "charByChar": "Character by character",
+    "wordByWord": "Word by word",
+    "lineByLine": "Line by line",
+    "typewriter": "Typewriter",
+    "scramble": "Text Scramble",
+    "gradient": "Gradient",
+    "counter": "Counter"
+  },
+  "replay": "Replay",
+  "sections": {
+    "charAnimations": {
+      "title": "Character Animations",
+      "desc": "Each character is animated individually",
+      "modes": {
+        "fade": "Fade",
+        "slide": "Slide",
+        "scale": "Scale",
+        "rotate": "Rotate"
+      }
+    },
+    "wordAnimations": {
+      "title": "Word Animations",
+      "desc": "Each word is animated individually",
+      "modes": {
+        "fade": "Fade",
+        "slide": "Slide",
+        "blur": "Blur"
+      }
+    },
+    "typewriter": {
+      "title": "Typewriter Effect",
+      "desc": "Classic terminal-style animation"
+    },
+    "scramble": {
+      "title": "Text Scramble",
+      "desc": "Matrix-style decoding effect"
+    },
+    "gradient": {
+      "title": "Gradient Text",
+      "desc": "Animated gradients on text",
+      "modes": {
+        "flow": "Flow",
+        "pulse": "Pulse",
+        "rainbow": "Rainbow",
+        "shimmer": "Shimmer"
+      }
+    },
+    "counter": {
+      "title": "Counter Animations",
+      "desc": "Animated number counters"
+    }
+  }
+}

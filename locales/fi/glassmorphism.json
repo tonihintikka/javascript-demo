@@ -1,0 +1,27 @@
+{
+  "title": "Glassmorphism 2.0",
+  "heroTitle": "Glassmorphism 2.0",
+  "heroSubtitle": "Fysikaalisesti uskottavat tilalliset materiaalit, jotka taittavat valoa ja luovat syvyysvaikutelman. Moderni design WebGPU:n voimalla.",
+  "playgroundTitle": "Interaktiivinen leikkikenttä",
+  "playgroundDesc": "Säädä parametreja ja katso miten glassmorphism-efekti muuttuu reaaliajassa",
+  "controls": {
+    "blur": "Sumennuksen määrä",
+    "opacity": "Taustan läpinäkyvyys",
+    "saturation": "Värikylläisyys",
+    "borderOpacity": "Reunan läpinäkyvyys"
+  },
+  "examples": {
+    "title": "Esimerkit",
+    "card": "Kortti",
+    "modal": "Modaali",
+    "navigation": "Navigaatio"
+  },
+  "layers": {
+    "title": "Monikerroksiset efektit",
+    "desc": "Luo syvyyttä useilla lasikerroksilla"
+  },
+  "codeGenerator": {
+    "title": "CSS-koodigeneraattori",
+    "copyButton": "Kopioi CSS"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title1": "Modernit",
+    "title2": "JavaScript-efektit",
+    "title3": "2025",
+    "subtitle": "Post-staattisen verkon aikakausi: Interaktiivinen demoympäristö, joka esittelee tuotantovalmiita visuaalisia koukkuja",
+    "cta": "Tutustu demoihin",
+    "scrollText": "Vieritä tutkiaksesi"
+  },
+  "intro": {
+    "title": "Visuaaliset efektit määrittelevät käyttäjäkokemuksen",
+    "stats": {
+      "webgpu": {
+        "value": "100",
+        "label": "% WebGPU-tuki",
+        "desc": "Kaikissa suurimmissa selaimissa"
+      },
+      "fps": {
+        "value": "60",
+        "label": "FPS suorituskyky",
+        "desc": "Myös mobiililaitteilla"
+      },
+      "categories": {
+        "value": "7",
+        "label": "Efektikategoriaa",
+        "desc": "Tuotantovalmiita toteutuksia"
+      }
+    },
+    "text1": "Joulukuussa 2025 digitaalinen maisema on saavuttanut kriittisen käännekohdan. <strong>WebGPU:n laaja käyttöönotto</strong> on poistanut perinteiset pullonkaulat, mahdollistaen AAA-pelitason grafiikan ja fysiikkasimulaatiot suoraan käyttöliittymissä.",
+    "text2": "Tämä demoympäristö esittelee <strong>oikeasti toimivia visuaalisia koukkuja</strong> pelkän koristelun sijaan. Keskitymme teknologioihin, jotka ovat tuotantovalmiita, skaalautuvia ja tuottavat mitattavaa lisäarvoa."
+  },
+  "demos": {
+    "sectionTitle": "Tutustu interaktiivisiin demoihin",
+    "sectionSubtitle": "Jokainen demo on toteutettu modernilla teknologialla ja optimoitu suorituskyvylle",
+    "webgpu": {
+      "title": "WebGPU & 3D-renderöinti",
+      "desc": "AAA-pelitason grafiikka selaimessa"
+    },
+    "scrollytelling": {
+      "title": "Scrollytelling 2.0",
+      "desc": "Datavetoinen, vieritykseen sidottu kerronta"
+    },
+    "glassmorphism": {
+      "title": "Glassmorphism 2.0",
+      "desc": "Fysikaalisesti uskottavat tilalliset materiaalit"
+    },
+    "fluidMotion": {
+      "title": "Nestemäiset muodot",
+      "desc": "Liquid distortion & orgaaniset animaatiot"
+    },
+    "viewTransitions": {
+      "title": "View Transitions",
+      "desc": "Saumattomat tilasiirtymät & Bento Grid"
+    },
+    "microInteractions": {
+      "title": "Mikrointeraktiot",
+      "desc": "Ennakoiva UI & magneettiset painikkeet"
+    },
+    "textAnimations": {
+      "title": "Tekstianimaatiot",
+      "desc": "GSAP SplitText & morfaukset"
+    },
+    "legacy": {
+      "title": "Voice, Gesture & Sensors",
+      "desc": "Web Speech API, MediaPipe, Generic Sensors"
+    }
+  },
+  "summary": {
+    "title": "Suorituskyky ja saavutettavuus",
+    "production": {
+      "title": "Tuotantokäyttö",
+      "items": ["View Transitions API", "Mikrointeraktiot", "Glassmorphism (CSS)", "Scrollytelling"]
+    },
+    "showcase": {
+      "title": "Showcase-efektit",
+      "items": ["Raskaat 3D-kohtaukset", "Partikkelijärjestelmät", "WebGPU Compute Shaders", "Liquid distortion"]
+    },
+    "accessibility": {
+      "title": "Saavutettavuus",
+      "items": ["prefers-reduced-motion", "ARIA-labels & roles", "Näppäimistönavigaatio", "Korkean kontrastin tila"]
+    },
+    "cta": "Aloita demojen tutkiminen"
+  }
+}

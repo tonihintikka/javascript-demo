@@ -2,6 +2,50 @@
 
 Projektin tehtävälista järjestyksessä.
 
+## 🌐 PRIORITEETTI 0: Internationalization (i18n) - KESKENERÄINEN
+
+### i18n Perustoteutus ✅ (osittain)
+- [x] `locales/fi.json` - Suomenkieliset käännökset
+- [x] `locales/en.json` - Englanninkieliset käännökset
+- [x] `js/i18n.js` - I18n-moduuli (load, t, apply, toggle)
+- [x] `index.html` - data-i18n attribuutit lisätty
+- [x] Kielenvaihtonappi + CSS-tyylit
+
+### i18n Refaktorointi modulaariseksi ⏳
+Nykyinen rakenne (yksi suuri JSON) pitäisi refaktoroida:
+
+```
+locales/
+├── fi/
+│   ├── common.json       # Yhteiset: nav, footer, buttons
+│   ├── landing.json      # Etusivu
+│   ├── glassmorphism.json
+│   ├── fluid-motion.json
+│   ├── scrollytelling.json
+│   ├── micro-interactions.json
+│   ├── view-transitions.json
+│   ├── text-animations.json
+│   └── webgpu-3d.json
+├── en/
+│   └── (sama rakenne)
+```
+
+- [ ] Jaa `fi.json` ja `en.json` pienempiin moduuleihin
+- [ ] Päivitä `js/i18n.js` lataamaan sivukohtaiset käännökset
+- [ ] Lisää lazy loading (ladataan vain tarvittavat)
+- [ ] Lisää caching (common.json ladataan kerran)
+
+### Demo-sivujen i18n ⏳
+- [ ] `demos/glassmorphism.html` - lisää data-i18n attribuutit
+- [ ] `demos/fluid-motion.html`
+- [ ] `demos/scrollytelling.html`
+- [ ] `demos/micro-interactions.html`
+- [ ] `demos/view-transitions.html`
+- [ ] `demos/text-animations.html`
+- [ ] `demos/webgpu-3d.html`
+
+---
+
 ## 🎯 PRIORITEETTI 1: Uudet Demodemo-sivut
 
 ### 1. Glassmorphism 2.0 Demo ✅

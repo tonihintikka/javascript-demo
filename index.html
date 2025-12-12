@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modernit JavaScript-efektit 2025 | Interaktiivinen Demo</title>
-  <meta name="description" content="Tutustu moderneihin JavaScript-efekteihin ja käyttöliittymätrendeihin 2025: WebGPU, Glassmorphism, Scrollytelling ja enemmän.">
+  <title data-i18n="meta.title">Modernit JavaScript-efektit 2025 | Interaktiivinen Demo</title>
+  <meta name="description" data-i18n="meta.description" content="Tutustu moderneihin JavaScript-efekteihin ja käyttöliittymätrendeihin 2025: WebGPU, Glassmorphism, Scrollytelling ja enemmän.">
   <link rel="stylesheet" href="/css/landing.css">
 </head>
 <body>
+  <!-- Language Toggle Button -->
+  <button class="lang-toggle" data-lang-toggle aria-label="Switch to English">EN</button>
   <!-- Hero Section with 3D Background -->
   <section class="hero" id="hero">
     <!-- Three.js Canvas for particle background -->
@@ -17,17 +19,17 @@
     <div class="hero-content">
       <div class="glass-card">
         <h1 class="hero-title">
-          <span class="title-line">Modernit</span>
-          <span class="title-line gradient-text">JavaScript-efektit</span>
-          <span class="title-line">2025</span>
+          <span class="title-line" data-i18n="hero.title1">Modernit</span>
+          <span class="title-line gradient-text" data-i18n="hero.title2">JavaScript-efektit</span>
+          <span class="title-line" data-i18n="hero.title3">2025</span>
         </h1>
-        <p class="hero-subtitle">
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
           Post-staattisen verkon aikakausi: Interaktiivinen demoympäristö,
           joka esittelee tuotantovalmiita visuaalisia koukkuja
         </p>
         <div class="hero-cta">
           <a href="#demos" class="btn btn-primary btn-magnetic">
-            Tutustu demoihin
+            <span data-i18n="hero.cta">Tutustu demoihin</span>
             <span class="btn-arrow">↓</span>
           </a>
         </div>
@@ -39,7 +41,7 @@
       <div class="scroll-mouse">
         <div class="scroll-wheel"></div>
       </div>
-      <span class="scroll-text">Scroll to explore</span>
+      <span class="scroll-text" data-i18n="hero.scroll">Scroll to explore</span>
     </div>
   </section>
 
@@ -47,34 +49,34 @@
   <section class="intro-section" id="intro">
     <div class="container">
       <div class="intro-content">
-        <h2 class="section-title reveal-text">
+        <h2 class="section-title reveal-text" data-i18n="intro.title">
           Visuaaliset efektit määrittelevät käyttäjäkokemuksen
         </h2>
         <div class="intro-grid">
           <div class="intro-stat reveal-fade">
             <div class="stat-number" data-target="100">0</div>
-            <div class="stat-label">% WebGPU-tuki</div>
-            <p class="stat-desc">Kaikissa suurimmissa selaimissa</p>
+            <div class="stat-label" data-i18n="intro.stat1.label">% WebGPU-tuki</div>
+            <p class="stat-desc" data-i18n="intro.stat1.desc">Kaikissa suurimmissa selaimissa</p>
           </div>
           <div class="intro-stat reveal-fade">
             <div class="stat-number" data-target="60">0</div>
-            <div class="stat-label">FPS suorituskyky</div>
-            <p class="stat-desc">Myös mobiililaitteilla</p>
+            <div class="stat-label" data-i18n="intro.stat2.label">FPS suorituskyky</div>
+            <p class="stat-desc" data-i18n="intro.stat2.desc">Myös mobiililaitteilla</p>
           </div>
           <div class="intro-stat reveal-fade">
             <div class="stat-number" data-target="7">0</div>
-            <div class="stat-label">Efektikategoriaa</div>
-            <p class="stat-desc">Tuotantovalmiita toteutuksia</p>
+            <div class="stat-label" data-i18n="intro.stat3.label">Efektikategoriaa</div>
+            <p class="stat-desc" data-i18n="intro.stat3.desc">Tuotantovalmiita toteutuksia</p>
           </div>
         </div>
 
         <div class="intro-text reveal-fade">
-          <p>
+          <p data-i18n="intro.text1">
             Joulukuussa 2025 digitaalinen maisema on saavuttanut kriittisen käännekohdan.
             <strong>WebGPU:n laaja käyttöönotto</strong> on poistanut perinteiset pullonkaulat,
             mahdollistaen AAA-pelitason grafiikan ja fysiikkasimulaatiot suoraan käyttöliittymissä.
           </p>
-          <p>
+          <p data-i18n="intro.text2">
             Tämä demoympäristö esittelee <strong>oikeasti toimivia visuaalisia koukkuja</strong>
             pelkän koristelun sijaan. Keskitymme teknologioihin, jotka ovat tuotantovalmiita,
             skaalautuvia ja tuottavat mitattavaa lisäarvoa.
@@ -94,10 +96,10 @@
   <!-- Demo Grid (Bento Layout) -->
   <section class="demos-section" id="demos">
     <div class="container">
-      <h2 class="section-title centered reveal-text">
+      <h2 class="section-title centered reveal-text" data-i18n="demos.title">
         Tutustu interaktiivisiin demoihin
       </h2>
-      <p class="section-subtitle centered reveal-fade">
+      <p class="section-subtitle centered reveal-fade" data-i18n="demos.subtitle">
         Jokainen demo on toteutettu modernilla teknologialla ja optimoitu suorituskyvylle
       </p>
 
@@ -107,8 +109,8 @@
         <a href="/demos/webgpu-3d.html" class="demo-card card-large demo-card-3d" data-demo="3d">
           <div class="card-content">
             <span class="card-number">01</span>
-            <h3 class="card-title">WebGPU & 3D-renderöinti</h3>
-            <p class="card-desc">AAA-pelitason grafiikka selaimessa</p>
+            <h3 class="card-title" data-i18n="demos.card1.title">WebGPU & 3D-renderöinti</h3>
+            <p class="card-desc" data-i18n="demos.card1.desc">AAA-pelitason grafiikka selaimessa</p>
             <div class="card-tech">
               <span class="tech-tag">Three.js</span>
               <span class="tech-tag">WebGPU</span>
@@ -125,8 +127,8 @@
         <a href="/demos/scrollytelling.html" class="demo-card demo-card-scroll" data-demo="scrollytelling">
           <div class="card-content">
             <span class="card-number">02</span>
-            <h3 class="card-title">Scrollytelling 2.0</h3>
-            <p class="card-desc">Datavetoinen, vieritykseen sidottu kerronta</p>
+            <h3 class="card-title" data-i18n="demos.card2.title">Scrollytelling 2.0</h3>
+            <p class="card-desc" data-i18n="demos.card2.desc">Datavetoinen, vieritykseen sidottu kerronta</p>
             <div class="card-tech">
               <span class="tech-tag">GSAP</span>
               <span class="tech-tag">ECharts</span>
@@ -142,8 +144,8 @@
         <a href="/demos/glassmorphism.html" class="demo-card card-wide demo-card-glass" data-demo="glass">
           <div class="card-content">
             <span class="card-number">03</span>
-            <h3 class="card-title">Glassmorphism 2.0</h3>
-            <p class="card-desc">Fysikaalisesti uskottavat tilalliset materiaalit</p>
+            <h3 class="card-title" data-i18n="demos.card3.title">Glassmorphism 2.0</h3>
+            <p class="card-desc" data-i18n="demos.card3.desc">Fysikaalisesti uskottavat tilalliset materiaalit</p>
             <div class="card-tech">
               <span class="tech-tag">CSS Backdrop</span>
               <span class="tech-tag">Shaders</span>
@@ -163,8 +165,8 @@
         <a href="/demos/fluid-motion.html" class="demo-card demo-card-fluid" data-demo="fluid">
           <div class="card-content">
             <span class="card-number">04</span>
-            <h3 class="card-title">Nestemäiset muodot</h3>
-            <p class="card-desc">Liquid distortion & orgaaniset animaatiot</p>
+            <h3 class="card-title" data-i18n="demos.card4.title">Nestemäiset muodot</h3>
+            <p class="card-desc" data-i18n="demos.card4.desc">Liquid distortion & orgaaniset animaatiot</p>
             <div class="card-tech">
               <span class="tech-tag">WebGL</span>
               <span class="tech-tag">Shaders</span>
@@ -180,8 +182,8 @@
         <a href="/demos/view-transitions.html" class="demo-card demo-card-transitions" data-demo="transitions">
           <div class="card-content">
             <span class="card-number">05</span>
-            <h3 class="card-title">View Transitions</h3>
-            <p class="card-desc">Saumattomat tilasiirtymät & Bento Grid</p>
+            <h3 class="card-title" data-i18n="demos.card5.title">View Transitions</h3>
+            <p class="card-desc" data-i18n="demos.card5.desc">Saumattomat tilasiirtymät & Bento Grid</p>
             <div class="card-tech">
               <span class="tech-tag">View Transitions API</span>
             </div>
@@ -203,15 +205,15 @@
         <a href="/demos/micro-interactions.html" class="demo-card demo-card-micro" data-demo="micro">
           <div class="card-content">
             <span class="card-number">06</span>
-            <h3 class="card-title">Mikrointeraktiot</h3>
-            <p class="card-desc">Ennakoiva UI & magneettiset painikkeet</p>
+            <h3 class="card-title" data-i18n="demos.card6.title">Mikrointeraktiot</h3>
+            <p class="card-desc" data-i18n="demos.card6.desc">Ennakoiva UI & magneettiset painikkeet</p>
             <div class="card-tech">
               <span class="tech-tag">Intent Detection</span>
             </div>
           </div>
           <div class="card-preview">
             <div class="micro-preview">
-              <button class="preview-btn">Hover me</button>
+              <button class="preview-btn" data-i18n="demos.card6.hover">Hover me</button>
             </div>
           </div>
           <div class="card-overlay"></div>
@@ -221,8 +223,8 @@
         <a href="/demos/text-animations.html" class="demo-card demo-card-text" data-demo="text">
           <div class="card-content">
             <span class="card-number">07</span>
-            <h3 class="card-title">Tekstianimaatiot</h3>
-            <p class="card-desc">GSAP SplitText & morfaukset</p>
+            <h3 class="card-title" data-i18n="demos.card7.title">Tekstianimaatiot</h3>
+            <p class="card-desc" data-i18n="demos.card7.desc">GSAP SplitText & morfaukset</p>
             <div class="card-tech">
               <span class="tech-tag">GSAP</span>
               <span class="tech-tag">SplitText</span>
@@ -240,8 +242,8 @@
         <a href="/legacy.html" class="demo-card card-legacy demo-card-legacy" data-demo="legacy">
           <div class="card-content">
             <span class="card-number">+3</span>
-            <h3 class="card-title">Voice, Gesture & Sensors</h3>
-            <p class="card-desc">Web Speech API, MediaPipe, Generic Sensors</p>
+            <h3 class="card-title" data-i18n="demos.cardLegacy.title">Voice, Gesture & Sensors</h3>
+            <p class="card-desc" data-i18n="demos.cardLegacy.desc">Web Speech API, MediaPipe, Generic Sensors</p>
             <div class="card-tech">
               <span class="tech-tag">Multimodal</span>
             </div>
@@ -256,46 +258,46 @@
   <section class="summary-section" id="summary">
     <div class="container">
       <div class="summary-content">
-        <h2 class="section-title reveal-text">Suorituskyky ja saavutettavuus</h2>
+        <h2 class="section-title reveal-text" data-i18n="summary.title">Suorituskyky ja saavutettavuus</h2>
 
         <div class="summary-grid">
           <div class="summary-card reveal-fade">
             <div class="summary-icon">🚀</div>
-            <h3>Tuotantokäyttö</h3>
+            <h3 data-i18n="summary.production.title">Tuotantokäyttö</h3>
             <ul>
-              <li>View Transitions API</li>
-              <li>Mikrointeraktiot</li>
-              <li>Glassmorphism (CSS)</li>
-              <li>Scrollytelling</li>
+              <li data-i18n="summary.production.item1">View Transitions API</li>
+              <li data-i18n="summary.production.item2">Mikrointeraktiot</li>
+              <li data-i18n="summary.production.item3">Glassmorphism (CSS)</li>
+              <li data-i18n="summary.production.item4">Scrollytelling</li>
             </ul>
           </div>
 
           <div class="summary-card reveal-fade">
             <div class="summary-icon">🎨</div>
-            <h3>Showcase-efektit</h3>
+            <h3 data-i18n="summary.showcase.title">Showcase-efektit</h3>
             <ul>
-              <li>Raskaat 3D-kohtaukset</li>
-              <li>Partikkelijärjestelmät</li>
-              <li>WebGPU Compute Shaders</li>
-              <li>Liquid distortion</li>
+              <li data-i18n="summary.showcase.item1">Raskaat 3D-kohtaukset</li>
+              <li data-i18n="summary.showcase.item2">Partikkelijärjestelmät</li>
+              <li data-i18n="summary.showcase.item3">WebGPU Compute Shaders</li>
+              <li data-i18n="summary.showcase.item4">Liquid distortion</li>
             </ul>
           </div>
 
           <div class="summary-card reveal-fade">
             <div class="summary-icon">♿</div>
-            <h3>Saavutettavuus</h3>
+            <h3 data-i18n="summary.accessibility.title">Saavutettavuus</h3>
             <ul>
               <li><code>prefers-reduced-motion</code></li>
-              <li>ARIA-labels & roles</li>
-              <li>Keyboard navigation</li>
-              <li>High contrast mode</li>
+              <li data-i18n="summary.accessibility.item2">ARIA-labels & roles</li>
+              <li data-i18n="summary.accessibility.item3">Keyboard navigation</li>
+              <li data-i18n="summary.accessibility.item4">High contrast mode</li>
             </ul>
           </div>
         </div>
 
         <div class="summary-cta reveal-fade">
           <a href="#demos" class="btn btn-primary btn-large btn-magnetic">
-            Aloita demojen tutkiminen
+            <span data-i18n="summary.cta">Aloita demojen tutkiminen</span>
             <span class="btn-arrow">→</span>
           </a>
         </div>
@@ -308,11 +310,11 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-text">
-          <p><strong>Modernit JavaScript-efektit ja käyttöliittymäarkkitehtuurit</strong></p>
-          <p>Tilannekatsaus joulukuu 2025 · Tuotantovalmiit toteutukset</p>
+          <p><strong data-i18n="footer.title">Modernit JavaScript-efektit ja käyttöliittymäarkkitehtuurit</strong></p>
+          <p data-i18n="footer.subtitle">Tilannekatsaus joulukuu 2025 · Tuotantovalmiit toteutukset</p>
         </div>
         <div class="footer-links">
-          <a href="https://github.com/tonihintikka/javascript-demo" target="_blank" rel="noopener">
+          <a href="https://github.com/tonihintikka/javascript-demo" target="_blank" rel="noopener" data-i18n="footer.github">
             GitHub Repository
           </a>
         </div>
@@ -323,6 +325,7 @@
   <!-- Magnetic Cursor Follower -->
   <div class="cursor-follower" id="cursor-follower"></div>
 
+  <script type="module" src="/js/i18n.js"></script>
   <script type="module" src="/js/landing.js"></script>
 </body>
 </html>

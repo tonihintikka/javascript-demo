@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "title": "Modern JavaScript Effects 2025 | Interactive Demo",
+    "description": "Explore modern JavaScript effects and UI trends 2025: WebGPU, Glassmorphism, Scrollytelling and more."
+  },
+  "nav": {
+    "back": "← Back",
+    "toggleTheme": "Toggle theme",
+    "language": "FI"
+  },
+  "hero": {
+    "title1": "Modern",
+    "title2": "JavaScript Effects",
+    "title3": "2025",
+    "subtitle": "The post-static web era: Interactive demo environment showcasing production-ready visual hooks",
+    "cta": "Explore Demos",
+    "scrollText": "Scroll to explore"
+  },
+  "intro": {
+    "title": "Visual effects define the user experience",
+    "stats": {
+      "webgpu": {
+        "value": "100",
+        "label": "% WebGPU support",
+        "desc": "In all major browsers"
+      },
+      "fps": {
+        "value": "60",
+        "label": "FPS performance",
+        "desc": "Even on mobile devices"
+      },
+      "categories": {
+        "value": "7",
+        "label": "Effect categories",
+        "desc": "Production-ready implementations"
+      }
+    },
+    "text1": "In December 2025, the digital landscape has reached a critical turning point. <strong>Widespread adoption of WebGPU</strong> has removed traditional bottlenecks, enabling AAA game-level graphics and physics simulations directly in user interfaces.",
+    "text2": "This demo environment showcases <strong>actually working visual hooks</strong> instead of mere decoration. We focus on technologies that are production-ready, scalable, and deliver measurable value."
+  },
+  "demos": {
+    "sectionTitle": "Explore Interactive Demos",
+    "sectionSubtitle": "Each demo is implemented with modern technology and optimized for performance",
+    "webgpu": {
+      "title": "WebGPU & 3D Rendering",
+      "desc": "AAA game-level graphics in browser"
+    },
+    "scrollytelling": {
+      "title": "Scrollytelling 2.0",
+      "desc": "Data-driven, scroll-bound storytelling"
+    },
+    "glassmorphism": {
+      "title": "Glassmorphism 2.0",
+      "desc": "Physically plausible spatial materials"
+    },
+    "fluidMotion": {
+      "title": "Fluid Shapes",
+      "desc": "Liquid distortion & organic animations"
+    },
+    "viewTransitions": {
+      "title": "View Transitions",
+      "desc": "Seamless state transitions & Bento Grid"
+    },
+    "microInteractions": {
+      "title": "Micro-interactions",
+      "desc": "Predictive UI & magnetic buttons"
+    },
+    "textAnimations": {
+      "title": "Text Animations",
+      "desc": "GSAP SplitText & morphing"
+    },
+    "legacy": {
+      "title": "Voice, Gesture & Sensors",
+      "desc": "Web Speech API, MediaPipe, Generic Sensors"
+    }
+  },
+  "summary": {
+    "title": "Performance and Accessibility",
+    "production": {
+      "title": "Production Use",
+      "items": ["View Transitions API", "Micro-interactions", "Glassmorphism (CSS)", "Scrollytelling"]
+    },
+    "showcase": {
+      "title": "Showcase Effects",
+      "items": ["Heavy 3D scenes", "Particle systems", "WebGPU Compute Shaders", "Liquid distortion"]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "items": ["prefers-reduced-motion", "ARIA-labels & roles", "Keyboard navigation", "High contrast mode"]
+    },
+    "cta": "Start Exploring Demos"
+  },
+  "footer": {
+    "title": "Modern JavaScript Effects and UI Architecture",
+    "subtitle": "Status update December 2025 · Production-ready implementations",
+    "github": "GitHub Repository"
+  },
+  "common": {
+    "tryIt": "Try it",
+    "learnMore": "Learn more",
+    "controls": "Controls",
+    "codeExamples": "Code Examples",
+    "browserSupport": "Browser Support",
+    "otherDemos": "Other Demos",
+    "hoverMe": "Hover me",
+    "reset": "Reset",
+    "copy": "Copy"
+  },
+  "webgpuDemo": {
+    "title": "WebGPU & 3D",
+    "heroTitle": "WebGPU & Advanced 3D",
+    "heroSubtitle": "Next-generation graphics API for browsers. GPU Compute, TSL shaders, and post-processing effects.",
+    "checkingSupport": "Checking WebGPU support...",
+    "supported": "WebGPU supported ✓",
+    "notSupported": "WebGPU not available - using WebGL fallback",
+    "comparison": {
+      "title": "WebGPU vs WebGL",
+      "webgl": {
+        "title": "WebGL 2.0",
+        "features": [
+          "✅ Wide browser support (98%+)",
+          "✅ Stable and well documented",
+          "⚠️ GLSL shader language",
+          "⚠️ Limited GPU compute",
+          "⚠️ Older API design"
+        ]
+      },
+      "webgpu": {
+        "title": "WebGPU",
+        "features": [
+          "✅ Modern, efficient API",
+          "✅ GPU Compute Shaders",
+          "✅ WGSL shader language",
+          "✅ Better performance",
+          "⚠️ Limited browser support (Chrome 113+)"
+        ]
+      }
+    },
+    "tabs": {
+      "particles": "Particles",
+      "materials": "PBR Materials",
+      "postfx": "Post-Processing",
+      "compute": "GPU Compute"
+    },
+    "particleControls": {
+      "title": "Particle Controls",
+      "count": "Particle Count",
+      "size": "Size",
+      "speed": "Speed",
+      "colorMode": "Color Mode",
+      "rainbow": "Rainbow",
+      "gradient": "Gradient",
+      "solid": "Solid Color",
+      "reset": "Reset Particles"
+    },
+    "materialControls": {
+      "title": "Material Properties",
+      "type": "Material Type",
+      "standard": "Standard PBR",
+      "glass": "Glass",
+      "metal": "Metal",
+      "fabric": "Fabric",
+      "tslCustom": "TSL Custom",
+      "roughness": "Roughness",
+      "metalness": "Metalness",
+      "envIntensity": "Environment Intensity"
+    },
+    "postfxControls": {
+      "title": "Post-Processing Effects",
+      "bloom": "Bloom",
+      "dof": "Depth of Field",
+      "vignette": "Vignette",
+      "chromatic": "Chromatic Aberration"
+    },
+    "computeControls": {
+      "title": "GPU Compute Simulation",
+      "simType": "Simulation Type",
+      "particles": "Particle Physics",
+      "boids": "Boids (Flocking)",
+      "fluid": "Fluid Simulation",
+      "particleCount": "Particle Count",
+      "simSpeed": "Simulation Speed",
+      "warning": "GPU Compute requires WebGPU support"
+    },
+    "codeExamples": {
+      "title": "Code Examples",
+      "webgpuCheck": "WebGPU Check",
+      "tslShader": "TSL Shader",
+      "postprocessing": "Post-Processing",
+      "computeShader": "Compute Shader"
+    }
+  },
+  "glassmorphismDemo": {
+    "title": "Glassmorphism 2.0",
+    "heroTitle": "Glassmorphism 2.0",
+    "heroSubtitle": "Physically plausible spatial materials that refract light and create depth. Modern design powered by WebGPU.",
+    "playgroundTitle": "Interactive Playground",
+    "playgroundDesc": "Adjust parameters and see how the glassmorphism effect changes in real-time",
+    "controls": {
+      "blur": "Blur Amount",
+      "opacity": "Background Opacity",
+      "saturation": "Saturation",
+      "borderOpacity": "Border Opacity"
+    }
+  },
+  "fluidMotionDemo": {
+    "title": "Fluid Shapes",
+    "heroTitle": "Fluid Motion",
+    "heroSubtitle": "WebGL liquid distortion shaders. Move your mouse to see the distortion effect.",
+    "controls": {
+      "viscosity": "Viscosity",
+      "distortion": "Distortion",
+      "speed": "Speed",
+      "colorShift": "Color Shift"
+    },
+    "presets": {
+      "calm": "Calm",
+      "energetic": "Energetic",
+      "chaotic": "Chaotic"
+    }
+  },
+  "scrollytellingDemo": {
+    "title": "Scrollytelling 2.0",
+    "heroTitle": "Scrollytelling 2.0",
+    "heroSubtitle": "Data-driven, scroll-bound storytelling with GSAP ScrollTrigger."
+  },
+  "viewTransitionsDemo": {
+    "title": "View Transitions",
+    "heroTitle": "View Transitions API",
+    "heroSubtitle": "Seamless transitions between pages and states.",
+    "expandCard": "Expand card",
+    "collapseCard": "Collapse card"
+  },
+  "microInteractionsDemo": {
+    "title": "Micro-interactions",
+    "heroTitle": "Micro-interactions & Predictive UI",
+    "heroSubtitle": "Magnetic buttons, haptic feedback, and predictive user interfaces.",
+    "magneticButtons": {
+      "title": "Magnetic Buttons",
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong"
+    },
+    "hapticFeedback": {
+      "title": "Haptic Feedback",
+      "tap": "Tap",
+      "success": "Success",
+      "warning": "Warning"
+    },
+    "predictiveUI": {
+      "title": "Predictive UI",
+      "desc": "Move your mouse near the button to see the intent detection effect"
+    }
+  },
+  "textAnimationsDemo": {
+    "title": "Text Animations",
+    "heroTitle": "Text Animations",
+    "heroSubtitle": "Character-by-character, word-by-word, and line-by-line animations.",
+    "types": {
+      "charByChar": "Character by character",
+      "wordByWord": "Word by word",
+      "typewriter": "Typewriter",
+      "scramble": "Text Scramble",
+      "gradient": "Gradient",
+      "counter": "Counter"
+    },
+    "replay": "Replay"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "title": "Modernit JavaScript-efektit 2025 | Interaktiivinen Demo",
+    "description": "Tutustu moderneihin JavaScript-efekteihin ja käyttöliittymätrendeihin 2025: WebGPU, Glassmorphism, Scrollytelling ja enemmän."
+  },
+  "nav": {
+    "back": "← Takaisin",
+    "toggleTheme": "Vaihda teemaa",
+    "language": "EN"
+  },
+  "hero": {
+    "title1": "Modernit",
+    "title2": "JavaScript-efektit",
+    "title3": "2025",
+    "subtitle": "Post-staattisen verkon aikakausi: Interaktiivinen demoympäristö, joka esittelee tuotantovalmiita visuaalisia koukkuja",
+    "cta": "Tutustu demoihin",
+    "scroll": "Vieritä tutkiaksesi"
+  },
+  "intro": {
+    "title": "Visuaaliset efektit määrittelevät käyttäjäkokemuksen",
+    "stat1": {
+      "label": "% WebGPU-tuki",
+      "desc": "Kaikissa suurimmissa selaimissa"
+    },
+    "stat2": {
+      "label": "FPS suorituskyky",
+      "desc": "Myös mobiililaitteilla"
+    },
+    "stat3": {
+      "label": "Efektikategoriaa",
+      "desc": "Tuotantovalmiita toteutuksia"
+    },
+    "text1": "Joulukuussa 2025 digitaalinen maisema on saavuttanut kriittisen käännekohdan. WebGPU:n laaja käyttöönotto on poistanut perinteiset pullonkaulat, mahdollistaen AAA-pelitason grafiikan ja fysiikkasimulaatiot suoraan käyttöliittymissä.",
+    "text2": "Tämä demoympäristö esittelee oikeasti toimivia visuaalisia koukkuja pelkän koristelun sijaan. Keskitymme teknologioihin, jotka ovat tuotantovalmiita, skaalautuvia ja tuottavat mitattavaa lisäarvoa."
+  },
+  "demos": {
+    "title": "Tutustu interaktiivisiin demoihin",
+    "subtitle": "Jokainen demo on toteutettu modernilla teknologialla ja optimoitu suorituskyvylle",
+    "card1": {
+      "title": "WebGPU & 3D-renderöinti",
+      "desc": "AAA-pelitason grafiikka selaimessa"
+    },
+    "card2": {
+      "title": "Scrollytelling 2.0",
+      "desc": "Datavetoinen, vieritykseen sidottu kerronta"
+    },
+    "card3": {
+      "title": "Glassmorphism 2.0",
+      "desc": "Fysikaalisesti uskottavat tilalliset materiaalit"
+    },
+    "card4": {
+      "title": "Nestemäiset muodot",
+      "desc": "Liquid distortion & orgaaniset animaatiot"
+    },
+    "card5": {
+      "title": "View Transitions",
+      "desc": "Saumattomat tilasiirtymät & Bento Grid"
+    },
+    "card6": {
+      "title": "Mikrointeraktiot",
+      "desc": "Ennakoiva UI & magneettiset painikkeet",
+      "hover": "Vie hiiri päälle"
+    },
+    "card7": {
+      "title": "Tekstianimaatiot",
+      "desc": "GSAP SplitText & morfaukset"
+    },
+    "cardLegacy": {
+      "title": "Voice, Gesture & Sensors",
+      "desc": "Web Speech API, MediaPipe, Generic Sensors"
+    }
+  },
+  "summary": {
+    "title": "Suorituskyky ja saavutettavuus",
+    "production": {
+      "title": "Tuotantokäyttö",
+      "item1": "View Transitions API",
+      "item2": "Mikrointeraktiot",
+      "item3": "Glassmorphism (CSS)",
+      "item4": "Scrollytelling"
+    },
+    "showcase": {
+      "title": "Showcase-efektit",
+      "item1": "Raskaat 3D-kohtaukset",
+      "item2": "Partikkelijärjestelmät",
+      "item3": "WebGPU Compute Shaders",
+      "item4": "Liquid distortion"
+    },
+    "accessibility": {
+      "title": "Saavutettavuus",
+      "item2": "ARIA-labels & roles",
+      "item3": "Keyboard navigation",
+      "item4": "High contrast mode"
+    },
+    "cta": "Aloita demojen tutkiminen"
+  },
+  "footer": {
+    "title": "Modernit JavaScript-efektit ja käyttöliittymäarkkitehtuurit",
+    "subtitle": "Tilannekatsaus joulukuu 2025 · Tuotantovalmiit toteutukset",
+    "github": "GitHub Repository"
+  },
+  "common": {
+    "tryIt": "Kokeile",
+    "learnMore": "Lue lisää",
+    "controls": "Kontrollit",
+    "codeExamples": "Koodiesimerkit",
+    "browserSupport": "Selaintuki",
+    "otherDemos": "Muut Demot",
+    "hoverMe": "Vie hiiri päälle",
+    "reset": "Nollaa",
+    "copy": "Kopioi"
+  },
+  "webgpuDemo": {
+    "title": "WebGPU & 3D",
+    "heroTitle": "WebGPU & Advanced 3D",
+    "heroSubtitle": "Seuraavan sukupolven grafiikkarajapinta selaimissa. GPU Compute, TSL-shaderit, ja post-processing efektit."
+  },
+  "glassmorphismDemo": {
+    "title": "Glassmorphism 2.0",
+    "heroTitle": "Glassmorphism 2.0",
+    "heroSubtitle": "Fysikaalisesti uskottavat tilalliset materiaalit, jotka taittavat valoa ja luovat syvyysvaikutelman."
+  },
+  "fluidMotionDemo": {
+    "title": "Nestemäiset muodot",
+    "heroTitle": "Fluid Motion",
+    "heroSubtitle": "WebGL liquid distortion -shaderit. Liikuta hiirtä nähdäksesi vääristymisefekti."
+  },
+  "scrollytellingDemo": {
+    "title": "Scrollytelling 2.0",
+    "heroTitle": "Scrollytelling 2.0",
+    "heroSubtitle": "Datavetoinen, vieritykseen sidottu kerronta GSAP ScrollTrigger -kirjastolla."
+  },
+  "viewTransitionsDemo": {
+    "title": "View Transitions",
+    "heroTitle": "View Transitions API",
+    "heroSubtitle": "Saumattomat siirtymät sivujen ja tilojen välillä."
+  },
+  "microInteractionsDemo": {
+    "title": "Mikrointeraktiot",
+    "heroTitle": "Mikrointeraktiot & Ennakoiva UI",
+    "heroSubtitle": "Magneettiset painikkeet, haptinen palaute ja ennakoivat käyttöliittymät."
+  },
+  "textAnimationsDemo": {
+    "title": "Tekstianimaatiot",
+    "heroTitle": "Tekstianimaatiot",
+    "heroSubtitle": "Character-by-character, word-by-word, ja line-by-line animaatiot."
+  }
+}

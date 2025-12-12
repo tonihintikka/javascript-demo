@@ -1,0 +1,28 @@
+{
+  "name": "js-visualization-demo-2025",
+  "version": "1.0.0",
+  "description": "Interactive JavaScript visualization demos showcasing 2025 trends: voice, gesture, and sensor controls",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "echarts": "^5.5.1",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.3"
+  },
+  "keywords": [
+    "visualization",
+    "echarts",
+    "three.js",
+    "voice-control",
+    "gesture-recognition",
+    "sensor-api"
+  ],
+  "author": "",
+  "license": "MIT"
+}
